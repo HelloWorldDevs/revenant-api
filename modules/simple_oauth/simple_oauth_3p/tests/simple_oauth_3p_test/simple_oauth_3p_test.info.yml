@@ -1,0 +1,14 @@
+name: Simple OAuth 3P Test
+type: module
+description: Test module for Simple OAuth 3rd Party
+# core: 8.x
+package: Testing
+hidden: true
+dependencies:
+  - simple_oauth_3p
+
+# Information added by Drupal.org packaging script on 2016-12-28
+version: '8.x-2.0-alpha2'
+core: '8.x'
+project: 'simple_oauth'
+datestamp: 1482935286

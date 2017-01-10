@@ -701,7 +701,7 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  * For example:
  * @code
  * $settings['trusted_host_patterns'] = array(
- *   '^www\.example\.com$',
+ *   '^www\.revenant-api\.bfdig\.com$',
  * );
  * @endcode
  * will allow the site to only run from www.example.com.
@@ -723,7 +723,10 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  * will allow the site to run off of all variants of example.com and
  * example.org, with all subdomains included.
  */
-
+  $settings['trusted_host_patterns'] = array(
+    '^revenant-api\.bfdig\.com$',
+    '^.+\.revenant-api\.bfdig\.com'
+  );
 /**
  * The default list of directories that will be ignored by Drupal's file API.
  *
