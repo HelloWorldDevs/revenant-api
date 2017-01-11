@@ -41,7 +41,7 @@ class RevenantPageController extends ControllerBase {
             'langcode' => 'en',
             'uid' => '1',
             'status' => 1,
-            'field_url' => 'asdfs/asdfa/asdf',
+            'field_page_url' => 'asdfs/asdfa/asdf',
         ));
 
         $node->save();
