@@ -6,4 +6,9 @@ revenant_page.get:
     _access: 'TRUE'
 
 
-
+test_api.post:
+  path: 'revenant_page/post'
+  defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_example' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
