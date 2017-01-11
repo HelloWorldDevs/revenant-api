@@ -1,0 +1,9 @@
+revenant_page.get:
+  path: 'revenant_page/get'
+  defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::get_example' }
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+
+
+

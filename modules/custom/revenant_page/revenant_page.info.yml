@@ -1,0 +1,6 @@
+name: Revenant Page
+description: API for posting and updating revenant page content
+package: Custom
+version: 1.x
+type: module
+core: 8.x
