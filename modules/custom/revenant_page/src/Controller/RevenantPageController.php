@@ -33,7 +33,6 @@ class RevenantPageController extends ControllerBase {
         if ( 0 === strpos( $request->headers->get( 'Content-Type' ), 'application/json' ) ) {
             $data = json_decode( $request->getContent(), TRUE );
             $request->request->replace( is_array( $data ) ? $data : [] );
-            \Drupal::logger('my_module')->notice($data);
 //            $node = Node::create(array(
 //                'type' => 'revenant_page',
 //                'title' => 'NEW PAGE!',
@@ -42,7 +41,7 @@ class RevenantPageController extends ControllerBase {
 //                'status' => 1,
 //                'field_page_url' => 'asdfs/asdfa/asdf',
 //            ));
-//
+
 //            $node->save();
         }
 
