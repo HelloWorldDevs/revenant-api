@@ -35,11 +35,11 @@ class RevenantPageController extends ControllerBase {
             $request->request->replace( is_array( $data ) ? $data : [] );
             $node = Node::create(array(
                 'type' => 'revenant_page',
-                'title' => 'NEW PAGE!',
+                'title' => $data['title'],
                 'langcode' => 'en',
                 'uid' => '1',
                 'status' => 1,
-                'field_page_url' => 'asdfs/asdfa/asdf',
+                'field_page_url' => $data['url'],
             ));
 
             $node->save();
