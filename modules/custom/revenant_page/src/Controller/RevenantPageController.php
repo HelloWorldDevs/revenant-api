@@ -43,6 +43,7 @@ class RevenantPageController extends ControllerBase {
 //            ));
 
 //            $node->save();
+            \Drupal::logger('my_module')->error($message);
         }
 
 
