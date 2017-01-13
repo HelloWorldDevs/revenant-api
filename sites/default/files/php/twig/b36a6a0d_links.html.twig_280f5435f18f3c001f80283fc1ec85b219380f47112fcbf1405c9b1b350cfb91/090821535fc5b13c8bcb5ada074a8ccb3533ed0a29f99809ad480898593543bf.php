@@ -1,6 +1,6 @@
 <?php
 
-/* core/themes/classy/templates/navigation/links.html.twig */
+/* links.html.twig */
 class __TwigTemplate_ece02f0c3df7b0086cd0ca8465f38308d76b527e9ac8a6b1025d4d084d54ae92 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -104,7 +104,7 @@ $context["item"], "text_attributes", array())) {
 
     public function getTemplateName()
     {
-        return "core/themes/classy/templates/navigation/links.html.twig";
+        return "links.html.twig";
     }
 
     public function isTraitable()
@@ -127,6 +127,6 @@ $context["item"], "text_attributes", array())) {
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "core/themes/classy/templates/navigation/links.html.twig", "/home/danlinn/webapps/revenant_api/core/themes/classy/templates/navigation/links.html.twig");
+        return new Twig_Source("", "links.html.twig", "core/themes/classy/templates/navigation/links.html.twig");
     }
 }
