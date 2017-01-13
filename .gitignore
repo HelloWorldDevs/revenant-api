@@ -11,6 +11,7 @@ themes/.DS_Store
 
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings.local.php
+sites/*/settings.php
 sites/*/services*.yml
 sites/*/development.services.yml
 
