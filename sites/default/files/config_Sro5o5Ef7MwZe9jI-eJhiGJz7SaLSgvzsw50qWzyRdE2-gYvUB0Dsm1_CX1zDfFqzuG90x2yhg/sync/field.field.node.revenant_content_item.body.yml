@@ -1,0 +1,22 @@
+uuid: 1c82969e-570b-4449-8d3a-da8b80e997fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.revenant_content_item
+  module:
+    - text
+id: node.revenant_content_item.body
+field_name: body
+entity_type: node
+bundle: revenant_content_item
+label: 'Old Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

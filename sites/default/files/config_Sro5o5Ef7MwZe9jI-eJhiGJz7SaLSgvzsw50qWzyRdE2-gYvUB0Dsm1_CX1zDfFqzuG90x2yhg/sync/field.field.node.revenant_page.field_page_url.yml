@@ -1,0 +1,19 @@
+uuid: 67ddec2f-4b33-4e2d-b342-1611f51e0194
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_url
+    - node.type.revenant_page
+id: node.revenant_page.field_page_url
+field_name: field_page_url
+entity_type: node
+bundle: revenant_page
+label: 'Page URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
