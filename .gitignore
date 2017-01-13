@@ -14,3 +14,4 @@ sites/*/settings.local.php
 sites/*/services*.yml
 sites/*/development.services.yml
 
+sites/default/files
