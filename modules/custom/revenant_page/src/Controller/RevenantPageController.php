@@ -33,7 +33,7 @@ class RevenantPageController extends ControllerBase {
         if ( 0 === strpos( $request->headers->get( 'Content-Type' ), 'application/json' ) ) {
             $data = json_decode( $request->getContent(), TRUE );
             $request->request->replace( is_array( $data ) ? $data : [] );
-            dprint_r($data);
+            \Drupal::logger('my_module')->error("here is a message");
             $node = Node::create(array(
                 'type' => 'revenant_page',
                 'title' => $data['title'],
