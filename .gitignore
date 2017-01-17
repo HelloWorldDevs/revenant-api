@@ -1,18 +1,18 @@
 # Core's dependencies are managed with Composer.
 # Some modules use Bower or NPM for dependencies
-node_modules/
-bower_components/
+webroot/node_modules/
+webroot/bower_components/
 
 ../.DS_Store
 ./.DS_Store
-themes/.DS_Store
+webroot/themes/.DS_Store
 
 ../.idea/
 
 # Ignore configuration files that may contain sensitive information.
-sites/*/settings.local.php
-sites/*/settings.php
-sites/*/services*.yml
-sites/*/development.services.yml
+webroot/sites/*/settings.local.php
+webroot/sites/*/settings.php
+webroot/sites/*/services*.yml
+webroot/sites/*/development.services.yml
 
-sites/default/files
+webroot/sites/default/files
