@@ -65,6 +65,7 @@ class RevenantPageController extends ControllerBase {
         $response['data'] = 'Some newer test data to return';
         $response['method'] = 'POST';
 
+
         return new JsonResponse( $response );
     }
 
