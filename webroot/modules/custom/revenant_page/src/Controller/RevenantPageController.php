@@ -74,28 +74,26 @@ class RevenantPageController extends ControllerBase {
             $data = json_decode( $request->getContent(), TRUE );
             $request->request->replace( is_array( $data ) ? $data : [] );
         }
-//        $content = json_decode($request->getContent(), TRUE);
+        $content = json_decode($request->getContent(), TRUE);
 
-//        $query = \Drupal::entityQuery('node')
-//            ->condition('status', 1)
-//            ->condition('type', 'revenant_page');
-//        $nids = $query->execute();
-//
-//        $node_storage = \Drupal::entityManager()->getStorage('node');
-
-//        $nid = $nids[0]->nid;
+        $query = \Drupal::entityQuery('node')
+            ->condition('status', 1)
+            ->condition('type', 'revenant_page')
+            ->condition('title', 'omsi-test.dev/');
+        $results = $query->execute();
+        $nid = reset($results);
 
         //create node for page on check
         $node = Node::create(array(
             'type' => 'revenant_content_item',
-            'title' => 'test item again and again adfasfsdf',
+            'title' => 'test item again and again',
             'langcode' => 'en',
             'uid' => '1',
             'status' => 1,
-            'body' => $request->getContent(),
+            'body' => $content['editorID'],
         ));
 
-//        $node->field_page->target_id = $nid;
+        $node->field_page->target_id = $nid;
 
         $node->save();
 
