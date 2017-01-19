@@ -1,14 +1,14 @@
-revenant_page.get:
-  path: 'revenant_page/get'
-  defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::get_example' }
-  methods:  [GET]
+
+page.post:
+  path: 'revenant_page/page'
+  defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_page' }
+  methods:  [POST]
   requirements:
     _access: 'TRUE'
 
-
-test_api.post:
-  path: 'revenant_page/page'
-  defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_page' }
+page_content.post:
+  path: 'revenant_page/page_content'
+  defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_page_content' }
   methods:  [POST]
   requirements:
     _access: 'TRUE'

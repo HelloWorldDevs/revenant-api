@@ -62,11 +62,48 @@ class RevenantPageController extends ControllerBase {
         $content_node->field_page->target_id = $page_node_id;
         $content_node->save();
 
-        $response['data'] = 'Some newer test data to return';
+        $response['data'] = 'Post ';
         $response['method'] = 'POST';
 
 
         return new JsonResponse( $response );
+    }
+
+    public function post_page_content( Request $request ) {
+        if ( 0 === strpos( $request->headers->get( 'Content-Type' ), 'application/json' ) ) {
+            $data = json_decode( $request->getContent(), TRUE );
+            $request->request->replace( is_array( $data ) ? $data : [] );
+        }
+//        $content = json_decode($request->getContent(), TRUE);
+
+//        $query = \Drupal::entityQuery('node')
+//            ->condition('status', 1)
+//            ->condition('type', 'revenant_page');
+//        $nids = $query->execute();
+//
+//        $node_storage = \Drupal::entityManager()->getStorage('node');
+
+//        $nid = $nids[0]->nid;
+
+        //create node for page on check
+        $node = Node::create(array(
+            'type' => 'revenant_content_item',
+            'title' => 'test item again and again adfasfsdf',
+            'langcode' => 'en',
+            'uid' => '1',
+            'status' => 1,
+            'body' => $request->getContent(),
+        ));
+
+//        $node->field_page->target_id = $nid;
+
+        $node->save();
+
+//        $response['data'] = 'Post ';
+//        $response['method'] = 'POST';
+//
+//
+//        return new JsonResponse( $response );
     }
 
 }
