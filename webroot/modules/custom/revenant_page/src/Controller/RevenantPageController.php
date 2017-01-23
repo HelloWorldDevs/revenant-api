@@ -55,7 +55,7 @@ class RevenantPageController extends ControllerBase {
             'langcode' => 'en',
             'uid' => '1',
             'status' => 1,
-            'body' => 'default content item',
+            'field_old_content' => 'default content item',
             'field_new_content' => 'default content item',
             'field_xpath' => 'default content item',
         ));
@@ -75,7 +75,7 @@ class RevenantPageController extends ControllerBase {
             $request->request->replace( is_array( $data ) ? $data : [] );
         }
         $content = json_decode($request->getContent(), TRUE);
-        $editorData = json_decode($content['editorID'], TRUE);
+        $editorData = $content['data'];
 
         $query = \Drupal::entityQuery('node')
             ->condition('status', 1)
@@ -87,13 +87,13 @@ class RevenantPageController extends ControllerBase {
         //create node for page on check
         $node = Node::create(array(
             'type' => 'revenant_content_item',
-            'title' => $editorData['title'],
+            'title' => html_entity_decode($editorData['title']),
             'langcode' => 'en',
             'uid' => '1',
             'status' => 1,
-            'body' => $editorData['oldText'],
+            'field_old_content' => html_entity_decode($editorData['oldText']),
             'field_xpath' => $editorData['xpath'],
-            'field_new_content' => $content['editabledata']
+            'field_new_content' => html_entity_decode($content['editabledata'])
         ));
         $node->field_page->target_id = $nid;
         $node->save();

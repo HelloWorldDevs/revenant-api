@@ -4,23 +4,18 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.revenant_content_item.body
+    - field.field.node.revenant_content_item.field_page
+    - field.field.node.revenant_content_item.field_xpath
     - node.type.revenant_content_item
   module:
-    - text
     - user
 id: node.revenant_content_item.teaser
 targetEntityType: node
 bundle: revenant_content_item
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_page: true
+  field_xpath: true

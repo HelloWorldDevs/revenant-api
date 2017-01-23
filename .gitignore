@@ -2,6 +2,7 @@
 # Some modules use Bower or NPM for dependencies
 webroot/node_modules/
 webroot/bower_components/
+credentials/
 
 ../.DS_Store
 ./.DS_Store
