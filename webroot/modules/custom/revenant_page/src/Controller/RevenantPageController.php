@@ -41,7 +41,6 @@ class RevenantPageController extends ControllerBase {
             'type' => 'revenant_page',
             'title' => $content['title'],
             'langcode' => 'en',
-            'uid' => '1',
             'status' => 1,
             'field_page_url' => $content['url'],
         ));
@@ -51,9 +50,8 @@ class RevenantPageController extends ControllerBase {
         // create default content node for page
         $content_node = Node::create(array(
             'type' => 'revenant_content_item',
-            'title' => 'default content item',
+            'title' => $content['title'] . 'default content item',
             'langcode' => 'en',
-            'uid' => '1',
             'status' => 1,
             'field_old_content' => 'default content item',
             'field_new_content' => 'default content item',
@@ -77,26 +75,49 @@ class RevenantPageController extends ControllerBase {
         $content = json_decode($request->getContent(), TRUE);
         $editorData = $content['data'];
 
-        $query = \Drupal::entityQuery('node')
+        //query to see if node with editor data xpath exists
+        $node_exists_query = $query = \Drupal::entityQuery('node')
             ->condition('status', 1)
-            ->condition('type', 'revenant_page')
-            ->condition('title', $editorData['url']);
-        $results = $query->execute();
-        $nid = reset($results);
+            ->condition('type', 'revenant_content_item')
+            ->condition('field_xpath', $editorData['xpath']);
+        $node_exists_results = $node_exists_query->execute();
+        $nid_exists = reset($node_exists_results);
 
-        //create node for page on check
-        $node = Node::create(array(
-            'type' => 'revenant_content_item',
-            'title' => html_entity_decode($editorData['title']),
-            'langcode' => 'en',
-            'uid' => '1',
-            'status' => 1,
-            'field_old_content' => html_entity_decode($editorData['oldText']),
-            'field_xpath' => $editorData['xpath'],
-            'field_new_content' => html_entity_decode($content['editabledata'])
-        ));
-        $node->field_page->target_id = $nid;
-        $node->save();
+        //if node exists, update new content field.
+        if ($nid_exists) {
+            $node_to_update = Node::load($nid_exists);
+            $node_to_update->field_new_content = html_entity_decode($content['editabledata']);
+            $node_to_update->save();
+        } else {
+            //if node doesn't exist create node with revenant page entity reference.
+            //get revenenat page entity reference
+            $query = \Drupal::entityQuery('node')
+                ->condition('status', 1)
+                ->condition('type', 'revenant_page')
+                ->condition('title', $editorData['url']);
+            $results = $query->execute();
+            $nid = reset($results);
+
+            //get uid from current client user.
+            $users = \Drupal::entityTypeManager()->getStorage('user')
+                ->loadByProperties(['name' => $editorData['username']]);
+            $user = reset($users);
+            $uid = $user->id();
+
+            //create node for page on check
+            $node = Node::create(array(
+                'type' => 'revenant_content_item',
+                'title' => html_entity_decode($editorData['title']),
+                'langcode' => 'en',
+                'uid' => $uid,
+                'status' => 1,
+                'field_old_content' => html_entity_decode($editorData['oldText']),
+                'field_xpath' => $editorData['xpath'],
+                'field_new_content' => html_entity_decode($content['editabledata'])
+            ));
+            $node->field_page->target_id = $nid;
+            $node->save();
+        }
 
         $response['data'] = 'Post ';
         $response['method'] = 'POST';
