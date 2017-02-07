@@ -12,4 +12,6 @@ page_content.post:
   methods:  [POST]
   requirements:
     _access: 'TRUE'
+  options:
+    _auth: ['oauth2']
 
