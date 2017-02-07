@@ -27,11 +27,15 @@ configuration:
       - json
     supported_auth:
       - basic_auth
-      - cookie
   POST:
     supported_formats:
       - hal_json
       - json
     supported_auth:
       - basic_auth
-      - cookie
+  PATCH:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - basic_auth
