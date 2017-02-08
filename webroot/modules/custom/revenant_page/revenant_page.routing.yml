@@ -13,5 +13,5 @@ page_content.post:
   requirements:
     _user_is_logged_in: 'TRUE'
   options:
-    _auth: [ 'basic_auth', 'oauth' ]
+    _auth: [ 'basic_auth', 'oauth2' ]
 
