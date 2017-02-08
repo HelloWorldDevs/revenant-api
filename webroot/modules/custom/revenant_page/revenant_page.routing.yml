@@ -4,7 +4,9 @@ page.post:
   defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_page' }
   methods:  [POST]
   requirements:
-    _access: 'TRUE'
+    _user_is_logged_in: 'TRUE'
+  options:
+    _auth: [ 'basic_auth', 'oauth2' ]
 
 page_content.post:
   path: 'revenant_page/page_content'
