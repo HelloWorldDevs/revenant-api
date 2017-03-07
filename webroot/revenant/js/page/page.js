@@ -45,7 +45,7 @@ var pageModule = (function($) {
       var authBearer = 'Bearer ' + JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
       $.ajax({
           type: 'POST',
-          url: '/revenant_page/page',
+          url: 'http://revenant-api.bfdig.com/revenant_page/page',
           headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/hal+json',

@@ -21,7 +21,7 @@ var pageControllerModule = (function($){
       if (!el.hasAttribute('id', data.xpath)) {
         el.setAttribute('id', data.xpath);
         CKEDITOR.config.inlinesave = {
-          postUrl: '/revenant_page/page_content',
+          postUrl: 'http://revenant-api.bfdig.com/revenant_page/page_content',
           postAuth: authBearer,
           postData: {data: data},
           useJson: true,
@@ -138,7 +138,7 @@ var pageControllerModule = (function($){
             "password": password,
           }
           $.ajax({
-            url: "/oauth/token",
+            url: "http://revenant-api.bfdig.com/oauth/token",
             method: "POST",
             headers: {'X-Requested-With': null},
             data: data,
