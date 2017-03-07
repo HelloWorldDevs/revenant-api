@@ -3,7 +3,7 @@ var templateModule = (function(module){
         console.log('inside of getCompiledTemplate');
         return $.ajax({
             type: 'GET',
-            url: '/revenant/templates/' + name + '.hbs'
+            url: 'http://revenant-api.bfdig.com/revenant/templates/' + name + '.hbs'
         })
             .then(function(text) {
                 return Handlebars.compile(text);
