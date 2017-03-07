@@ -17,3 +17,5 @@ webroot/sites/*/services*.yml
 webroot/sites/*/development.services.yml
 
 webroot/sites/default/files
+
+revenant/credentials/credentials.js

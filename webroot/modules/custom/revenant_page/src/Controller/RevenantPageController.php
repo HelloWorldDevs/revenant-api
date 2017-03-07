@@ -19,7 +19,6 @@ class RevenantPageController extends ControllerBase {
      * Callback for `my-api/get.json` API method.
      */
     public function get_example( Request $request ) {
-
         $response['data'] = 'Some test data to return';
         $response['method'] = 'GET';
 

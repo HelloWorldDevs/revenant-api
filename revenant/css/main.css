@@ -1,0 +1,35 @@
+
+.text--edit {
+  padding: .3rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(81, 203, 238, 1);
+  -webkit-transition : border 500ms ease-out;
+  -moz-transition : border 500ms ease-out;
+  -o-transition : border 500ms ease-out;
+  transition : border 500ms ease-out;
+}
+
+.text--edit:hover {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.rev_login {
+  text-align: right;
+}
+
+.rev_login__contaier {
+  height: 1px;
+  opacity: 0;
+  -webkit-transition: all .7s;
+  -moz-transition: all .7s;
+  -o-transition: all .7s;
+  transition: all .7s;
+}
+
+.show {
+  height: 15rem;
+  opacity: 1;
+}
