@@ -2,9 +2,98 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62b3b3cb-71d4-4808-8d85-47b90da85cc3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/.gitignore" afterPath="$PROJECT_DIR$/webroot/revenant/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/webroot/revenant/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/.idea/inspectionProfiles/profiles_settings.xml" afterPath="$PROJECT_DIR$/webroot/revenant/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/webroot/revenant/.idea/jsLibraryMappings.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/.idea/libraries/revenant_node_modules.xml" afterPath="$PROJECT_DIR$/webroot/revenant/.idea/libraries/revenant_node_modules.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/.idea/modules.xml" afterPath="$PROJECT_DIR$/webroot/revenant/.idea/modules.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/.idea/revenant.iml" afterPath="$PROJECT_DIR$/webroot/revenant/.idea/revenant.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/.idea/vcs.xml" afterPath="$PROJECT_DIR$/webroot/revenant/.idea/vcs.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/.idea/workspace.xml" afterPath="$PROJECT_DIR$/webroot/revenant/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/README.md" afterPath="$PROJECT_DIR$/webroot/revenant/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/autogrow/plugin.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/autogrow/plugin.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/autogrow/samples/autogrow.html" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/autogrow/samples/autogrow.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/inlinesave/images/inlinesave-color.svg" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/inlinesave/images/inlinesave-color.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/inlinesave/images/inlinesave.svg" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/inlinesave/images/inlinesave.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/inlinesave/plugin.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/inlinesave/plugin.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/icons/hidpi/save.png" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/icons/hidpi/save.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/icons/save.png" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/icons/save.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/af.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/af.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/ar.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/ar.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/bg.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/bg.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/bn.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/bn.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/bs.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/bs.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/ca.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/ca.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/cs.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/cs.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/cy.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/cy.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/da.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/da.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/de-ch.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/de-ch.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/de.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/de.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/el.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/el.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/en-au.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/en-au.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/en-ca.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/en-ca.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/en-gb.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/en-gb.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/en.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/en.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/eo.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/eo.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/es.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/es.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/et.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/et.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/eu.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/eu.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/fa.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/fa.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/fi.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/fi.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/fo.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/fo.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/fr-ca.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/fr-ca.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/fr.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/fr.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/gl.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/gl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/gu.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/gu.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/he.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/he.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/hi.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/hi.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/hr.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/hr.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/hu.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/hu.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/id.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/id.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/is.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/is.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/it.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/it.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/ja.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/ja.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/ka.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/ka.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/km.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/km.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/ko.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/ko.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/ku.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/ku.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/lt.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/lt.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/lv.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/lv.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/mk.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/mk.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/mn.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/mn.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/ms.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/ms.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/nb.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/nb.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/nl.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/nl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/no.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/no.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/pl.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/pl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/pt-br.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/pt-br.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/pt.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/pt.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/ro.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/ro.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/ru.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/ru.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/si.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/si.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/sk.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/sk.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/sl.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/sl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/sq.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/sq.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/sr-latn.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/sr-latn.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/sr.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/sr.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/sv.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/sv.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/th.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/th.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/tr.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/tr.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/tt.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/tt.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/ug.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/ug.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/uk.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/uk.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/vi.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/vi.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/zh-cn.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/zh-cn.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/lang/zh.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/lang/zh.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/ckeditor/save/plugin.js" afterPath="$PROJECT_DIR$/webroot/revenant/ckeditor/save/plugin.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/css/main.css" afterPath="$PROJECT_DIR$/webroot/revenant/css/main.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/js/page/page.js" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/page.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/js/page/pageController.js" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/pageController.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/templates/login.hbs" afterPath="$PROJECT_DIR$/webroot/revenant/templates/login.hbs" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/templates/template.js" afterPath="$PROJECT_DIR$/webroot/revenant/templates/template.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/revenant/templates/user_control_panel.hbs" afterPath="$PROJECT_DIR$/webroot/revenant/templates/user_control_panel.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/modules/custom/revenant_page/src/Controller/RevenantPageController.php" afterPath="$PROJECT_DIR$/webroot/modules/custom/revenant_page/src/Controller/RevenantPageController.php" />
     </list>
     <ignored path="revenant-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,40 +115,20 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="page.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/revenant/js/page/page.js">
+        <entry file="file://$PROJECT_DIR$/webroot/revenant/js/page/page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="120" column="3" lean-forward="true" selection-start-line="120" selection-start-column="3" selection-end-line="120" selection-end-column="3" />
+            <state relative-caret-position="1050">
+              <caret line="70" column="35" lean-forward="true" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="pageController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webroot/revenant/js/page/pageController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pageController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/revenant/js/page/pageController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-518">
-              <caret line="122" column="13" lean-forward="true" selection-start-line="122" selection-start-column="13" selection-end-line="122" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/revenant/templates/template.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="215" lean-forward="false" selection-start-line="19" selection-start-column="212" selection-end-line="19" selection-end-column="215" />
+            <state relative-caret-position="375">
+              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -71,8 +140,12 @@
     <findStrings>
       <find>permissions</find>
       <find>save</find>
+      <find>bfdig</find>
       <find>use</find>
     </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/revenant/js/page</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -89,9 +162,11 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/revenant/templates/template.js" />
         <option value="$PROJECT_DIR$/webroot/modules/custom/revenant_page/src/Controller/RevenantPageController.php" />
-        <option value="$PROJECT_DIR$/revenant/js/page/pageController.js" />
-        <option value="$PROJECT_DIR$/revenant/js/page/page.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/revenant/js/page/page.js" />
+        <option value="$PROJECT_DIR$/revenant/js/page/pageController.js" />
+        <option value="$PROJECT_DIR$/webroot/revenant/js/page/page.js" />
+        <option value="$PROJECT_DIR$/webroot/revenant/js/page/pageController.js" />
       </list>
     </option>
   </component>
@@ -106,10 +181,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1721" />
-    <option name="y" value="92" />
     <option name="width" value="1440" />
-    <option name="height" value="797" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -150,6 +223,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="webroot" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="revenant-api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="revenant-api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webroot" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="revenant" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -164,21 +255,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="revenant" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revenant-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revenant-api" />
+              <option name="myItemId" value="webroot" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -204,25 +281,15 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="webroot" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="revenant" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="credentials" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revenant-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="revenant-api" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="credentials" />
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -239,14 +306,16 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/webroot/sites/default" />
-      <recent name="$PROJECT_DIR$/db_dumps" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/webroot/sites/default" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webroot" />
+      <recent name="$PROJECT_DIR$/webroot/sites/default" />
+      <recent name="$PROJECT_DIR$/db_dumps" />
     </key>
   </component>
   <component name="RunManager">
@@ -337,24 +406,25 @@
       <workItem from="1486579042538" duration="99000" />
       <workItem from="1488387829594" duration="760000" />
       <workItem from="1488394595570" duration="880000" />
-      <workItem from="1488911344265" duration="2500000" />
+      <workItem from="1488911344265" duration="3918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67473000" />
+    <option name="totallyTimeSpent" value="68891000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1721" y="92" width="1440" height="797" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2167382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49078014" sideWeight="0.37768242" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32907802" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33333334" sideWeight="0.6223176" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28313252" sideWeight="0.6223176" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -362,7 +432,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -728,26 +797,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/revenant/templates/template.js">
+    <entry file="file://$PROJECT_DIR$/webroot/revenant/templates/template.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="215" lean-forward="false" selection-start-line="19" selection-start-column="212" selection-end-line="19" selection-end-column="215" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/revenant/js/page/pageController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-518">
-          <caret line="122" column="13" lean-forward="true" selection-start-line="122" selection-start-column="13" selection-end-line="122" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/revenant/js/page/page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="120" column="3" lean-forward="true" selection-start-line="120" selection-start-column="3" selection-end-line="120" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -756,6 +809,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/revenant/js/page/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="70" column="35" lean-forward="true" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/revenant/js/page/pageController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
           <folding />
         </state>
       </provider>

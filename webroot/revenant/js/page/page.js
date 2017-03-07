@@ -45,7 +45,7 @@ var pageModule = (function($) {
       var authBearer = 'Bearer ' + JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
       $.ajax({
           type: 'POST',
-          url: 'http://revenant-api.bfdig.com/revenant_page/page',
+          url: '/revenant_page/page',
           headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/hal+json',
@@ -67,7 +67,7 @@ var pageModule = (function($) {
       const pageLocation = window.location.hostname + window.location.pathname;
       $.ajax({
           method: 'GET',
-          url:'http://revenant-api.bfdig.com/rev-content/?url=' + pageLocation,
+          url:'/rev-content/?url=' + pageLocation,
           success: function(data) {
               console.log('success again!', data);
               //if no revenant nodes are sent and the user is logged in, send current revenant data to be created as revenant revenant entity reference
