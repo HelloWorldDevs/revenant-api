@@ -110,7 +110,7 @@ var pageControllerModule = (function($){
 
   //appends control panel for user and passes session variable with username to .hbs template
   pageController.appendControlPanel = function() {
-      // templateModule.getCompiledTemplate('user_control_panel')
+      templateModule.getCompiledTemplate('user_control_panel')
           .then(function(html){
               var rev_auth = JSON.parse(sessionStorage.getItem('rev_auth'));
               $('body').prepend(html(rev_auth));
