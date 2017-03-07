@@ -306,6 +306,7 @@ var pageModule = (function ($) {
 
 
     return {
+        pageControllerInit : pageController.init,
         // RevenantAPIServer: page.RevenantAPIServer,
         getCompletePath: page.getCompletePath,
         init: page.init,
@@ -313,4 +314,4 @@ var pageModule = (function ($) {
 
 })(jQuery);
 
-pageModule.init(pageControllerModule.init);
+pageModule.init(pageControllerInit);
