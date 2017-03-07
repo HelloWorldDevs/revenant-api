@@ -100,11 +100,11 @@ var pageModule = (function ($) {
     };
 
     page.addCKEditor = function() {
-        console.log('APPEND!')
+        console.log('APPEND TO BODY!')
         var script   = document.createElement("script");
         // script.type  = "text/javascript";
         script.src   = "//cdn.ckeditor.com/4.6.2/standard/ckeditor.js";
-        document.head.appendChild(script);
+        document.body.appendChild(script);
     }
 
 
