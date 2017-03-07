@@ -67,7 +67,7 @@ var pageModule = (function($) {
       const pageLocation = window.location.hostname + window.location.pathname;
       $.ajax({
           method: 'GET',
-          url:'/rev-content/?url=' + pageLocation,
+          url:'http://revenant-api.bfdig.com/rev-content/?url=' + pageLocation,
           success: function(data) {
               console.log('success again!', data);
               //if no revenant nodes are sent and the user is logged in, send current revenant data to be created as revenant revenant entity reference
