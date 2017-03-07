@@ -125,12 +125,15 @@ var pageModule = (function ($) {
 
     var pageController = {};
 
-    //ckeditor inline save plugin configuration.
-    CKEDITOR.plugins.addExternal('inlinesave', '/revenant/ckeditor/inlinesave/', 'plugin.js');
-    CKEDITOR.disableAutoInline = true;
+    pageController.ckEditorInit = function() {
+        //ckeditor inline save plugin configuration.
+        CKEDITOR.plugins.addExternal('inlinesave', '/revenant/ckeditor/inlinesave/', 'plugin.js');
+        CKEDITOR.disableAutoInline = true;
 
-    //for clearing ckeditor cache and allowing set Authorization Header
-    CKEDITOR.timestamp = 'ABCD';
+        //for clearing ckeditor cache and allowing set Authorization Header
+        // CKEDITOR.timestamp = 'ABCD';
+    }
+
 
 
 //inline editor added on text element click
@@ -304,6 +307,7 @@ var pageModule = (function ($) {
 
     //control module initializer, checks for session token and adds login or control panel on page load.
     pageController.init = function () {
+        pageController.ckEditorInit();
         if (!sessionStorage.getItem('rev_auth')) {
             pageController.appendLogin();
         } else {
