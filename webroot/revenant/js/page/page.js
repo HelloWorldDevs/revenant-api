@@ -249,9 +249,9 @@ var pageModule = (function ($) {
             // });
     };
 
-    if (OAUTH_CLIENT_ID === 'undefined' || OAUTH_CLIENT_SECRET === 'undefined') {
-        OAUTH_CLIENT_ID = 'default';
-        OAUTH_CLIENT_SECRET = 'default';
+    if (typeof OAUTH_CLIENT_ID === 'undefined' || typeof OAUTH_CLIENT_SECRET === 'undefined') {
+        const OAUTH_CLIENT_ID = 'default';
+        const OAUTH_CLIENT_SECRET = 'default';
     }
 
     //authenticates using D8 simple_oauth module parameters. Stores session var with tokens and username, removes login and calls functions for adding edit class and control panel.

@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62b3b3cb-71d4-4808-8d85-47b90da85cc3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/revenant/credentials/credentials.js" afterPath="$PROJECT_DIR$/webroot/revenant/credentials/credentials.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/revenant/js/page/page.js" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/page.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/revenant/js/page/pageController.js" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/pageController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/revenant/templates/template.js" afterPath="$PROJECT_DIR$/webroot/revenant/templates/template.js" />
     </list>
     <ignored path="revenant-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,8 +32,8 @@
       <file leaf-file-name="page.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webroot/revenant/js/page/page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="252" column="36" lean-forward="true" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
+            <state relative-caret-position="180">
+              <caret line="251" column="57" lean-forward="false" selection-start-line="251" selection-start-column="57" selection-end-line="251" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -41,9 +42,11 @@
       <file leaf-file-name="template.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webroot/revenant/templates/template.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="23" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="225">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,9 +54,11 @@
       <file leaf-file-name="pageController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webroot/revenant/js/page/pageController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="2700">
+              <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,9 +106,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/revenant/js/page/page.js" />
         <option value="$PROJECT_DIR$/revenant/js/page/pageController.js" />
+        <option value="$PROJECT_DIR$/webroot/revenant/js/page/pageController.js" />
         <option value="$PROJECT_DIR$/webroot/revenant/credentials/credentials.js" />
         <option value="$PROJECT_DIR$/webroot/revenant/templates/template.js" />
-        <option value="$PROJECT_DIR$/webroot/revenant/js/page/pageController.js" />
         <option value="$PROJECT_DIR$/webroot/revenant/js/page/page.js" />
       </list>
     </option>
@@ -388,12 +393,12 @@
       <workItem from="1486579042538" duration="99000" />
       <workItem from="1488387829594" duration="760000" />
       <workItem from="1488394595570" duration="880000" />
-      <workItem from="1488911344265" duration="5990000" />
+      <workItem from="1488911344265" duration="6227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70963000" />
+    <option name="totallyTimeSpent" value="71200000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -790,24 +795,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webroot/revenant/templates/template.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="23" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webroot/revenant/js/page/pageController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="2700">
+          <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webroot/revenant/js/page/page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="252" column="36" lean-forward="true" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
+        <state relative-caret-position="180">
+          <caret line="251" column="57" lean-forward="false" selection-start-line="251" selection-start-column="57" selection-end-line="251" selection-end-column="57" />
           <folding />
         </state>
       </provider>
