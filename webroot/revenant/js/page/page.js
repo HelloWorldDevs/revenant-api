@@ -314,4 +314,4 @@ var pageModule = (function ($) {
 
 })(jQuery);
 
-pageModule.init(pageControllerInit);
+pageModule.init(pageModule.pageControllerInit);
