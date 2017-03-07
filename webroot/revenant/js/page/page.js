@@ -99,6 +99,10 @@ var pageModule = (function ($) {
         });
     };
 
+    page.addCKEditor = function() {
+        $('head').append('<script type="text/javascript" src="http://revenant-api.bfdig.com/revenant//ckeditor/ckeditor.js"></script>')
+    }
+
 
     //initializes check for content and passes in pageController as callback
     page.init = function (callback) {
@@ -307,7 +311,6 @@ var pageModule = (function ($) {
 
     return {
         pageControllerInit : pageController.init,
-        // RevenantAPIServer: page.RevenantAPIServer,
         getCompletePath: page.getCompletePath,
         init: page.init,
     }
