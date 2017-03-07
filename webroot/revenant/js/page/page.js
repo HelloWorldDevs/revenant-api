@@ -115,6 +115,7 @@ var pageModule = (function ($) {
         //
         //     console.log(page.RevenantAPIServer);
         // }
+        page.addCKEditor();
         page.revenantContentCheck(callback);
     };
 
