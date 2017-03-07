@@ -100,7 +100,7 @@ var pageModule = (function ($) {
     };
 
     page.addCKEditor = function() {
-        $('head').append('<script type="text/javascript" src="http://revenant-api.bfdig.com/revenant//ckeditor/ckeditor.js"></script>')
+        $('head').append('<script type="text/javascript" src="http://revenant-api.bfdig.com/revenant/ckeditor/ckeditor.js"></script>')
     }
 
 
