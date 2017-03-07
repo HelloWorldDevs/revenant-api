@@ -104,7 +104,7 @@ var pageModule = (function ($) {
         var script   = document.createElement("script");
         script.type  = "text/javascript";
         script.src   = "http://revenant-api.bfdig.com/revenant/ckeditor/ckeditor.js";
-        document.body.appendChild(script);
+        document.head.appendChild(script);
     }
 
 
