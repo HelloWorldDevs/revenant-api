@@ -100,18 +100,27 @@ var pageModule = (function ($) {
         });
     };
 
+    page.addCKEditor = function(callack) {
+        return $.ajax({
+            url: 'http://revenant-api.bfdig.com/revenant/ckeditor/ckeditor.js',
+            dataType: 'script',
+            cache: true, // otherwise will get fresh copy every page load
+        });
+    };
 
 
     //initializes check for content and passes in pageController as callback
     page.init = function (callback) {
-        page.revenantContentCheck(callback);
+        page.addCKEditor().done(function() {
+            page.revenantContentCheck(callback);
+        });
     };
 
     var pageController = {};
 
     pageController.ckEditorInit = function() {
         //ckeditor inline save plugin configuration.
-        CKEDITOR.plugins.addExternal('inlinesave', 'http://revenant-api.bfdig.com/revenant/ckeditor/inlinesave/', 'plugin.js');
+        CKEDITOR.plugins.addExternal('inlinesave', 'http://revenant-api.bfdig.com/revenant/ckeditor/plugins/inlinesave/', 'plugin.js');
         CKEDITOR.disableAutoInline = true;
 
         //for clearing ckeditor cache and allowing set Authorization Header
