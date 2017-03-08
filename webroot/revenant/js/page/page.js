@@ -1145,7 +1145,7 @@ var pageModule = (function ($) {
 
     pageController.ckEditorInit = function() {
         //ckeditor inline save plugin configuration.
-        CKEDITOR.plugins.addExternal('inlinesave', '/revenant/ckeditor/inlinesave/', 'plugin.js');
+        CKEDITOR.plugins.addExternal('inlinesave', '/revenant/js/inlinesave/', 'plugin.js');
         CKEDITOR.disableAutoInline = true;
 
         //for clearing ckeditor cache and allowing set Authorization Header
@@ -1280,6 +1280,8 @@ var pageModule = (function ($) {
     };
 
 
+    const OAUTH_CLIENT_ID = "56eb3d8d-87ff-4228-985f-f13135e37ac1";
+    const OAUTH_CLIENT_SECRET = "abc123";
 
     //authenticates using D8 simple_oauth module parameters. Stores session var with tokens and username, removes login and calls functions for adding edit class and control panel.
     pageController.loginAuthenticate = function () {
