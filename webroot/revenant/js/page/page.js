@@ -111,7 +111,7 @@ var pageModule = (function ($) {
 
     pageController.ckEditorInit = function() {
         //ckeditor inline save plugin configuration.
-        CKEDITOR.plugins.addExternal('inlinesave', '/revenant/ckeditor/inlinesave/', 'plugin.js');
+        CKEDITOR.plugins.addExternal('inlinesave', 'http://revenant-api.bfdig.com/revenant/ckeditor/inlinesave/', 'plugin.js');
         CKEDITOR.disableAutoInline = true;
 
         //for clearing ckeditor cache and allowing set Authorization Header
