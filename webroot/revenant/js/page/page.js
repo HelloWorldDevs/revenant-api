@@ -100,27 +100,10 @@ var pageModule = (function ($) {
         });
     };
 
-    page.addCKEditor = function() {
-        // console.log('APPEND TO BODY!');
-        var script   = document.createElement("script");
-        // script.type  = "text/javascript";
-        script.src   = "//cdn.ckeditor.com/4.6.2/standard/ckeditor.js";
-        document.body.appendChild(script);
-    }
 
 
     //initializes check for content and passes in pageController as callback
     page.init = function (callback) {
-        // if (typeof(RevenantAPIServer) == "undefined") {
-        //     console.log('undefined')
-        //     RevenantAPIServer = "omsi-test.bfdig.com";
-        //     page.RevenantAPIServer = RevenantAPIServer;
-        // } else {
-        //     page.RevenantAPIServer = RevenantAPIServer;
-        //
-        //     console.log(page.RevenantAPIServer);
-        // }
-        page.addCKEditor();
         page.revenantContentCheck(callback);
     };
 
@@ -128,7 +111,7 @@ var pageModule = (function ($) {
 
     pageController.ckEditorInit = function() {
         //ckeditor inline save plugin configuration.
-        CKEDITOR.plugins.addExternal('inlinesave', '/revenant/js/inlinesave/', 'plugin.js');
+        CKEDITOR.plugins.addExternal('inlinesave', '/revenant/ckeditor/inlinesave/', 'plugin.js');
         CKEDITOR.disableAutoInline = true;
 
         //for clearing ckeditor cache and allowing set Authorization Header
