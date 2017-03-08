@@ -70,7 +70,7 @@ var pageModule = (function ($) {
             method: 'GET',
             url: 'http://revenant-api.bfdig.com/rev-content/?url=' + pageLocation,
             success: function (data) {
-                console.log('success again!', data);
+                console.log('success agaaaaaaain!', data);
                 //if no revenant nodes are sent and the user is logged in, send current revenant data to be created as revenant revenant entity reference
                 if (!data.length && sessionStorage.getItem('rev_auth')) {
                     console.log('no data, create page');
