@@ -124,7 +124,7 @@ var pageModule = (function ($) {
         CKEDITOR.disableAutoInline = true;
 
         //for clearing ckeditor cache and allowing set Authorization Header
-        // CKEDITOR.timestamp = 'ABCD';
+        CKEDITOR.timestamp = 'ABCD';
     };
 
 
@@ -146,14 +146,13 @@ var pageModule = (function ($) {
                     postData: {data: data},
                     useJson: true,
                     onSave: function (editor) {
-                        // console.log('save success!', editor);
                         return true;
                     },
                     onSuccess: function (editor, data) {
-                        // console.log('save successful', editor, data);
+                        console.log('save successful', editor, data);
                     },
                     onFailure: function (editor, status, request) {
-                        // console.log('save failed', editor, status, request);
+                        console.log('save failed', editor, status, request);
                     },
                     useJSON: true,
                     useColorIcon: false
