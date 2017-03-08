@@ -4,397 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62b3b3cb-71d4-4808-8d85-47b90da85cc3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/about/dialogs/hidpi/logo_ckeditor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/about/dialogs/logo_ckeditor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/icons_hidpi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/image/images/noimage.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/link/images/anchor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/link/images/hidpi/anchor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/magicline/images/hidpi/icon-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/magicline/images/hidpi/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/magicline/images/icon-rtl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/magicline/images/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/img/github-top.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/img/header-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/img/header-separator.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/img/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/img/navigation-tip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/assets/inlineall/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/assets/sample.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/htmlwriter/assets/outputforflash/outputforflash.fla" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/htmlwriter/assets/outputforflash/outputforflash.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/font/fontello.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/font/fontello.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/font/fontello.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/icons/hidpi/save.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/icons/save.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/icons_hidpi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/images/arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/images/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/images/hidpi/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/images/hidpi/lock-open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/images/hidpi/lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/images/hidpi/refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/images/lock-open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/images/lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/images/refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/images/spinner.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/CHANGES.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/adapters/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/autogrow/plugin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/autogrow/samples/autogrow.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/build-config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/ckeditor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/contents.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/inlinesave/images/inlinesave-color.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/inlinesave/images/inlinesave.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/inlinesave/plugin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/af.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/bn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/bs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/cy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/de-ch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/en-au.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/en-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/en-gb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/eo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/eu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/fo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/fr-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/gu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/hi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/is.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/ka.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/km.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/ku.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/mk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/mn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/ms.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/nb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/pt-br.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/si.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/sq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/sr-latn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/sr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/tt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/ug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/zh-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/lang/zh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/a11yhelp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/_translationstatus.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/af.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/cy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/de-ch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/en-gb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/eo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/eu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/fo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/fr-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/gu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/hi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/km.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/ku.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/mk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/mn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/nb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/pt-br.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/si.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/sq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/sr-latn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/sr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/tt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/ug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/zh-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/a11yhelp/dialogs/lang/zh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/about/dialogs/about.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/clipboard/dialogs/paste.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/dialog/dialogDefinition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/image/dialogs/image.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/link/dialogs/anchor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/link/dialogs/link.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/pastefromword/filter/default.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/scayt/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/scayt/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/scayt/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/scayt/dialogs/options.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/scayt/dialogs/toolbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/_translationstatus.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/af.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/cy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/de-ch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/en-gb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/eo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/eu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/fr-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/km.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/ku.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/nb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/pt-br.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/si.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/sq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/tt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/ug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/zh-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/lang/zh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/specialchar/dialogs/specialchar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/table/dialogs/table.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/tabletools/dialogs/tableCell.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/wsc/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/wsc/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/wsc/dialogs/ciframe.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/wsc/dialogs/tmpFrameset.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/wsc/dialogs/wsc.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/wsc/dialogs/wsc.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/plugins/wsc/dialogs/wsc_ie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/css/samples.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/js/sample.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/js/sf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/api.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/appendto.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/assets/outputxhtml/outputxhtml.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/assets/posteddata.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/assets/uilanguages/languages.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/datafiltering.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/dialog/assets/my_dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/dialog/dialog.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/divreplace.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/enterkey/enterkey.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/htmlwriter/assets/outputforflash/swfobject.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/htmlwriter/outputforflash.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/htmlwriter/outputhtml.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/inlineall.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/inlinebycode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/inlinetextarea.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/jquery.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/magicline/magicline.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/readonly.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/replacebyclass.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/replacebycode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/sample.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/sample.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/sample_posteddata.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/tabindex.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/toolbar/toolbar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/uicolor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/uilanguages.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/wysiwygarea/fullpage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/old/xhtmlstyle.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/css/fontello.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/font/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/font/config.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/font/fontello.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/js/abstracttoolbarmodifier.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/js/fulltoolbareditor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/js/toolbarmodifier.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/js/toolbartextmodifier.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/lib/codemirror/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/lib/codemirror/codemirror.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/lib/codemirror/codemirror.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/lib/codemirror/javascript.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/lib/codemirror/neo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/lib/codemirror/show-hint.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/samples/toolbarconfigurator/lib/codemirror/show-hint.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/af.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/bn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/bs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/cy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/de-ch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/en-au.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/en-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/en-gb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/eo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/et.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/eu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/fa.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/fi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/fo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/fr-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/gl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/gu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/he.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/hi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/hr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/hu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/id.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/is.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/ja.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/ka.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/km.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/ko.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/ku.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/lt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/lv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/mk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/mn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/ms.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/nb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/no.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/pt-br.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/pt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/ro.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/si.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/sk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/sl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/sq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/sr-latn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/sr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/sv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/th.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/tt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/ug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/uk.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/vi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/zh-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/lang/zh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/save/plugin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/dialog_ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/dialog_ie7.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/dialog_ie8.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/dialog_iequirks.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/editor.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/editor_gecko.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/editor_ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/editor_ie7.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/editor_ie8.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/editor_iequirks.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/skins/moono/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/styles.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webroot/revenant/js/page/page.js" afterPath="$PROJECT_DIR$/webroot/revenant/js/page/page.js" />
-    </list>
+    <list default="true" id="62b3b3cb-71d4-4808-8d85-47b90da85cc3" name="Default" comment="" />
     <ignored path="revenant-api.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -417,8 +27,8 @@
       <file leaf-file-name="page.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webroot/revenant/js/page/page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="1147" column="64" lean-forward="false" selection-start-line="1147" selection-start-column="64" selection-end-line="1147" selection-end-column="64" />
+            <state relative-caret-position="608">
+              <caret line="1182" column="12" lean-forward="true" selection-start-line="1182" selection-start-column="12" selection-end-line="1182" selection-end-column="12" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -827,12 +437,12 @@
       <workItem from="1488387829594" duration="760000" />
       <workItem from="1488394595570" duration="880000" />
       <workItem from="1488911344265" duration="9863000" />
-      <workItem from="1488999196342" duration="2030000" />
+      <workItem from="1488999196342" duration="2130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76866000" />
+    <option name="totallyTimeSpent" value="76966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1679" y="95" width="1440" height="797" extended-state="0" />
@@ -844,7 +454,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3148936" sideWeight="0.6223176" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3148936" sideWeight="0.6223176" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1229,8 +839,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webroot/revenant/js/page/page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="1147" column="64" lean-forward="false" selection-start-line="1147" selection-start-column="64" selection-end-line="1147" selection-end-column="64" />
+        <state relative-caret-position="608">
+          <caret line="1182" column="12" lean-forward="true" selection-start-line="1182" selection-start-column="12" selection-end-line="1182" selection-end-column="12" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
