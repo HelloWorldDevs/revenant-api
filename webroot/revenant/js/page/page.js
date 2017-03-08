@@ -115,7 +115,7 @@ var pageModule = (function ($) {
         CKEDITOR.disableAutoInline = true;
 
         //for clearing ckeditor cache and allowing set Authorization Header
-        CKEDITOR.timestamp = 'ABCD';
+        // CKEDITOR.timestamp = 'ABCD';
     };
 
 

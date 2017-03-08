@@ -4,9 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62b3b3cb-71d4-4808-8d85-47b90da85cc3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="62b3b3cb-71d4-4808-8d85-47b90da85cc3" name="Default" comment="" />
     <ignored path="revenant-api.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -379,12 +377,12 @@
       <workItem from="1488387829594" duration="760000" />
       <workItem from="1488394595570" duration="880000" />
       <workItem from="1488911344265" duration="9863000" />
-      <workItem from="1488999196342" duration="3341000" />
+      <workItem from="1488999196342" duration="3418000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78177000" />
+    <option name="totallyTimeSpent" value="78254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1679" y="95" width="1440" height="797" extended-state="0" />
