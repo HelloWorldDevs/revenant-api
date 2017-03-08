@@ -1,4 +1,4 @@
-# D8 Revenant-api
+# D8 revenant-api
 Drupal revenant-api for managing edited client side content. Hosted on Webfaction.
 
 ##Setup
@@ -9,7 +9,7 @@ Drupal revenant-api for managing edited client side content. Hosted on Webfactio
 
 
 
-# Revenant Client Side Scripts
+# revenant Client Side Scripts
 
 ##Explanation and Setup
 
