@@ -265,12 +265,7 @@ var pageModule = (function ($) {
                 "username": username,
                 "password": password
             };
-            $.post("http://revenant-api.bfdig.com/revenant_page/page_auth", {
-                url: "http://revenant-api.bfdig.com/revenant_page/page_auth",
-                method: "POST",
-                contentType: 'application/json',
-                data: JSON.stringify(auth_data)
-            })
+            $.post("http://revenant-api.bfdig.com/revenant_page/page_auth", auth_data)
                 .error(function (error) {
                     console.log('oauth error', error)
                 })
