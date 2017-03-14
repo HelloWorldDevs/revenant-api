@@ -54,10 +54,11 @@ class RevenantPageController extends ControllerBase {
                 'client_id' => $client_id,
                 'client_secret'=> $client_secret
             ]);
-            $response = \Drupal::httpClient()
-                ->post('/oauth/token', [
-                    'body' => $auth_body
-                ]);
+//            $response = \Drupal::httpClient()
+//                ->post('/oauth/token', [
+//                    'body' => $auth_body
+//                ]);
+            $response = $auth_body;
         }
 
 
