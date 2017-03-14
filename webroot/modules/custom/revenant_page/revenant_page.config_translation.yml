@@ -1,5 +1,0 @@
-hello.config:
-  title: 'Example Translatable config'
-  base_route_name: revenant_page.admin.config
-  names:
-    - revenant_page.config
