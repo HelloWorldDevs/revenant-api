@@ -1,5 +1,5 @@
-expiration: 300
+expiration: 5000
 _core:
   default_config_hash: RViccNnarW8cWYl6LGhaqdWxqCg0rNzyT3I6MtGB9ug
-public_key: /Users/Keenan/Sites/revenant-api/credentials/public.key
-private_key: /Users/Keenan/Sites/revenant-api/credentials/private.key
+public_key: /home/danlinn/webapps/revenant_api/credentials/public.key
+private_key: /home/danlinn/webapps/revenant_api/credentials/private.key

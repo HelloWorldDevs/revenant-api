@@ -13,8 +13,6 @@ permissions:
   2: 'access comments'
   3: 'access site-wide contact form'
   4: 'search content'
-  5: 'create revenant_content_item content'
-  6: 'create revenant_page content'
   7: 'create article content'
   8: 'create page content'
   9: 'access content'

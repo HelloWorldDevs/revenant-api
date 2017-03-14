@@ -17,3 +17,5 @@ permissions:
   - 'access site-wide contact form'
   - 'access shortcuts'
   - 'search content'
+  - 'create revenant_content_item content'
+  - 'create revenant_page content'

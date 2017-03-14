@@ -17,5 +17,7 @@ content:
   links:
     weight: 100
 hidden:
+  field_new_content: true
+  field_old_content: true
   field_page: true
   field_xpath: true
