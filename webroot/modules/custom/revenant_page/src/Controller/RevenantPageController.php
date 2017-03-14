@@ -54,7 +54,11 @@ class RevenantPageController extends ControllerBase {
             $request = $client->request('POST', 'http://revenant-api.bfdig.com/oauth/token', [
 //                    'auth' => [$username, $password],'auth' =>  [$apiClientId, $apiClientSecret, 'basic']
                     'auth' => [$client_id, $client_secret, $username, $password],
-                    'json' => ['grant_type' =>  "password"]
+                    'json' => ['grant_type' =>  "password"],
+                    'headers' => [
+                        'Accept-Language' => 'en_US',
+                        'Accept' => 'application/json'
+                    ]
 //                    'client_id' => $client_id,
 //                    'client_secret'=> $client_secret,
 //                    'username' => $username,
