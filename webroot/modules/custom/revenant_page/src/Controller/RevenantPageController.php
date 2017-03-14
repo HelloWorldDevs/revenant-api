@@ -30,7 +30,7 @@ class RevenantPageController extends ControllerBase {
      */
     public function post_creds( Request $request ) {
 
-        $content = json_decode($request->getContent(), TRUE);
+//        $content = json_decode($request->getContent(), TRUE);
 
 //        if ( 0 === strpos( $request->headers->get( 'Content-Type' ), 'application/json' ) ) {
 //            $data = json_decode( $request->getContent(), TRUE );
