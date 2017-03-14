@@ -1,7 +1,0 @@
-renvenant_page.config:
-  type: config_object
-  label: 'Example config'
-  mapping:
-    message:
-      type: text
-      label: 'Message'
