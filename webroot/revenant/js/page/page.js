@@ -99,7 +99,7 @@ var pageModule = (function ($) {
         });
     };
 
-    page.addCKEditor = function() {
+    page.addCKEditor = function (callack) {
         return $.ajax({
             url: 'http://revenant-api.bfdig.com/revenant/ckeditor/ckeditor.js',
             dataType: 'script',
@@ -107,22 +107,11 @@ var pageModule = (function ($) {
         });
     };
 
-    page.addCSS = function() {
-        console.log('add css');
-        return $.ajax({
-            url: 'http://revenant-api.bfdig.com/revenant/css/main.css',
-            dataType: 'css',
-            cache: true,
-        });
-    }
-
 
     //initializes check for content and passes in pageController as callback
     page.init = function (callback) {
         page.addCKEditor().done(function () {
-            page.addCSS().done(function() {
-                page.revenantContentCheck(callback);
-            })
+            page.revenantContentCheck(callback);
         });
     };
 
