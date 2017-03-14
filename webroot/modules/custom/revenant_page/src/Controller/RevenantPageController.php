@@ -52,8 +52,8 @@ class RevenantPageController extends ControllerBase {
                     'form_params' => $auth_body
                 ]);
 
-            $response = $request->getBody();
-            $response['method'] = 'hello';
+            $response = $request;
+//            $response['method'] = 'hello';
         }
 
         return new JsonResponse( $response );
