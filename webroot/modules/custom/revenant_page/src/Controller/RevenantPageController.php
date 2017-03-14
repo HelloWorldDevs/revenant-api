@@ -13,22 +13,15 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Drupal\node\Entity\Node;
 
-class RevenantPageController extends ControllerBase {
+class RevenantPageController extends ControllerBase
+{
+
 
     /**
-     * Callback for `my-api/get.json` API method.
+     * Proxy for handling authentication, retrieves client credentials.
      */
-    public function get_example( Request $request ) {
-        $response['data'] = 'Some test data to return';
-        $response['method'] = 'GET';
-
-        return new JsonResponse( $response );
-    }
-
-    /**
-     * Callback for `my-api/get.json` API method.
-     */
-    public function post_creds( Request $request ) {
+    public function post_creds(Request $request)
+    {
         $content = json_decode($request->getContent(), TRUE);
         $origin = $content['origin'];
         $username = $content["username"];
@@ -40,29 +33,28 @@ class RevenantPageController extends ControllerBase {
             $client_id = $cred_data['client_id'];
             $client_secret = $cred_data['client_secret'];
             $auth_body = array(
-                'grant_type' =>  "password",
+                'grant_type' => "password",
                 'username' => $username,
                 'password' => $password,
                 'client_id' => $client_id,
-                'client_secret'=> $client_secret
+                'client_secret' => $client_secret
             );
             $client = new \GuzzleHttp\Client();
             $response = $client->post('http://revenant-api.bfdig.com/oauth/token', [
-                    'form_params' => $auth_body
-                ]);
-
+                'form_params' => $auth_body
+            ]);
             $response = $response->getBody()->getContents();
         }
-
-        return new JsonResponse( $response );
+        return new JsonResponse($response);
     }
 
-    public function post_page( Request $request ) {
+    public function post_page(Request $request)
+    {
         // This condition checks the `Content-type` and makes sure to
         // decode JSON string from the request body into array.
-        if ( 0 === strpos( $request->headers->get( 'Content-Type' ), 'application/json' ) ) {
-            $data = json_decode( $request->getContent(), TRUE );
-            $request->request->replace( is_array( $data ) ? $data : [] );
+        if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
+            $data = json_decode($request->getContent(), TRUE);
+            $request->request->replace(is_array($data) ? $data : []);
         }
         $content = json_decode($request->getContent(), TRUE);
 
@@ -93,14 +85,14 @@ class RevenantPageController extends ControllerBase {
         $response['data'] = 'Post ';
         $response['method'] = 'POST';
 
-
-        return new JsonResponse( $response );
+        return new JsonResponse($response);
     }
 
-    public function post_page_content( Request $request ) {
-        if ( 0 === strpos( $request->headers->get( 'Content-Type' ), 'application/json' ) ) {
-            $data = json_decode( $request->getContent(), TRUE );
-            $request->request->replace( is_array( $data ) ? $data : [] );
+    public function post_page_content(Request $request)
+    {
+        if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
+            $data = json_decode($request->getContent(), TRUE);
+            $request->request->replace(is_array($data) ? $data : []);
         }
         $content = json_decode($request->getContent(), TRUE);
         $editorData = $content['data'];
@@ -154,7 +146,7 @@ class RevenantPageController extends ControllerBase {
         $response['method'] = 'POST';
 
 
-        return new JsonResponse( $response );
+        return new JsonResponse($response);
     }
 
 }

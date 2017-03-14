@@ -1,4 +1,3 @@
-
 var pageModule = (function ($) {
     var page = {};
 
@@ -100,7 +99,7 @@ var pageModule = (function ($) {
         });
     };
 
-    page.addCKEditor = function(callack) {
+    page.addCKEditor = function() {
         return $.ajax({
             url: 'http://revenant-api.bfdig.com/revenant/ckeditor/ckeditor.js',
             dataType: 'script',
@@ -108,17 +107,27 @@ var pageModule = (function ($) {
         });
     };
 
+    page.addCSS = function() {
+        return $.ajax({
+            url: 'http://revenant-api.bfdig.com/revenant/css/main.css',
+            dataType: 'css',
+            cache: true,
+        });
+    }
+
 
     //initializes check for content and passes in pageController as callback
     page.init = function (callback) {
-        page.addCKEditor().done(function() {
-            page.revenantContentCheck(callback);
+        page.addCKEditor().done(function () {
+            page.addCSS().done(function() {
+                page.revenantContentCheck(callback);
+            })
         });
     };
 
     var pageController = {};
 
-    pageController.ckEditorInit = function() {
+    pageController.ckEditorInit = function () {
         //ckeditor inline save plugin configuration.
         CKEDITOR.plugins.addExternal('inlinesave', 'http://revenant-api.bfdig.com/revenant/ckeditor/plugins/inlinesave/', 'plugin.js');
         CKEDITOR.disableAutoInline = true;
@@ -126,7 +135,6 @@ var pageModule = (function ($) {
         //for clearing ckeditor cache and allowing set Authorization Header
         // CKEDITOR.timestamp = 'ABCD';
     };
-
 
 
 //inline editor added on text element click
@@ -170,6 +178,7 @@ var pageModule = (function ($) {
     // adds edit class and data to all text nodes
     pageController.addEditClass = function () {
         var body = document.getElementsByTagName('body')[0];
+
         function recurseAdd(element) {
             if (element.childNodes.length > 0) {
                 for (var i = 0; i < element.childNodes.length; i++)
@@ -188,6 +197,7 @@ var pageModule = (function ($) {
                 }
             }
         }
+
         recurseAdd(body);
     };
 
@@ -211,6 +221,7 @@ var pageModule = (function ($) {
                 }
             }
         }
+
         recurseRemove(body);
     };
 
@@ -222,32 +233,32 @@ var pageModule = (function ($) {
             var LoginTemplate = $('<div class="rev_login"><button class="rev_login_reveal">Revenant</button><div class="rev_login__contaier"><h2>Revenant Login</h2><form class="rev_login__form"> <input type="text" title="username" placeholder="username" /><input type="password" title="password" placeholder="password" /><button type="submit" class="btn">Login</button><a class="forgot" href="#">Forgot Username?</a></form></div></div>');
             // templateModule.getCompiledTemplate('login')
             //     .then(function (html) {
-                    $('body').prepend(LoginTemplate);
-                    $('.rev_login_reveal').on('click', function () {
-                        $('.rev_login__contaier').toggleClass('show');
-                        pageController.loginAuthenticate();
-                    })
-                // });
+            $('body').prepend(LoginTemplate);
+            $('.rev_login_reveal').on('click', function () {
+                $('.rev_login__contaier').toggleClass('show');
+                pageController.loginAuthenticate();
+            })
+            // });
         }());
     };
 
     //appends control panel for user and passes session variable with username to .hbs template
     pageController.appendControlPanel = function () {
-        var UserControlPanelTemplate = function(username) {
-            return $('<div class="rev_user_control_panel"><h4 class="rev_user">Currently Logged in as: '+ username+ '</h4><button class="rev_logout">Logout of Revenant</button></div>')
+        var UserControlPanelTemplate = function (username) {
+            return $('<div class="rev_user_control_panel"><h4 class="rev_user">Currently Logged in as: ' + username + '</h4><button class="rev_logout">Logout of Revenant</button></div>')
         };
         // templateModule.getCompiledTemplate('user_control_panel')
         //     .then(function (html) {
-                var rev_auth = JSON.parse(sessionStorage.getItem('rev_auth'));
-                var UserControlPanel = UserControlPanelTemplate(rev_auth.username);
-                $('body').prepend(UserControlPanel);
-                $('.rev_logout').on('click', function () {
-                    $('.rev_user_control_panel').remove();
-                    pageController.removeEditClass();
-                    sessionStorage.clear();
-                    pageController.init();
-                });
-            // });
+        var rev_auth = JSON.parse(sessionStorage.getItem('rev_auth'));
+        var UserControlPanel = UserControlPanelTemplate(rev_auth.username);
+        $('body').prepend(UserControlPanel);
+        $('.rev_logout').on('click', function () {
+            $('.rev_user_control_panel').remove();
+            pageController.removeEditClass();
+            sessionStorage.clear();
+            pageController.init();
+        });
+        // });
     };
 
 
@@ -256,7 +267,8 @@ var pageModule = (function ($) {
         $('.rev_login__form').on('submit', function (e) {
             var username = $(this).find('input[title="username"]').val(),
                 password = $(this).find('input[title="password"]').val(),
-                origin = window.location.host.replace(/\./g,'-').replace(/\//g,'-')
+                //for back end yaml file naming convention
+                origin = window.location.host.replace(/\./g, '-').replace(/\//g, '-');
             e.preventDefault();
             auth_data = {
                 "origin": origin,
@@ -302,7 +314,7 @@ var pageModule = (function ($) {
 
 
     return {
-        pageControllerInit : pageController.init,
+        pageControllerInit: pageController.init,
         getCompletePath: page.getCompletePath,
         init: page.init,
     }
