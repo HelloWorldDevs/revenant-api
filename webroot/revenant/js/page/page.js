@@ -256,11 +256,13 @@ var pageModule = (function ($) {
     //authenticates using D8 simple_oauth module parameters. Stores session var with tokens and username, removes login and calls functions for adding edit class and control panel.
     pageController.loginAuthenticate = function () {
         $('.rev_login__form').on('submit', function (e) {
-            var username = $(this).find('input[title="username"]').val();
-            var password = $(this).find('input[title="password"]').val();
+            var username = $(this).find('input[title="username"]').val(),
+                password = $(this).find('input[title="password"]').val(),
+                origin = window.location.hostname.split('.')[0];
             e.preventDefault();
+
             auth_data = {
-                "origin": window.location.hostname + window.location.pathname,
+                "origin": window.location.hostname,
                 "username": username,
                 "password": password,
             };
