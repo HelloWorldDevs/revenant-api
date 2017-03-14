@@ -272,11 +272,11 @@ var pageModule = (function ($) {
                 data: JSON.stringify(auth_data),
             })
                 .error(function (error) {
-                    // console.log('oauth error', error)
+                    console.log('oauth error', error)
                 })
                 .done(function (response, status, xhr) {
                     // console.log('oauth response', response);
-                    console.log(response);
+                    console.log(JSON.stringify(response));
                     // sessionStorage.setItem('rev_auth', JSON.stringify({
                     //     "username": username,
                     //     "access_token": response.access_token,
