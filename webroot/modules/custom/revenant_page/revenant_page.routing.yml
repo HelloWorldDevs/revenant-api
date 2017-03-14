@@ -1,5 +1,12 @@
 
 page.post:
+  path: 'revenant_page/page_auth'
+  defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_creds' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
+
+page.post:
   path: 'revenant_page/page'
   defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_page' }
   methods:  [POST]

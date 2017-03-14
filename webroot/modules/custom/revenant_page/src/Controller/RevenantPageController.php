@@ -25,6 +25,41 @@ class RevenantPageController extends ControllerBase {
         return new JsonResponse( $response );
     }
 
+    /**
+     * Callback for `my-api/get.json` API method.
+     */
+    public function post_creds( Request $request ) {
+
+        $content = json_decode($request->getContent(), TRUE);
+
+//        "origin": window.location.hostname + window.location.pathname;
+//                "grant_type": "password",
+//                // "client_id": OAUTH_CLIENT_ID,
+//                // "client_secret": OAUTH_CLIENT_SECRET,
+//                "username": username,
+//                "password": password,
+
+
+        switch ($content['origin']) {
+            case "http://revenant-test.dev/":
+                $response['data'] = 'You are authorized!';
+                $response['method'] = 'GET';
+                break;
+        }
+
+//        $response = \Drupal::httpClient()
+//            ->post('http://example.com/entity/node?_format=hal_json', [
+//                'auth' => ['klausi', 'secret'],
+//                'body' => $serialized_entity,
+//                'headers' => [
+//                    // const OAUTH_CLIENT_ID = "56eb3d8d-87ff-4228-985f-f13135e37ac1";
+//                    // const OAUTH_CLIENT_SECRET = "abc123";
+//                ],
+//        ]);
+
+        return new JsonResponse( $response );
+    }
+
     public function post_page( Request $request ) {
 
         // This condition checks the `Content-type` and makes sure to

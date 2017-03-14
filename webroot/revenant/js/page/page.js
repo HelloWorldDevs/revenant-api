@@ -42,7 +42,7 @@ var pageModule = (function ($) {
 
     //helper function for posting to rev-api, creates page and default content item.
     page.createRevenantPage = function (currentPage) {
-        console.log('inside create page, current revenant', currentPage);
+        // console.log('inside create page, current revenant', currentPage);
         var authBearer = 'Bearer ' + JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
         $.ajax({
             type: 'POST',
@@ -55,10 +55,10 @@ var pageModule = (function ($) {
             },
             data: JSON.stringify(currentPage),
             success: function (data) {
-                console.log('create page post success', data)
+                // console.log('create page post success', data)
             },
             error: function (err) {
-                console.log("create page post error: " + err);
+                // console.log("create page post error: " + err);
             }
         });
     };
@@ -70,10 +70,10 @@ var pageModule = (function ($) {
             method: 'GET',
             url: 'http://revenant-api.bfdig.com/rev-content/?url=' + pageLocation,
             success: function (data) {
-                console.log('success agaaaaaaain!', data);
+                // console.log('success agaaaaaaain!', data);
                 //if no revenant nodes are sent and the user is logged in, send current revenant data to be created as revenant revenant entity reference
                 if (!data.length && sessionStorage.getItem('rev_auth')) {
-                    console.log('no data, create page');
+                    // console.log('no data, create page');
                     var currentPage = {};
                     currentPage.title = window.location.hostname + window.location.pathname;
                     currentPage.url = pageLocation;
@@ -150,10 +150,10 @@ var pageModule = (function ($) {
                         return true;
                     },
                     onSuccess: function (editor, data) {
-                        console.log('save successful', editor, data);
+                        // console.log('save successful', editor, data);
                     },
                     onFailure: function (editor, status, request) {
-                        console.log('save failed', editor, status, request);
+                        // console.log('save failed', editor, status, request);
                     },
                     useJSON: true,
                     useColorIcon: false
@@ -255,25 +255,19 @@ var pageModule = (function ($) {
     };
 
 
-    const OAUTH_CLIENT_ID = "56eb3d8d-87ff-4228-985f-f13135e37ac1";
-    const OAUTH_CLIENT_SECRET = "abc123";
-
     //authenticates using D8 simple_oauth module parameters. Stores session var with tokens and username, removes login and calls functions for adding edit class and control panel.
     pageController.loginAuthenticate = function () {
         $('.rev_login__form').on('submit', function (e) {
             var username = $(this).find('input[title="username"]').val();
             var password = $(this).find('input[title="password"]').val();
             e.preventDefault();
-            //Oauth POST
             data = {
-                "grant_type": "password",
-                "client_id": OAUTH_CLIENT_ID,
-                "client_secret": OAUTH_CLIENT_SECRET,
+                "origin": window.location.hostname + window.location.pathname,
                 "username": username,
                 "password": password,
             };
             $.ajax({
-                url: "http://revenant-api.bfdig.com/oauth/token",
+                url: "http://revenant-api.bfdig.com/revenant_page/page_auth",
                 method: "POST",
                 headers: {'X-Requested-With': null},
                 data: data,
@@ -283,16 +277,17 @@ var pageModule = (function ($) {
                 })
                 .done(function (response, status, xhr) {
                     // console.log('oauth response', response);
-                    sessionStorage.setItem('rev_auth', JSON.stringify({
-                        "username": username,
-                        "access_token": response.access_token,
-                        "refresh_token": response.refresh_token
-                    }));
-                    pageModule.init();
-                    $('.rev_login').remove();
-                    pageController.addEditClass();
-                    pageController.edit();
-                    pageController.appendControlPanel();
+                    console.log(response)
+                    // sessionStorage.setItem('rev_auth', JSON.stringify({
+                    //     "username": username,
+                    //     "access_token": response.access_token,
+                    //     "refresh_token": response.refresh_token
+                    // }));
+                    // pageModule.init();
+                    // $('.rev_login').remove();
+                    // pageController.addEditClass();
+                    // pageController.edit();
+                    // pageController.appendControlPanel();
                 });
         })
     };
