@@ -52,13 +52,13 @@ class RevenantPageController extends ControllerBase {
 ////                    'auth' => ['oauth2'],
 //                    'form_params' => $auth_body
 //                ]);
-            $client = \Drupal::httpClient();
-            $request = $client->post('http://revenant-api.bfdig.com/oauth/token', [
-                'auth' => [$username,$password],
-                'form_params' => $auth_body
-            ]);
-            $response = $request->getBody();
-            $response['method'] = 'hello';
+//            $client = \Drupal::httpClient();
+//            $request = $client->post('http://revenant-api.bfdig.com/oauth/token', [
+//                'auth' => [$username,$password],
+//                'form_params' => $auth_body
+//            ]);
+//            $response = $request->getBody();
+            $response['method'] = $auth_body;
         }
 
         return new JsonResponse( $response );
