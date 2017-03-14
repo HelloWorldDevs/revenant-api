@@ -262,7 +262,7 @@ var pageModule = (function ($) {
             e.preventDefault();
 
             auth_data = {
-                "origin": window.location.hostname,
+                "origin": origin,
                 "username": username,
                 "password": password,
             };
