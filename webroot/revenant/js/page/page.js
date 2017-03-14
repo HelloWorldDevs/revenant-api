@@ -108,6 +108,7 @@ var pageModule = (function ($) {
     };
 
     page.addCSS = function() {
+        console.log('add css');
         return $.ajax({
             url: 'http://revenant-api.bfdig.com/revenant/css/main.css',
             dataType: 'css',
