@@ -55,10 +55,11 @@ class RevenantPageController extends ControllerBase {
                 'client_secret'=> $client_secret
             );
             $client = new \GuzzleHttp\Client();
-            $response = $client->request('POST', 'http://revenant-api.bfdig.com/oauth/token', [
+            $resquest = $client->request('POST', 'http://revenant-api.bfdig.com/oauth/token', [
                     'form_params' => $auth_body,
                 ]);
-//            $response = $request->getBody();
+            $response = $request->getBody();
+            $response['hello'] = 'hello';
         }
 
         return new JsonResponse( $response );
