@@ -277,11 +277,11 @@ var pageModule = (function ($) {
                 .done(function (response, status, xhr) {
                     // console.log('oauth response', response);
                     console.log(JSON.parse(response));
-                    response_data = JSON.parse(response);
+                    var response_data = JSON.parse(response);
                     sessionStorage.setItem('rev_auth', JSON.stringify({
                         "username": username,
-                        "access_token": response.access_token,
-                        "refresh_token": response.refresh_token
+                        "access_token": response_data.access_token,
+                        "refresh_token": response_data.refresh_token
                     }));
                     pageModule.init();
                     $('.rev_login').remove();
