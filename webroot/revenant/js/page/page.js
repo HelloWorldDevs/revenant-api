@@ -104,7 +104,7 @@ var pageModule = (function ($) {
         return $.ajax({
             url: 'http://revenant-api.bfdig.com/revenant/ckeditor/ckeditor.js',
             dataType: 'script',
-            cache: true, // otherwise will get fresh copy every page load
+            cache: true
         });
     };
 
@@ -124,7 +124,7 @@ var pageModule = (function ($) {
         CKEDITOR.disableAutoInline = true;
 
         //for clearing ckeditor cache and allowing set Authorization Header
-        CKEDITOR.timestamp = 'ABCD';
+        // CKEDITOR.timestamp = 'ABCD';
     };
 
 
@@ -259,7 +259,7 @@ var pageModule = (function ($) {
             var username = $(this).find('input[title="username"]').val();
             var password = $(this).find('input[title="password"]').val();
             e.preventDefault();
-            data = {
+            auth_data = {
                 "origin": window.location.hostname + window.location.pathname,
                 "username": username,
                 "password": password,
@@ -268,7 +268,7 @@ var pageModule = (function ($) {
                 url: "http://revenant-api.bfdig.com/revenant_page/page_auth",
                 method: "POST",
                 contentType: 'application/json',
-                data: data,
+                data: JSON.stringify(auth_data),
             })
                 .error(function (error) {
                     // console.log('oauth error', error)
