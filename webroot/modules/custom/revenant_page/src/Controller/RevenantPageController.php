@@ -30,12 +30,6 @@ class RevenantPageController extends ControllerBase {
      */
     public function post_creds( Request $request ) {
 
-//        $content = json_decode($request->getContent(), TRUE);
-
-//        if ( 0 === strpos( $request->headers->get( 'Content-Type' ), 'application/json' ) ) {
-//            $data = json_decode( $request->getContent(), TRUE );
-//            $request->request->replace( is_array( $data ) ? $data : [] );
-//        }
 
         $content = json_decode($request->getContent(), TRUE);
 
@@ -49,14 +43,13 @@ class RevenantPageController extends ControllerBase {
 
         $origin = $content['origin'];
 
-//        switch ($origin) {
-//            case "http://revenant-test.dev":
-//                $response['data'] = 'You are authorized!';
-//                $response['method'] = 'GET';
-//                break;
-//        }
+        switch ($origin) {
+            case "http://revenant-test.dev":
+                $response['data'] = 'You are authorized!';
+                $response['method'] = 'GET';
+                break;
+        }
 
-        $response['data'] = $origin;
 
 //        $response = \Drupal::httpClient()
 //            ->post('http://revenant-api.bfdig.com/oauth/token', [
