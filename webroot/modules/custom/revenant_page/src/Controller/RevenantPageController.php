@@ -37,6 +37,9 @@ class RevenantPageController extends ControllerBase {
             $request->request->replace( is_array( $data ) ? $data : [] );
         }
 
+        $content = json_decode($request->getContent(), TRUE);
+
+
 //        "origin": window.location.hostname + window.location.pathname;
 //                "grant_type": "password",
 //                // "client_id": OAUTH_CLIENT_ID,
