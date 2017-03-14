@@ -267,7 +267,7 @@ var pageModule = (function ($) {
             $.ajax({
                 url: "http://revenant-api.bfdig.com/revenant_page/page_auth",
                 method: "POST",
-                headers: {'X-Requested-With': null},
+                contentType: 'application/json',
                 data: data,
             })
                 .error(function (error) {
