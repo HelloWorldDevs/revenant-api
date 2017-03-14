@@ -32,10 +32,10 @@ class RevenantPageController extends ControllerBase {
 
         $content = json_decode($request->getContent(), TRUE);
 
-        if ( 0 === strpos( $request->headers->get( 'Content-Type' ), 'application/json' ) ) {
-            $data = json_decode( $request->getContent(), TRUE );
-            $request->request->replace( is_array( $data ) ? $data : [] );
-        }
+//        if ( 0 === strpos( $request->headers->get( 'Content-Type' ), 'application/json' ) ) {
+//            $data = json_decode( $request->getContent(), TRUE );
+//            $request->request->replace( is_array( $data ) ? $data : [] );
+//        }
 
         $content = json_decode($request->getContent(), TRUE);
 
@@ -74,10 +74,10 @@ class RevenantPageController extends ControllerBase {
 
         // This condition checks the `Content-type` and makes sure to
         // decode JSON string from the request body into array.
-//        if ( 0 === strpos( $request->headers->get( 'Content-Type' ), 'application/json' ) ) {
-//            $data = json_decode( $request->getContent(), TRUE );
-//            $request->request->replace( is_array( $data ) ? $data : [] );
-//        }
+        if ( 0 === strpos( $request->headers->get( 'Content-Type' ), 'application/json' ) ) {
+            $data = json_decode( $request->getContent(), TRUE );
+            $request->request->replace( is_array( $data ) ? $data : [] );
+        }
         $content = json_decode($request->getContent(), TRUE);
 
         //create node for page on check
