@@ -47,7 +47,7 @@ class RevenantPageController extends ControllerBase {
             $cred_data = $config->get('credentials.' . $origin);
             $client_id = $cred_data['client_id'];
             $client_secret = $cred_data['client_secret'];
-            $auth_body = json_encode([
+            $auth_body = json_decode([
                 'grant_type' =>  "password",
                 'username' => $username,
                 'password' => $password,
