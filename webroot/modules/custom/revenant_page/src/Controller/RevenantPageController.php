@@ -45,7 +45,7 @@ class RevenantPageController extends ControllerBase {
 
         switch ($origin) {
             case "revenant-test":
-                $config = \Drupal::config('revenant_page.setttings');
+                $config = \Drupal::config('revenant_page.settings');
                 $response['data'] = $config->get('credentials.' . $origin);
                 $response['method'] = 'GET';
                 break;
