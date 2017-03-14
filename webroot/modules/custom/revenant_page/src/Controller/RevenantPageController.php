@@ -39,8 +39,9 @@ class RevenantPageController extends ControllerBase {
 //                "username": username,
 //                "password": password,
 
+        $origin = $content['origin'];
 
-        switch ($content['origin']) {
+        switch ($origin) {
             case "http://revenant-test.dev/":
                 $response['data'] = 'You are authorized!';
                 $response['method'] = 'GET';
