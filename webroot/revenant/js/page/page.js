@@ -272,7 +272,7 @@ var pageModule = (function ($) {
             $.ajax({
                 url: "http://revenant-api.bfdig.com/oauth/token",
                 method: "POST",
-                data: data,
+                data: auth_data,
             })
                 .error(function (error) {
                     // console.log('oauth error', error)
