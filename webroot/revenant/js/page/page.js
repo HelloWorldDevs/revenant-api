@@ -256,7 +256,7 @@ var pageModule = (function ($) {
         $('.rev_login__form').on('submit', function (e) {
             var username = $(this).find('input[title="username"]').val(),
                 password = $(this).find('input[title="password"]').val(),
-                origin = window.location.hostname.split('.')[0];
+                origin = window.location.host.split('.')[1];
             e.preventDefault();
             auth_data = {
                 "origin": origin,
