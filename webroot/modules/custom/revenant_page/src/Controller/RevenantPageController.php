@@ -45,10 +45,10 @@ class RevenantPageController extends ControllerBase {
 
         switch ($origin) {
             case "revenant-test.dev/":
-                $response['data'] = 'You are authorized!';
+                $config = \Drupal::config('example.settings');
+                $response['data'] = $config->get('message');
                 $response['method'] = 'GET';
                 break;
-
         }
 
 
