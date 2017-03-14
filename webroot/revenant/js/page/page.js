@@ -275,8 +275,6 @@ var pageModule = (function ($) {
                     console.log('oauth error', error)
                 })
                 .done(function (response, status, xhr) {
-                    // console.log('oauth response', response);
-                    console.log(JSON.parse(response));
                     var response_data = JSON.parse(response);
                     sessionStorage.setItem('rev_auth', JSON.stringify({
                         "username": username,
