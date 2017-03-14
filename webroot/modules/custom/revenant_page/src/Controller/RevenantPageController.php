@@ -29,7 +29,6 @@ class RevenantPageController extends ControllerBase {
      * Callback for `my-api/get.json` API method.
      */
     public function post_creds( Request $request ) {
-
         $content = json_decode($request->getContent(), TRUE);
         $origin = $content['origin'];
         $username = $content["username"];
@@ -53,14 +52,12 @@ class RevenantPageController extends ControllerBase {
                 ]);
 
             $response = $response->getBody()->getContents();
-//            $response['method'] = 'hello';
         }
 
         return new JsonResponse( $response );
     }
 
     public function post_page( Request $request ) {
-
         // This condition checks the `Content-type` and makes sure to
         // decode JSON string from the request body into array.
         if ( 0 === strpos( $request->headers->get( 'Content-Type' ), 'application/json' ) ) {
@@ -137,6 +134,7 @@ class RevenantPageController extends ControllerBase {
             $user = reset($users);
             $uid = $user->id();
 
+            //TODO remove tags for edit text and content-editable
             //create node for page on check
             $node = Node::create(array(
                 'type' => 'revenant_content_item',

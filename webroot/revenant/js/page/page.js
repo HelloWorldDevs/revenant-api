@@ -170,7 +170,6 @@ var pageModule = (function ($) {
     // adds edit class and data to all text nodes
     pageController.addEditClass = function () {
         var body = document.getElementsByTagName('body')[0];
-        console.log('add edit class!');
         function recurseAdd(element) {
             if (element.childNodes.length > 0) {
                 for (var i = 0; i < element.childNodes.length; i++)
@@ -189,7 +188,6 @@ var pageModule = (function ($) {
                 }
             }
         }
-
         recurseAdd(body);
     };
 
