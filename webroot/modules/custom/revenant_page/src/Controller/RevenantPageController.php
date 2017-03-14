@@ -48,6 +48,7 @@ class RevenantPageController extends ControllerBase {
                 $response['data'] = 'You are authorized!';
                 $response['method'] = 'GET';
                 break;
+
         }
 
 
