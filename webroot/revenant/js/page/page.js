@@ -252,8 +252,6 @@ var pageModule = (function ($) {
             // });
     };
 
-    const OAUTH_CLIENT_ID = "56eb3d8d-87ff-4228-985f-f13135e37ac1";
-    const OAUTH_CLIENT_SECRET = "abc123";
 
     //authenticates using D8 simple_oauth module parameters. Stores session var with tokens and username, removes login and calls functions for adding edit class and control panel.
     pageController.loginAuthenticate = function () {
@@ -263,23 +261,22 @@ var pageModule = (function ($) {
                 origin = window.location.hostname.split('.')[0];
             e.preventDefault();
             auth_data = {
-                "grant_type": "password",
-                "client_id": OAUTH_CLIENT_ID,
-                "client_secret": OAUTH_CLIENT_SECRET,
+                "origin": origin,
                 "username": username,
                 "password": password,
             };
             $.ajax({
-                url: "http://revenant-api.bfdig.com/oauth/token",
+                url: "http://revenant-api.bfdig.com/revenant_page/page_auth",
                 method: "POST",
-                data: auth_data,
+                contentType: 'application/json',
+                data: JSON.stringify(auth_data),
             })
                 .error(function (error) {
                     // console.log('oauth error', error)
                 })
                 .done(function (response, status, xhr) {
                     // console.log('oauth response', response);
-                    console.log(response)
+                    console.log(response);
                     // sessionStorage.setItem('rev_auth', JSON.stringify({
                     //     "username": username,
                     //     "access_token": response.access_token,
