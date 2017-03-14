@@ -47,18 +47,13 @@ class RevenantPageController extends ControllerBase {
                 'client_id' => $client_id,
                 'client_secret'=> $client_secret
             );
-//            $client = new \GuzzleHttp\Client();
-//            $request = $client->request('POST', 'http://revenant-api.bfdig.com/oauth/token', [
-////                    'auth' => ['oauth2'],
-//                    'form_params' => $auth_body
-//                ]);
-//            $client = \Drupal::httpClient();
-//            $request = $client->post('http://revenant-api.bfdig.com/oauth/token', [
-//                'auth' => [$username,$password],
-//                'form_params' => $auth_body
-//            ]);
-//            $response = $request->getBody();
-            $response['method'] = $auth_body;
+            $client = new \GuzzleHttp\Client();
+            $request = $client->post('http://revenant-api.bfdig.com/oauth/token', [
+                    'form_params' => $auth_body
+                ]);
+
+            $response = $request->getBody();
+            $response['method'] = 'hello';
         }
 
         return new JsonResponse( $response );
