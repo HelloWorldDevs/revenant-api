@@ -12,8 +12,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Drupal\node\Entity\Node;
-use GuzzleHttp\Exception\ClientException;
-
 
 class RevenantPageController extends ControllerBase {
 
@@ -53,11 +51,10 @@ class RevenantPageController extends ControllerBase {
 
             );
             $client = new \GuzzleHttp\Client();
-            try {
-                $request = $client->request('POST', 'http://revenant-api.bfdig.com/oauth/token', [
+            $request = $client->request('POST', 'http://revenant-api.bfdig.com/oauth/token', [
 //                    'auth' => [$username, $password],'auth' =>  [$apiClientId, $apiClientSecret, 'basic']
                     'auth' => [$client_id, $client_secret, $username, $password],
-                    'json' => ['grant_type' =>  "password"],
+                    'json' => ['grant_type' =>  "client_credentials"],
                     'headers' => [
                         'Accept-Language' => 'en_US',
                         'Accept' => 'application/json'
@@ -67,11 +64,8 @@ class RevenantPageController extends ControllerBase {
 //                    'username' => $username,
 //                    'password' => $password,
                 ]);
-            } catch (ClientException $e) {
-                $response = $e;
-                $responseBodyAsString = $response->getBody()->getContents();
-            }
-
+            $response = $request;
+            $response['method'] = 'hello';
         }
 
         return new JsonResponse( $response );
