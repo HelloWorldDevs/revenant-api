@@ -276,11 +276,12 @@ var pageModule = (function ($) {
                 })
                 .done(function (response, status, xhr) {
                     // console.log('oauth response', response);
-                    sessionStorage.setItem('rev_auth', JSON.stringify({
+                    console.log(response);
+                    sessionStorage.setItem('rev_auth', {
                         "username": username,
                         "access_token": response.access_token,
                         "refresh_token": response.refresh_token
-                    }));
+                    });
                     pageModule.init();
                     $('.rev_login').remove();
                     pageController.addEditClass();
