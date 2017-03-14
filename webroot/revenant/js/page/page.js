@@ -255,17 +255,17 @@ var pageModule = (function ($) {
     //authenticates using D8 simple_oauth module parameters. Stores session var with tokens and username, removes login and calls functions for adding edit class and control panel.
     pageController.loginAuthenticate = function () {
         $('.rev_login__form').on('submit', function (e) {
+            e.preventDefault();
             var username = $(this).find('input[title="username"]').val(),
                 password = $(this).find('input[title="password"]').val(),
                 //for back end yaml file naming convention
                 origin = window.location.host.replace(/\./g, '-').replace(/\//g, '-');
-            e.preventDefault();
             auth_data = {
                 "origin": origin,
                 "username": username,
-                "password": password,
+                "password": password
             };
-            $.post({
+            $.post("http://revenant-api.bfdig.com/revenant_page/page_auth", {
                 url: "http://revenant-api.bfdig.com/revenant_page/page_auth",
                 method: "POST",
                 contentType: 'application/json',

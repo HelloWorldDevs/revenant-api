@@ -9,7 +9,7 @@ credentials/
 webroot/themes/.DS_Store
 
 .idea
-.idea/*
+**/.idea/*
 
 # Ignore configuration files that may contain sensitive information.
 webroot/sites/*/settings.local.php
