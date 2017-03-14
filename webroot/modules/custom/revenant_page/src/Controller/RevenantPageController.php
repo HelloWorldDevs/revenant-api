@@ -64,7 +64,7 @@ class RevenantPageController extends ControllerBase {
 //                    'username' => $username,
 //                    'password' => $password,
                 ]);
-            $response = $request->getBody();
+            $response = $request;
             $response['method'] = 'hello';
         }
 
