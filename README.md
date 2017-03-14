@@ -29,6 +29,5 @@ Append to  `<head>`
 Append below all other `<script>` tags
 
 ``` 
-<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 <script type="text/javascript" src="http://revenant-api.bfdig.com/revenant/js/page/page.js"></script>
 ```
