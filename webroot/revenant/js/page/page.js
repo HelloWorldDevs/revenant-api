@@ -260,7 +260,6 @@ var pageModule = (function ($) {
                 password = $(this).find('input[title="password"]').val(),
                 origin = window.location.hostname.split('.')[0];
             e.preventDefault();
-
             auth_data = {
                 "origin": origin,
                 "username": username,

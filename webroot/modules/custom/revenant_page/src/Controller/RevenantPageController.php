@@ -30,10 +30,6 @@ class RevenantPageController extends ControllerBase {
      */
     public function post_creds( Request $request ) {
 
-
-        $content = json_decode($request->getContent(), TRUE);
-
-
 //        "origin": window.location.hostname + window.location.pathname;
 //                "grant_type": "password",
 //                // "client_id": OAUTH_CLIENT_ID,
@@ -41,24 +37,34 @@ class RevenantPageController extends ControllerBase {
 //                "username": username,
 //                "password": password,
 
+        $content = json_decode($request->getContent(), TRUE);
         $origin = $content['origin'];
+        $username = $content["username"];
+        $password = $content["password"];
+
         $config = \Drupal::config('revenant_page.settings');
         if ($config->get('credentials.' . $origin)) {
-            $response['data'] = $config->get('credentials.' . $origin);
+            $cred_data = $config->get('credentials.' . $origin);
+            $client_id = $cred_data['client_id'];
+            $client_secret = $cred_data['client_secret'];
+            $auth_body = json_encode([
+                'grant_type' =>  "password",
+                'username' => $username,
+                'password' => $password,
+                'client_id' => $client_id,
+                'client_secret'=> $client_secret
+            ]);
+            $response = \Drupal::httpClient()
+                ->post('http://revenant-api.bfdig.com/oauth/token', [
+                    'body' => $auth_body
+                ]);
         }
 
 
 
 
 
-//        $response = \Drupal::httpClient()
-//            ->post('http://revenant-api.bfdig.com/oauth/token', [
-//                'auth' => ['klausi', 'secret'],
-//                'body' => $serialized_entity,
-//                'headers' => [
-//
-//                ],
-//        ]);
+
 
         return new JsonResponse( $response );
     }
