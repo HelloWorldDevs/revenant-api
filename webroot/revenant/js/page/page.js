@@ -73,7 +73,6 @@ var pageModule = (function ($) {
                 // console.log('success agaaaaaaain!', data);
                 //if no revenant nodes are sent and the user is logged in, send current revenant data to be created as revenant revenant entity reference
                 if (!data.length && sessionStorage.getItem('rev_auth')) {
-                    // console.log('no data, create page');
                     var currentPage = {};
                     currentPage.title = window.location.hostname + window.location.pathname;
                     currentPage.url = pageLocation;
@@ -214,7 +213,6 @@ var pageModule = (function ($) {
                 }
             }
         }
-
         recurseRemove(body);
     };
 
