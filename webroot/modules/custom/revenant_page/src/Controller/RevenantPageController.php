@@ -68,7 +68,7 @@ class RevenantPageController extends ControllerBase {
 //                    'password' => $password,
                 ]);
             } catch (ClientException $e) {
-                $response = $e->getResponse();
+                $response = $e;
                 $responseBodyAsString = $response->getBody()->getContents();
             }
 
