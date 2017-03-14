@@ -276,17 +276,16 @@ var pageModule = (function ($) {
                 })
                 .done(function (response, status, xhr) {
                     // console.log('oauth response', response);
-                    console.log(JSON.stringify(response));
-                    // sessionStorage.setItem('rev_auth', JSON.stringify({
-                    //     "username": username,
-                    //     "access_token": response.access_token,
-                    //     "refresh_token": response.refresh_token
-                    // }));
-                    // pageModule.init();
-                    // $('.rev_login').remove();
-                    // pageController.addEditClass();
-                    // pageController.edit();
-                    // pageController.appendControlPanel();
+                    sessionStorage.setItem('rev_auth', JSON.stringify({
+                        "username": username,
+                        "access_token": response.access_token,
+                        "refresh_token": response.refresh_token
+                    }));
+                    pageModule.init();
+                    $('.rev_login').remove();
+                    pageController.addEditClass();
+                    pageController.edit();
+                    pageController.appendControlPanel();
                 });
         })
     };
