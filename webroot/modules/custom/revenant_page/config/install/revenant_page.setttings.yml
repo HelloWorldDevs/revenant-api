@@ -1,2 +1,2 @@
-hello:
-  name: 'Hank Williams'
+credentials:
+  revenant-test.dev/: 'Hank Williams'
