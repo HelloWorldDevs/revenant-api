@@ -53,11 +53,11 @@ var pageModule = (function ($) {
                 'X-Requested-With': null
             },
             data: JSON.stringify(currentPage),
-            success: function (data) {
+            success: function (response, status, xhr) {
                 console.log('revenant create page post success', data)
             },
             error: function (err) {
-                console.log("revenant create page post error: " + err);
+                console.log("revenant create page post error: ", err);
             }
         });
     };
@@ -187,7 +187,6 @@ var pageModule = (function ($) {
                 }
             }
         }
-
         recurseAdd(body);
     };
 
