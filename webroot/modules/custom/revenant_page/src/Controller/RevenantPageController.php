@@ -19,32 +19,32 @@ class RevenantPageController extends ControllerBase {
     /**
      * Proxy for handling authentication, retrieves client credentials.
      */
-//    public function post_creds(Request $request) {
-//        $content = json_decode($request->getContent(), TRUE);
-//        $origin = $content['origin'];
-//        $username = $content["username"];
-//        $password = $content["password"];
-//
-//        $config = \Drupal::config('revenant_page.settings');
-//        if ($config->get('credentials.' . $origin)) {
-//            $cred_data = $config->get('credentials.' . $origin);
-//            $client_id = $cred_data['client_id'];
-//            $client_secret = $cred_data['client_secret'];
-//            $auth_body = array(
-//                'grant_type' => "password",
-//                'username' => $username,
-//                'password' => $password,
-//                'client_id' => $client_id,
-//                'client_secret' => $client_secret
-//            );
-//            $client = new \GuzzleHttp\Client();
-//            $response = $client->post('http://revenant-api.bfdig.com/oauth/token', [
-//                'form_params' => $auth_body
-//            ]);
-//            $response = $response->getBody()->getContents();
-//        }
-//        return new JsonResponse($response);
-//    }
+    public function post_creds(Request $request) {
+        $content = json_decode($request->getContent(), TRUE);
+        $origin = $content['origin'];
+        $username = $content["username"];
+        $password = $content["password"];
+
+        $config = \Drupal::config('revenant_page.settings');
+        if ($config->get('credentials.' . $origin)) {
+            $cred_data = $config->get('credentials.' . $origin);
+            $client_id = $cred_data['client_id'];
+            $client_secret = $cred_data['client_secret'];
+            $auth_body = array(
+                'grant_type' => "password",
+                'username' => $username,
+                'password' => $password,
+                'client_id' => $client_id,
+                'client_secret' => $client_secret
+            );
+            $client = new \GuzzleHttp\Client();
+            $response = $client->post('http://revenant-api.bfdig.com/oauth/token', [
+                'form_params' => $auth_body
+            ]);
+            $response = $response->getBody()->getContents();
+        }
+        return new JsonResponse($response);
+    }
 
     public function post_page_create(Request $request) {
         // This condition checks the `Content-type` and makes sure to
