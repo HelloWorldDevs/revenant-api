@@ -46,9 +46,9 @@ var pageModule = (function ($) {
         $.ajax({
             type: 'POST',
             url: 'http://revenant-api.bfdig.com/revenant_page/page',
-            xhrFields: {
-                withCredentials: true
-            },
+            // xhrFields: {
+            //     withCredentials: true
+            // },
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/hal+json',
@@ -59,8 +59,9 @@ var pageModule = (function ($) {
             success: function (response, status, xhr) {
                 console.log('revenant create page post success', data)
             },
-            error: function (err) {
-                console.log("revenant create page post error: ", err);
+            error: function (xhr, ajaxOptions, thrownError) {
+                console.log("revenant create page post xhr: ", xhr);
+                console.log("revenant create page post xhr: ", thrownError);
             }
         });
     };
