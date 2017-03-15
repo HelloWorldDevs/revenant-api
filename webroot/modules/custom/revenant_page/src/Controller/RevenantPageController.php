@@ -48,7 +48,7 @@ class RevenantPageController extends ControllerBase
         return new JsonResponse($response);
     }
 
-    public function post_page(Request $request)
+    public function post_page_create(Request $request)
     {
         // This condition checks the `Content-type` and makes sure to
         // decode JSON string from the request body into array.
