@@ -20,8 +20,7 @@ class RevenantPageController extends ControllerBase
     /**
      * Proxy for handling authentication, retrieves client credentials.
      */
-    public function post_creds(Request $request)
-    {
+    public function post_creds(Request $request) {
         $content = json_decode($request->getContent(), TRUE);
         $origin = $content['origin'];
         $username = $content["username"];
@@ -48,8 +47,7 @@ class RevenantPageController extends ControllerBase
         return new JsonResponse($response);
     }
 
-    public function post_page(Request $request)
-    {
+    public function post_page(Request $request) {
         // This condition checks the `Content-type` and makes sure to
         // decode JSON string from the request body into array.
         if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
@@ -88,8 +86,7 @@ class RevenantPageController extends ControllerBase
         return new JsonResponse($response);
     }
 
-    public function post_page_content(Request $request)
-    {
+    public function post_page_content(Request $request) {
         if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
             $data = json_decode($request->getContent(), TRUE);
             $request->request->replace(is_array($data) ? $data : []);

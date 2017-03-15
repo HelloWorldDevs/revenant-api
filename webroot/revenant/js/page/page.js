@@ -41,7 +41,7 @@ var pageModule = (function ($) {
 
     //helper function for posting to rev-api, creates page and default content item.
     page.createRevenantPage = function (currentPage) {
-        // console.log('inside create page, current revenant', currentPage);
+        console.log('inside create page, current revenant', currentPage);
         var authBearer = 'Bearer ' + JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
         $.ajax({
             type: 'POST',
