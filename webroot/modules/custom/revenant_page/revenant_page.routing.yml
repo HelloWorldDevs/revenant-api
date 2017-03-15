@@ -1,17 +1,17 @@
-#
-#page.post:
-#  path: 'revenant_page/page_auth'
-#  defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_creds' }
-#  methods:  [POST]
-#  requirements:
-#    _access: 'TRUE'
+
+page.post:
+  path: 'revenant_page/page_auth'
+  defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_creds' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'
 
 page.post:
   path: 'revenant_page/page_create'
   defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_page_create' }
   methods:  [POST]
   requirements:
-    _user_is_logged_in: 'FALSE'
+    _user_is_logged_in: 'TRUE'
   options:
     _auth: [ 'basic_auth', 'oauth2' ]
 
@@ -20,7 +20,7 @@ page_content.post:
   defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_page_content' }
   methods:  [POST]
   requirements:
-    _user_is_logged_in: 'FALSE'
+    _user_is_logged_in: 'TRUE'
   options:
     _auth: [ 'basic_auth', 'oauth2' ]
 
