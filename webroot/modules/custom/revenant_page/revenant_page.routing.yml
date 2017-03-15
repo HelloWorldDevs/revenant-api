@@ -4,7 +4,7 @@ page.post:
   defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_creds' }
   methods:  [POST]
   requirements:
-    _role: 'nnonymous user'
+    _role: 'anonymous user'
 
 page.post:
   path: 'revenant_page/page_create'
