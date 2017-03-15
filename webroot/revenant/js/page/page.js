@@ -54,10 +54,10 @@ var pageModule = (function ($) {
             },
             data: JSON.stringify(currentPage),
             success: function (data) {
-                // console.log('create page post success', data)
+                console.log('revenant create page post success', data)
             },
             error: function (err) {
-                // console.log("create page post error: " + err);
+                console.log("revenant create page post error: " + err);
             }
         });
     };
@@ -69,7 +69,7 @@ var pageModule = (function ($) {
             method: 'GET',
             url: 'http://revenant-api.bfdig.com/rev-content/?url=' + pageLocation,
             success: function (data) {
-                // console.log('success agaaaaaaain!', data);
+                console.log('revenant content check success', data);
                 //if no revenant nodes are sent and the user is logged in, send current revenant data to be created as revenant revenant entity reference
                 if (!data.length && sessionStorage.getItem('rev_auth')) {
                     var currentPage = {};
@@ -94,12 +94,12 @@ var pageModule = (function ($) {
                 }
             },
             error: function (err) {
-                console.log("AJAX error in request: " + err);
+                console.log("revenant content check error: " + err);
             }
         });
     };
 
-    page.addCKEditor = function (callack) {
+    page.addCKEditor = function() {
         return $.ajax({
             url: 'http://revenant-api.bfdig.com/revenant/ckeditor/ckeditor.js',
             dataType: 'script',
@@ -147,10 +147,10 @@ var pageModule = (function ($) {
                         return true;
                     },
                     onSuccess: function (editor, data) {
-                        // console.log('save successful', editor, data);
+                        console.log('save successful', editor, data);
                     },
                     onFailure: function (editor, status, request) {
-                        // console.log('save failed', editor, status, request);
+                        console.log('save failed', editor, status, request);
                     },
                     useJSON: true,
                     useColorIcon: false
@@ -211,7 +211,6 @@ var pageModule = (function ($) {
                 }
             }
         }
-
         recurseRemove(body);
     };
 
