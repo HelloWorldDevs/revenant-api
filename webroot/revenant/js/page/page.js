@@ -46,6 +46,9 @@ var pageModule = (function ($) {
         $.ajax({
             type: 'POST',
             url: 'http://revenant-api.bfdig.com/revenant_page/page',
+            xhrFields: {
+                withCredentials: true
+            },
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/hal+json',
