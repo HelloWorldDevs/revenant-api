@@ -56,7 +56,7 @@ var pageModule = (function ($) {
                 'X-Requested-With': null
             },
             data: JSON.stringify(currentPage),
-            success: function (response, status, xhr) {
+            success: function (data, status, xhr) {
                 console.log('revenant create page post success', data)
             },
             error: function (xhr, ajaxOptions, thrownError) {
