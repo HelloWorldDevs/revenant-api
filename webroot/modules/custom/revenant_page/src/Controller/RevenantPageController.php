@@ -13,15 +13,13 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Drupal\node\Entity\Node;
 
-class RevenantPageController extends ControllerBase
-{
+class RevenantPageController extends ControllerBase {
 
 
     /**
      * Proxy for handling authentication, retrieves client credentials.
      */
-    public function post_creds(Request $request)
-    {
+    public function post_creds(Request $request) {
         $content = json_decode($request->getContent(), TRUE);
         $origin = $content['origin'];
         $username = $content["username"];
@@ -48,14 +46,13 @@ class RevenantPageController extends ControllerBase
         return new JsonResponse($response);
     }
 
-    public function post_page_create(Request $request)
-    {
+    public function post_page_create(Request $request) {
         // This condition checks the `Content-type` and makes sure to
         // decode JSON string from the request body into array.
-        if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
-            $data = json_decode($request->getContent(), TRUE);
-            $request->request->replace(is_array($data) ? $data : []);
-        }
+//        if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
+//            $data = json_decode($request->getContent(), TRUE);
+//            $request->request->replace(is_array($data) ? $data : []);
+//        }
         $content = json_decode($request->getContent(), TRUE);
 
         //create node for page on check
@@ -88,8 +85,7 @@ class RevenantPageController extends ControllerBase
         return new JsonResponse($response);
     }
 
-    public function post_page_content(Request $request)
-    {
+    public function post_page_content(Request $request) {
         if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
             $data = json_decode($request->getContent(), TRUE);
             $request->request->replace(is_array($data) ? $data : []);
