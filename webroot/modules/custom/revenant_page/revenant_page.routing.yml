@@ -1,10 +1,10 @@
 
-page.post:
+page_creds.post:
   path: 'revenant_page/page_auth'
   defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_creds' }
   methods:  [POST]
   requirements:
-    _role: 'anonymous user'
+    _access: 'TRUE'
 
 page.post:
   path: 'revenant_page/page_create'
