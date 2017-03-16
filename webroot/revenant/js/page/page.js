@@ -125,6 +125,7 @@ var pageModule = (function ($) {
         //ckeditor inline save plugin configuration.
         CKEDITOR.plugins.addExternal('inlinesave', 'http://revenant-api.bfdig.com/revenant/ckeditor/plugins/inlinesave/', 'plugin.js');
         CKEDITOR.disableAutoInline = true;
+        CKEDITOR.dtd.$editable = {a: 1, address: 1, article: 1, aside: 1, blockquote: 1, body: 1, details: 1, div: 1, fieldset: 1, figcaption: 1, footer: 1, form: 1, h1: 1, h2: 1, h3: 1, h4: 1, h5: 1, h6: 1, header: 1, hgroup: 1, main: 1, nav: 1, p: 1, pre: 1, section: 1};
 
         //for clearing ckeditor cache and allowing set Authorization Header
         // CKEDITOR.timestamp = 'ABCD';
