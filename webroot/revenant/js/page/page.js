@@ -373,7 +373,7 @@ var pageModule = (function ($) {
                     // pageModule.init();
                     $('.rev_login').remove();
                     pageController.addEditClass();
-                    pageController.edit();
+                    pageController.editAddHandler();
                     pageController.appendControlPanel();
                 });
         })
@@ -382,6 +382,7 @@ var pageModule = (function ($) {
     //control module initializer, checks for session token and adds login or control panel on page load.
     pageController.init = function () {
         if (!sessionStorage.getItem('rev_auth')) {
+            console.log('no rev-auth');
             pageController.appendLogin();
             pageController.loginKeyBind();
         } else {
