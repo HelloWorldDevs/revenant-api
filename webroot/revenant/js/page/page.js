@@ -362,8 +362,9 @@ var pageModule = (function ($) {
                         type : 'post',
                         data : 'form_id=user_login_form&name=' + encodeURIComponent(username) + '&pass=' + encodeURIComponent(password),
                         dataType : 'json',
-                        error : function(err) {
-                            console.log('login err', err);
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            console.log("revenant create page post xhr: ", xhr);
+                            console.log("revenant create page post xhr: ", thrownError);
                         },
                         success : function(data) {
                             console.log('user login data', data);
