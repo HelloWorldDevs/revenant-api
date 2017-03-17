@@ -1,7 +1,12 @@
 var pageModule = (function ($) {
     var page = {};
 
-    page.getText = function (e) {
+    const DEV_CONFIGS = {
+        'LOCAL': 'http://revenant-test.dev/',
+        'PROD':  'http://revenant-api.bfdig.com/'
+    }
+
+        page.getText = function (e) {
         var text = e.parentNode.textContent;
         return text;
     };
@@ -45,7 +50,7 @@ var pageModule = (function ($) {
         var authBearer = 'Bearer ' + JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
         $.ajax({
             type: 'POST',
-            url: 'http://revenant-api.bfdig.com/revenant_page/page_create',
+            url: DEV_CONFIG + 'revenant_page/page_create',
             // xhrFields: {
             //     withCredentials: true
             // },
@@ -71,7 +76,7 @@ var pageModule = (function ($) {
         const pageLocation = window.location.hostname + window.location.pathname;
         $.ajax({
             method: 'GET',
-            url: 'http://revenant-api.bfdig.com/rev-content/?url=' + pageLocation,
+            url: DEV_CONFIG + 'rev-content/?url=' + pageLocation,
             success: function (data) {
                 console.log('revenant content check success', data);
                 //if no revenant nodes are sent and the user is logged in, send current revenant data to be created as revenant revenant entity reference
@@ -103,9 +108,13 @@ var pageModule = (function ($) {
         });
     };
 
+    page.conigureEnv = function(opt) {
+        DEV_CONFIG = DEV_CONFIGS[opt]
+    }
+
     page.addCKEditor = function() {
         return $.ajax({
-            url: 'http://revenant-api.bfdig.com/revenant/ckeditor/ckeditor.js',
+            url: DEV_CONFIG + 'revenant/ckeditor/ckeditor.js',
             dataType: 'script',
             cache: true
         });
@@ -113,7 +122,7 @@ var pageModule = (function ($) {
 
     page.addSpinJS = function() {
         return $.ajax({
-            url: 'http://revenant-api.bfdig.com/revenant/spin/spin.min.js',
+            url: DEV_CONFIG + 'revenant/spin/spin.min.js',
             dataType: 'script',
             cache: true
         });
@@ -152,7 +161,8 @@ var pageModule = (function ($) {
 
 
     //initializes check for content and passes in pageController as callback
-    page.init = function (callback) {
+    page.init = function (opt, callback) {
+        page.conigureEnv(opt);
         page.addSpinJS().done(function() {
             console.log('added spinnerjs');
             page.spinnerLoad();
@@ -166,7 +176,7 @@ var pageModule = (function ($) {
 
     pageController.ckEditorInit = function () {
         //ckeditor inline save plugin configuration.
-        CKEDITOR.plugins.addExternal('inlinesave', 'http://revenant-api.bfdig.com/revenant/ckeditor/plugins/inlinesave/', 'plugin.js');
+        CKEDITOR.plugins.addExternal('inlinesave', DEV_CONFIG + 'revenant/ckeditor/plugins/inlinesave/', 'plugin.js');
         CKEDITOR.disableAutoInline = true;
         CKEDITOR.dtd.$editable = {a: 1, address: 1, article: 1, aside: 1, blockquote: 1, body: 1, details: 1, div: 1, fieldset: 1, figcaption: 1, footer: 1, form: 1, h1: 1, h2: 1, h3: 1, h4: 1, h5: 1, h6: 1, header: 1, hgroup: 1, main: 1, nav: 1, p: 1, pre: 1, section: 1};
 
@@ -187,7 +197,7 @@ var pageModule = (function ($) {
             if (!el.hasAttribute('id', data.xpath)) {
                 el.setAttribute('id', data.xpath);
                 CKEDITOR.config.inlinesave = {
-                    postUrl: 'http://revenant-api.bfdig.com/revenant_page/page_content',
+                    postUrl: DEV_CONFIG + 'revenant_page/page_content',
                     postAuth: authBearer,
                     postData: {data: data},
                     useJson: true,
@@ -311,7 +321,7 @@ var pageModule = (function ($) {
                 "username": username,
                 "password": password
             };
-            $.post("http://revenant-api.bfdig.com/revenant_page/page_auth", JSON.stringify(auth_data))
+            $.post( DEV_CONFIG + "revenant_page/page_auth", JSON.stringify(auth_data))
                 .error(function (error) {
                     console.log('oauth error', error)
                 })
@@ -353,4 +363,4 @@ var pageModule = (function ($) {
 
 })(jQuery);
 
-pageModule.init(pageModule.pageControllerInit);
+pageModule.init('LOCAL', pageModule.pageControllerInit);
