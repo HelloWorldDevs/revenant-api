@@ -9,7 +9,7 @@ var pageModule = (function ($) {
     const DEV_CONFIGS = {
         'LOCAL': 'http://revenant-api.dev/',
         'PROD':  'http://revenant-api.bfdig.com/',
-        'DEV_CONFIG': ''
+        'CONFIG': ''
     }
 
         page.getText = function (e) {
@@ -56,7 +56,7 @@ var pageModule = (function ($) {
         var authBearer = 'Bearer ' + JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
         $.ajax({
             type: 'POST',
-            url: DEV_CONFIG + 'revenant_page/page_create',
+            url: DEV_CONFIG.CONFIG + 'revenant_page/page_create',
             // xhrFields: {
             //     withCredentials: true
             // },
@@ -83,7 +83,7 @@ var pageModule = (function ($) {
             const pageLocation = window.location.hostname + window.location.pathname;
             $.ajax({
                 method: 'GET',
-                url: DEV_CONFIG + 'rev-content/?url=' + pageLocation,
+                url: DEV_CONFIG.CONFIG + 'rev-content/?url=' + pageLocation,
                 success: function (data) {
                     console.log('revenant content check success', data);
                     //if no revenant nodes are sent and the user is logged in, send current revenant data to be created as revenant revenant entity reference
@@ -117,7 +117,8 @@ var pageModule = (function ($) {
     };
 
     page.conigureEnv = function(opt) {
-        DEV_CONFIGS['DEV_CONFIG'] = DEV_CONFIGS[opt];
+        console.log('opt', opt)
+        DEV_CONFIG.CONFIG = DEV_CONFIGS[opt];
         console.log('DEV CONFIG', DEV_CONFIG);
     }
 
