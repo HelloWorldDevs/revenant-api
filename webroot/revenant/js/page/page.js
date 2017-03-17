@@ -73,7 +73,7 @@ var pageModule = (function ($) {
 
     ///check for revenant content for current page, appends all content and invokes pageController callback.
     page.revenantContentCheck = function (callback) {
-        $(function() {
+        $(function($) {
             const pageLocation = window.location.hostname + window.location.pathname;
             $.ajax({
                 method: 'GET',
@@ -107,7 +107,7 @@ var pageModule = (function ($) {
                     console.log("revenant content check error: ", err);
                 }
             });
-        })()
+        })(jQuery)
     };
 
     page.conigureEnv = function(opt) {
