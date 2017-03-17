@@ -37,14 +37,14 @@
 }
 
 /* LOADING SPINNER */
-#spinner-overlay {
-  position: fixed;
-  height: 100%;
-  z-index: 9999;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: .9;
-  background-color: #fff;
-}
+/*#spinner-overlay {*/
+  /*position: fixed;*/
+  /*height: 100%;*/
+  /*z-index: 9999;*/
+  /*top: 0;*/
+  /*bottom: 0;*/
+  /*left: 0;*/
+  /*right: 0;*/
+  /*opacity: .9;*/
+  /*background-color: #fff;*/
+/*}*/

@@ -129,7 +129,7 @@ var pageModule = (function ($) {
     };
 
     page.spinnerLoad = function() {
-        $spinnerDiv = $('<div id="spinner-overlay"><div id="loading-spinner"><div></div>')
+        $spinnerDiv = $('<div id="spinner-overlay" style="position: fixed; height: 100%; z-index: 9999; top: 0;bottom: 0;left: 0;right: 0;opacity: .9;background-color: #fff;"><div id="loading-spinner"><div></div>')
         $('body').append($spinnerDiv);
 
         var opts = {
