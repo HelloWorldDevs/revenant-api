@@ -387,7 +387,7 @@ var pageModule = (function ($) {
         } else {
             pageController.ckEditorInit();
             pageController.addEditClass();
-            pageController.edit();
+            pageController.editAddHandler();
             pageController.appendControlPanel();
         }
         $('#spinner-overlay').fadeOut();
