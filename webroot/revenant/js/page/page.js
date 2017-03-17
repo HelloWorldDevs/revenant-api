@@ -103,7 +103,7 @@ var pageModule = (function ($) {
                 }
             },
             error: function (err) {
-                console.log("revenant content check error: " + err);
+                console.log("revenant content check error: ", err);
             }
         });
     };
@@ -185,7 +185,7 @@ var pageModule = (function ($) {
     };
 
 
-//inline editor added on text element click
+    //inline editor added on text element click
     pageController.edit = function () {
         $('.text--edit').on('click', function () {
             var dataCategory = $(this).attr('data-category');
@@ -364,4 +364,4 @@ var pageModule = (function ($) {
 })(jQuery);
 
 //SET DEV ENVIRONMENT IN STRING FOR LOCAL OR REMOTE URL
-pageModule.init('LOCAL', pageModule.pageControllerInit);
+pageModule.init('PROD', pageModule.pageControllerInit);
