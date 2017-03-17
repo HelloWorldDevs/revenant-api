@@ -7,7 +7,7 @@ var DEV_CONFIGS = {
     PROD:  'http://revenant-api.bfdig.com/'
 }
 
-var DEV_CONGIG = DEV_CONFIGS.LOCAL;
+var DEV_CONFIG = DEV_CONFIGS.LOCAL;
 
 
 var pageModule = (function ($) {
