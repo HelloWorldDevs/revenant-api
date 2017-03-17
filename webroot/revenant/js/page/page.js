@@ -114,7 +114,7 @@ var pageModule = (function ($) {
     };
 
     page.conigureEnv = function(opt) {
-        window.DEV_CONFIG = DEV_CONFIGS[opt]
+        DEV_CONFIG = DEV_CONFIGS[opt]
         console.log('dev_config', DEV_CONFIG)
     }
 
