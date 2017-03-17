@@ -295,7 +295,7 @@ var pageModule = (function ($) {
     //appends login and and event handler for hiding/showing and authenticating.
     pageController.appendLogin = function () {
         (function () {
-            var LoginTemplate = $('<div display="none" class="rev_login"><button class="rev_login_reveal">Revenant</button><div class="rev_login__contaier"><h2>Revenant Login</h2><form class="rev_login__form" method="post" action="submit.data"> <input type="text" title="username" placeholder="username" /><input type="password" title="password" placeholder="password" /><button type="submit" class="btn">Login</button><a class="forgot" href="#">Forgot Username?</a></form></div></div>');
+            var LoginTemplate = $('<div class="rev_login"><button class="rev_login_reveal">Revenant</button><div class="rev_login__contaier"><h2>Revenant Login</h2><form class="rev_login__form" method="post" action="submit.data"> <input type="text" title="username" placeholder="username" /><input type="password" title="password" placeholder="password" /><button type="submit" class="btn">Login</button><a class="forgot" href="#">Forgot Username?</a></form></div></div>');
             // templateModule.getCompiledTemplate('login')
             //     .then(function (html) {
             $('body').prepend(LoginTemplate);

@@ -20,6 +20,7 @@
 
 .rev_login {
   text-align: right;
+  display: none;
 }
 
 .rev_login__contaier {
