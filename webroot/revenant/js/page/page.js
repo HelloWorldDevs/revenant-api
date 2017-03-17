@@ -362,11 +362,11 @@ var pageModule = (function ($) {
                         type : 'post',
                         data : 'form_id=user_login_form&name=' + encodeURIComponent(username) + '&pass=' + encodeURIComponent(password),
                         dataType : 'json',
-                        error : function(data) {
-                            //error code
+                        error : function(err) {
+                            console.log('login err', err);
                         },
                         success : function(data) {
-                            console.log(data);
+                            console.log('user login data', data);
                             //success code
                         }
                     });
@@ -381,6 +381,7 @@ var pageModule = (function ($) {
 
     //control module initializer, checks for session token and adds login or control panel on page load.
     pageController.init = function () {
+        console.log('pageControllerInit, add handlers')
         if (!sessionStorage.getItem('rev_auth')) {
             console.log('no rev-auth');
             pageController.appendLogin();
@@ -392,7 +393,6 @@ var pageModule = (function ($) {
             pageController.appendControlPanel();
         }
         $('#spinner-overlay').fadeOut();
-        console.log('spin hide')
     };
 
 
