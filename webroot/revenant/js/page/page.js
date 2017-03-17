@@ -8,7 +8,8 @@ var pageModule = (function ($) {
 
     const DEV_CONFIGS = {
         'LOCAL': 'http://revenant-api.dev/',
-        'PROD':  'http://revenant-api.bfdig.com/'
+        'PROD':  'http://revenant-api.bfdig.com/',
+        'DEV_CONFIG': ''
     }
 
         page.getText = function (e) {
@@ -116,7 +117,7 @@ var pageModule = (function ($) {
     };
 
     page.conigureEnv = function(opt) {
-        DEV_CONFIG = DEV_CONFIGS[opt]
+        DEV_CONFIGS['DEV_CONFIG'] = DEV_CONFIGS[opt];
         console.log('DEV CONFIG', DEV_CONFIG);
     }
 
