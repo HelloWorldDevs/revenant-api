@@ -185,42 +185,45 @@ var pageModule = (function ($) {
     };
 
 
+    pageController.editHandler = function () {
+        var dataCategory = $(this).attr('data-category');
+        var data = $(this).data('complete-path');
+        data.username = JSON.parse(sessionStorage.getItem('rev_auth')).username;
+        var authBearer = 'Bearer ' + JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
+        // console.log('data here!', data);
+        var el = document.querySelector('[data-category="' + dataCategory + '"');
+        if (!el.hasAttribute('id', data.xpath)) {
+            el.setAttribute('id', data.xpath);
+            CKEDITOR.config.inlinesave = {
+                postUrl: DEV_CONFIG + 'revenant_page/page_content',
+                postAuth: authBearer,
+                postData: {data: data},
+                useJson: true,
+                onSave: function (editor) {
+                    return true;
+                },
+                onSuccess: function (editor, data) {
+                    console.log('save successful', editor, data);
+                },
+                onFailure: function (editor, status, request) {
+                    console.log('save failed', editor, status, request);
+                },
+                useJSON: true,
+                useColorIcon: false
+            };
+            CKEDITOR.inline(el, {
+                bodyId: data,
+                title: 'test title',
+                extraPlugins: 'inlinesave',
+                allowedContent: true,
+            });
+        }
+    }
+
+
     //inline editor added on text element click
-    pageController.edit = function () {
-        $('.text--edit').on('click', function () {
-            var dataCategory = $(this).attr('data-category');
-            var data = $(this).data('complete-path');
-            data.username = JSON.parse(sessionStorage.getItem('rev_auth')).username;
-            var authBearer = 'Bearer ' + JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
-            // console.log('data here!', data);
-            var el = document.querySelector('[data-category="' + dataCategory + '"');
-            if (!el.hasAttribute('id', data.xpath)) {
-                el.setAttribute('id', data.xpath);
-                CKEDITOR.config.inlinesave = {
-                    postUrl: DEV_CONFIG + 'revenant_page/page_content',
-                    postAuth: authBearer,
-                    postData: {data: data},
-                    useJson: true,
-                    onSave: function (editor) {
-                        return true;
-                    },
-                    onSuccess: function (editor, data) {
-                        console.log('save successful', editor, data);
-                    },
-                    onFailure: function (editor, status, request) {
-                        console.log('save failed', editor, status, request);
-                    },
-                    useJSON: true,
-                    useColorIcon: false
-                };
-                CKEDITOR.inline(el, {
-                    bodyId: data,
-                    title: 'test title',
-                    extraPlugins: 'inlinesave',
-                    allowedContent: true,
-                });
-            }
-        });
+    pageController.editAddHandler = function () {
+        $('.text--edit').on('click', pageController.editHandler)
     };
 
     pageController.loginKeyBind = function() {
@@ -312,9 +315,18 @@ var pageModule = (function ($) {
         $('body').prepend(UserControlPanel);
         $('.rev_logout').on('click', function () {
             $('.rev_user_control_panel').remove();
+            $('.text--edit').unbind('click', pageController.editHandler);
             pageController.removeEditClass();
             sessionStorage.clear();
+
+            //  pageController.ckEditorInit();
+            // pageController.addEditClass();
+            // pageController.edit();
+            // pageController.appendControlPanel();
+
+
             pageController.init();
+            //de-init
         });
         // });
     };
@@ -358,7 +370,7 @@ var pageModule = (function ($) {
                             //success code
                         }
                     });
-                    pageModule.init();
+                    // pageModule.init();
                     $('.rev_login').remove();
                     pageController.addEditClass();
                     pageController.edit();
@@ -369,11 +381,11 @@ var pageModule = (function ($) {
 
     //control module initializer, checks for session token and adds login or control panel on page load.
     pageController.init = function () {
-        pageController.ckEditorInit();
         if (!sessionStorage.getItem('rev_auth')) {
             pageController.appendLogin();
             pageController.loginKeyBind();
         } else {
+            pageController.ckEditorInit();
             pageController.addEditClass();
             pageController.edit();
             pageController.appendControlPanel();
