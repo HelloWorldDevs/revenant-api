@@ -129,7 +129,7 @@ var pageModule = (function ($) {
     };
 
     page.spinnerLoad = function() {
-        $spinnerDiv = $('<div id="loading-spinner"><div>')
+        $spinnerDiv = $('<div id="spinner-overlay"><div id="loading-spinner"><div></div>')
         $('body').append($spinnerDiv);
 
         var opts = {
@@ -347,10 +347,12 @@ var pageModule = (function ($) {
         pageController.ckEditorInit();
         if (!sessionStorage.getItem('rev_auth')) {
             pageController.appendLogin();
+            $('#spinner-overlay').fadeOut();
         } else {
             pageController.addEditClass();
             pageController.edit();
             pageController.appendControlPanel();
+            $('#spinner-overlay').fadeOut();
         }
     };
 

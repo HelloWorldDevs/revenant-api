@@ -1,4 +1,4 @@
-
+/*TEST EDIT*/
 .text--edit {
   padding: .3rem;
   border-radius: 1rem;
@@ -16,6 +16,8 @@
   cursor: pointer;
 }
 
+/*LOGIN*/
+
 .rev_login {
   text-align: right;
 }
@@ -32,4 +34,15 @@
 .show {
   height: 15rem;
   opacity: 1;
+}
+
+/* LOADING SPINNER */
+#spinner-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: .7;
+  background-color: rgba(0, 176, 255, 0.1);
 }
