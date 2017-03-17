@@ -3,8 +3,8 @@
 
 
 var DEV_CONFIGS = {
-    'LOCAL': 'http://revenant-api.dev/',
-    'PROD':  'http://revenant-api.bfdig.com/'
+    LOCAL: 'http://revenant-api.dev/',
+    PROD:  'http://revenant-api.bfdig.com/'
 }
 
 
