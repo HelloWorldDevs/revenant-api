@@ -118,8 +118,8 @@ var pageModule = (function ($) {
 
     page.conigureEnv = function(opt) {
         console.log('opt', opt)
-        DEV_CONFIG.CONFIG = DEV_CONFIGS[opt];
-        console.log('DEV CONFIG', DEV_CONFIG.CONFIG);
+        DEV_CONFIGS.CONFIG = DEV_CONFIGS[opt];
+        console.log('DEV CONFIG', DEV_CONFIGS.CONFIG);
     }
 
     page.addCKEditor = function() {
