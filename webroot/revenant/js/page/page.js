@@ -360,7 +360,7 @@ var pageModule = (function ($) {
                     $.ajax({
                         url : DEV_CONFIG + "revenant_page/user/login",
                         type : 'post',
-                        data : 'form_id=user_login_form&name=' + encodeURIComponent(username) + '&pass=' + encodeURIComponent(password),
+                        data : 'form_id=user_login_form&name=' + username + '&pass=' + password,
                         dataType : 'json',
                         error: function (xhr, ajaxOptions, thrownError) {
                             console.log("revenant create page post xhr: ", xhr);
