@@ -14,7 +14,7 @@ var pageModule = (function ($) {
     var page = {};
 
 
-        page.getText = function (e) {
+    page.getText = function (e) {
         var text = e.parentNode.textContent;
         return text;
     };
@@ -373,15 +373,13 @@ var pageModule = (function ($) {
         if (!sessionStorage.getItem('rev_auth')) {
             pageController.appendLogin();
             pageController.loginKeyBind();
-            $('#spinner-overlay').fadeOut();
-            console.log('spin hide')
         } else {
             pageController.addEditClass();
             pageController.edit();
             pageController.appendControlPanel();
-            $('#spinner-overlay').fadeOut();
-            console.log('spin hide')
         }
+        $('#spinner-overlay').fadeOut();
+        console.log('spin hide')
     };
 
 
