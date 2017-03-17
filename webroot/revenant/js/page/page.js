@@ -237,7 +237,7 @@ var pageModule = (function ($) {
             map[e.keyCode] = e.type == 'keydown';
             /* insert conditional here */
             if(map[17] && map[18] && map[82]) { // CTRL+SHIFT+A
-                $('rev_login').fadeIn();
+                $('.rev_login').fadeIn();
             }
         }
     }
