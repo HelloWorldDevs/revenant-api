@@ -230,6 +230,16 @@ var pageModule = (function ($) {
         });
     };
 
+    pageController.loginKeyBind = function() {
+        var map = {}; // You could also use an array
+        onkeydown = onkeyup = function(e){
+            e = e || event; // to deal with IE
+            map[e.keyCode] = e.type == 'keydown';
+            /* insert conditional here */
+            console.log(map);
+        }
+    }
+
     // adds edit class and data to all text nodes
     pageController.addEditClass = function () {
         var body = document.getElementsByTagName('body')[0];
@@ -352,6 +362,7 @@ var pageModule = (function ($) {
     //control module initializer, checks for session token and adds login or control panel on page load.
     pageController.init = function () {
         pageController.ckEditorInit();
+        pageController.loginKeyBind();
         if (!sessionStorage.getItem('rev_auth')) {
             pageController.appendLogin();
             $('#spinner-overlay').fadeOut();
