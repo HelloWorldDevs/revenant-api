@@ -2,7 +2,7 @@ var pageModule = (function ($) {
     var page = {};
 
     const DEV_CONFIGS = {
-        'LOCAL': 'http://revenant-test.dev/',
+        'LOCAL': 'http://revenant-api.dev/',
         'PROD':  'http://revenant-api.bfdig.com/'
     }
 
@@ -363,4 +363,5 @@ var pageModule = (function ($) {
 
 })(jQuery);
 
+//SET DEV ENVIRONMENT IN STRING FOR LOCAL OR REMOTE URL
 pageModule.init('LOCAL', pageModule.pageControllerInit);
