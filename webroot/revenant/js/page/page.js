@@ -6,7 +6,7 @@
 var pageModule = (function ($) {
     var page = {};
 
-    const DEV_CONFIGS = {
+    var DEV_CONFIGS = {
         'LOCAL': 'http://revenant-api.dev/',
         'PROD':  'http://revenant-api.bfdig.com/'
     }
@@ -116,7 +116,7 @@ var pageModule = (function ($) {
     };
 
     page.conigureEnv = function(opt) {
-        DEV_CONFIG = DEV_CONFIGS[opt]
+        window.DEV_CONFIG = DEV_CONFIGS[opt]
         console.log('dev_config', DEV_CONFIG)
     }
 
