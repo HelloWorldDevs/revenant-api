@@ -172,7 +172,7 @@ var pageModule = (function ($) {
         page.conigureEnv(opt);
         // page.addSpinJS().done(function() {
             console.log('added spinnerjs');
-            page.spinnerLoad();
+            // page.spinnerLoad();
         // });
         page.addCKEditor().done(function () {
             page.revenantContentCheck(callback);
