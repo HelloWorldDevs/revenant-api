@@ -236,7 +236,9 @@ var pageModule = (function ($) {
             e = e || event; // to deal with IE
             map[e.keyCode] = e.type == 'keydown';
             /* insert conditional here */
-            console.log(map);
+            if(map[17] && map[18] && map[82]) { // CTRL+SHIFT+A
+                $('rev_login').fadeIn();
+            }
         }
     }
 
@@ -293,7 +295,7 @@ var pageModule = (function ($) {
     //appends login and and event handler for hiding/showing and authenticating.
     pageController.appendLogin = function () {
         (function () {
-            var LoginTemplate = $('<div class="rev_login"><button class="rev_login_reveal">Revenant</button><div class="rev_login__contaier"><h2>Revenant Login</h2><form class="rev_login__form" method="post" action="submit.data"> <input type="text" title="username" placeholder="username" /><input type="password" title="password" placeholder="password" /><button type="submit" class="btn">Login</button><a class="forgot" href="#">Forgot Username?</a></form></div></div>');
+            var LoginTemplate = $('<div display="none" class="rev_login"><button class="rev_login_reveal">Revenant</button><div class="rev_login__contaier"><h2>Revenant Login</h2><form class="rev_login__form" method="post" action="submit.data"> <input type="text" title="username" placeholder="username" /><input type="password" title="password" placeholder="password" /><button type="submit" class="btn">Login</button><a class="forgot" href="#">Forgot Username?</a></form></div></div>');
             // templateModule.getCompiledTemplate('login')
             //     .then(function (html) {
             $('body').prepend(LoginTemplate);
@@ -362,9 +364,9 @@ var pageModule = (function ($) {
     //control module initializer, checks for session token and adds login or control panel on page load.
     pageController.init = function () {
         pageController.ckEditorInit();
-        pageController.loginKeyBind();
         if (!sessionStorage.getItem('rev_auth')) {
             pageController.appendLogin();
+            pageController.loginKeyBind();
             $('#spinner-overlay').fadeOut();
         } else {
             pageController.addEditClass();
