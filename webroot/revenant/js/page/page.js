@@ -352,6 +352,19 @@ var pageModule = (function ($) {
                         "access_token": response_data.access_token,
                         "refresh_token": response_data.refresh_token
                     }));
+                    $.ajax({
+                        url : DEV_CONFIG + "revenant_page/user/login",
+                        type : 'post',
+                        data : 'form_id=user_login_form&name=' + encodeURIComponent(username) + '&pass=' + encodeURIComponent(password),
+                        dataType : 'json',
+                        error : function(data) {
+                            //error code
+                        },
+                        success : function(data) {
+                            console.log('user login success', data);
+                            //success code
+                        }
+                    });
                     pageModule.init();
                     $('.rev_login').remove();
                     pageController.addEditClass();
@@ -386,4 +399,4 @@ var pageModule = (function ($) {
 })(jQuery);
 
 //SET DEV ENVIRONMENT IN STRING FOR LOCAL OR REMOTE URL
-pageModule.init('PROD', pageModule.pageControllerInit);
+pageModule.init('LOCAL', pageModule.pageControllerInit);
