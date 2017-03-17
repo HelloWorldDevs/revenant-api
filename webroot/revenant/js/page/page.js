@@ -153,7 +153,9 @@ var pageModule = (function ($) {
 
     //initializes check for content and passes in pageController as callback
     page.init = function (callback) {
-        page.addSpinJS(page.spinnerLoad);
+        page.addSpinJS.done(function() {
+            page.spinnerLoad();
+        });
         page.addCKEditor().done(function () {
             page.revenantContentCheck(callback);
         });
