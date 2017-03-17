@@ -73,39 +73,41 @@ var pageModule = (function ($) {
 
     ///check for revenant content for current page, appends all content and invokes pageController callback.
     page.revenantContentCheck = function (callback) {
-        const pageLocation = window.location.hostname + window.location.pathname;
-        $.ajax({
-            method: 'GET',
-            url: DEV_CONFIG + 'rev-content/?url=' + pageLocation,
-            success: function (data) {
-                console.log('revenant content check success', data);
-                //if no revenant nodes are sent and the user is logged in, send current revenant data to be created as revenant revenant entity reference
-                if (!data.length && sessionStorage.getItem('rev_auth')) {
-                    var currentPage = {};
-                    currentPage.title = window.location.hostname + window.location.pathname;
-                    currentPage.url = pageLocation;
-                    page.createRevenantPage(currentPage);
-                }
+        $(function() {
+            const pageLocation = window.location.hostname + window.location.pathname;
+            $.ajax({
+                method: 'GET',
+                url: DEV_CONFIG + 'rev-content/?url=' + pageLocation,
+                success: function (data) {
+                    console.log('revenant content check success', data);
+                    //if no revenant nodes are sent and the user is logged in, send current revenant data to be created as revenant revenant entity reference
+                    if (!data.length && sessionStorage.getItem('rev_auth')) {
+                        var currentPage = {};
+                        currentPage.title = window.location.hostname + window.location.pathname;
+                        currentPage.url = pageLocation;
+                        page.createRevenantPage(currentPage);
+                    }
 
-                // if data is received replace all corresponding text nodes with new text using saved xpath.
-                else {
-                    data.forEach(function (item) {
-                        //excludes default content item.
-                        if (!item || item.field_xpath.includes('default')) {
-                            return
-                        }
-                        var editedNode = page.getElementByXpath(item.field_xpath);
-                        editedNode.innerHTML = item.field_new_content;
-                    })
+                    // if data is received replace all corresponding text nodes with new text using saved xpath.
+                    else {
+                        data.forEach(function (item) {
+                            //excludes default content item.
+                            if (!item || item.field_xpath.includes('default')) {
+                                return
+                            }
+                            var editedNode = page.getElementByXpath(item.field_xpath);
+                            editedNode.innerHTML = item.field_new_content;
+                        })
+                    }
+                    if (callback) {
+                        callback();
+                    }
+                },
+                error: function (err) {
+                    console.log("revenant content check error: ", err);
                 }
-                if (callback) {
-                    callback();
-                }
-            },
-            error: function (err) {
-                console.log("revenant content check error: ", err);
-            }
-        });
+            });
+        })()
     };
 
     page.conigureEnv = function(opt) {
