@@ -158,7 +158,7 @@ var pageModule = (function ($) {
             , hwaccel: false // Whether to use hardware acceleration
             , position: 'absolute' // Element positioning
         };
-
+        console.log('load spin')
         var target = document.getElementById('loading-spinner')
         var spinner = new Spinner(opts).spin(target);
     }
@@ -374,11 +374,13 @@ var pageModule = (function ($) {
             pageController.appendLogin();
             pageController.loginKeyBind();
             $('#spinner-overlay').fadeOut();
+            console.log('spin hide')
         } else {
             pageController.addEditClass();
             pageController.edit();
             pageController.appendControlPanel();
             $('#spinner-overlay').fadeOut();
+            console.log('spin hide')
         }
     };
 
