@@ -153,7 +153,7 @@ var pageModule = (function ($) {
 
     //initializes check for content and passes in pageController as callback
     page.init = function (callback) {
-        page.addSpinJS.done(function() {
+        page.addSpinJS().done(function() {
             console.log('added spinnerjs');
             page.spinnerLoad();
         });
