@@ -140,7 +140,7 @@ AddEncoding gzip svgz
 
 ######  CORS   ########
 
-Header set Access-Control-Allow-Origin "*"
+#Header set Access-Control-Allow-Origin "*"
 
 #########################
 
