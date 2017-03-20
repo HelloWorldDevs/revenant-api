@@ -362,27 +362,27 @@ var pageModule = (function ($) {
                     //     'Content-Type': 'application/hal+json',
                     //     'Authorization': authBearer,
                     //     'X-Requested-With': null
-                    $.ajax({
-                        async: true,
-                        crossDomain: true,
-                        url : DEV_CONFIG + "user/login",
-                        type: 'POST',
-                        dataType : 'json',
-                        headers: {
-                            // 'Accept': 'application/json',
-                            "Content-Type": "application/x-www-form-urlencoded",
-                            'Authorization': 'Bearer ' + response_data.access_token,
-                            // 'X-Requested-With': null
-                        },
-                        data: 'form_id=user_login_form&name=' + encodeURIComponent(username) + '&pass=' + encodeURIComponent(password),
-                        error: function (error) {
-                            console.log("revenant login: ", error, "user data is ", username  + password);
-                        },
-                        success : function(data) {
-                            console.log('user login data', data);
-                            //success code
-                        }
-                    });
+                    // $.ajax({
+                    //     async: true,
+                    //     crossDomain: true,
+                    //     url : DEV_CONFIG + "user/login",
+                    //     type: 'POST',
+                    //     dataType : 'json',
+                    //     headers: {
+                    //         // 'Accept': 'application/json',
+                    //         "Content-Type": "application/x-www-form-urlencoded",
+                    //         'Authorization': 'Bearer ' + response_data.access_token,
+                    //         // 'X-Requested-With': null
+                    //     },
+                    //     data: 'form_id=user_login_form&name=' + encodeURIComponent(username) + '&pass=' + encodeURIComponent(password),
+                    //     error: function (error) {
+                    //         console.log("revenant login: ", error, "user data is ", username  + password);
+                    //     },
+                    //     success : function(data) {
+                    //         console.log('user login data', data);
+                    //         //success code
+                    //     }
+                    // });
                     // pageModule.init();
                     $('.rev_login').remove();
                     pageController.addEditClass();
