@@ -368,10 +368,10 @@ var pageModule = (function ($) {
                         url : DEV_CONFIG + "user/login",
                         type: 'POST',
                         headers: {
-                            'Accept': 'application/json',
-                            "Content-Type": "application/hal+json",
+                            // 'Accept': 'application/json',
+                            "Content-Type": "application/x-www-form-urlencoded",
                             'Authorization': 'Bearer ' + response_data.access_token,
-                            'X-Requested-With': null
+                            // 'X-Requested-With': null
                         },
                         data: JSON.stringify({
                             "name": username, // Change to your real login
