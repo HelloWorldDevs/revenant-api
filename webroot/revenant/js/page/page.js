@@ -363,6 +363,8 @@ var pageModule = (function ($) {
                     //     'Authorization': authBearer,
                     //     'X-Requested-With': null
                     $.ajax({
+                        async: true,
+                        crossDomain: true,
                         url : DEV_CONFIG + "user/login",
                         type: 'POST',
                         headers: {
