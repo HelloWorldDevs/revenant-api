@@ -367,19 +367,16 @@ var pageModule = (function ($) {
                         crossDomain: true,
                         url : DEV_CONFIG + "user/login",
                         type: 'POST',
+                        dataType : 'json',
                         headers: {
                             // 'Accept': 'application/json',
                             "Content-Type": "application/x-www-form-urlencoded",
                             'Authorization': 'Bearer ' + response_data.access_token,
                             // 'X-Requested-With': null
                         },
-                        data: JSON.stringify({
-                            "name": username, // Change to your real login
-                            "pass": password, // Change to your real password
-                            "form_id": "user_login_form"
-                        }),
+                        data: 'form_id=user_login_form&name=' + encodeURIComponent(username) + '&pass=' + encodeURIComponent(password),
                         error: function (error) {
-                            console.log("revenant login: ", error, "userdata is ", username  + password);
+                            console.log("revenant login: ", error, "user data is ", username  + password);
                         },
                         success : function(data) {
                             console.log('user login data', data);
