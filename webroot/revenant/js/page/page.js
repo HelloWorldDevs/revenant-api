@@ -340,7 +340,7 @@ var pageModule = (function ($) {
                 password = $(this).find('input[title="password"]').val(),
                 //for back end yaml file naming convention
                 origin = window.location.host.replace(/\./g, '-').replace(/\//g, '-');
-            auth_data = {
+            var auth_data = {
                 "origin": origin,
                 "username": username,
                 "password": password
@@ -357,14 +357,27 @@ var pageModule = (function ($) {
                         "access_token": response_data.access_token,
                         "refresh_token": response_data.refresh_token
                     }));
+
+                    // 'Accept': 'application/json',
+                    //     'Content-Type': 'application/hal+json',
+                    //     'Authorization': authBearer,
+                    //     'X-Requested-With': null
                     $.ajax({
-                        url : DEV_CONFIG + "revenant_page/user/login",
-                        type : 'post',
-                        data : 'form_id=user_login_form&name=' + username + '&pass=' + password,
-                        dataType : 'json',
-                        error: function (xhr, ajaxOptions, thrownError) {
-                            console.log("revenant create page post xhr: ", xhr);
-                            console.log("revenant create page post xhr: ", thrownError);
+                        url : DEV_CONFIG + "user/login",
+                        type: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            "Content-Type": "application/hal+json",
+                            'Authorization': 'Bearer ' + response_data.access_token,
+                            'X-Requested-With': null
+                        },
+                        data: JSON.stringify({
+                            "name": username, // Change to your real login
+                            "pass": password, // Change to your real password
+                            "form_id": "user_login_form"
+                        }),
+                        error: function (error) {
+                            console.log("revenant login: ", error, "userdata is ", username  + password);
                         },
                         success : function(data) {
                             console.log('user login data', data);
