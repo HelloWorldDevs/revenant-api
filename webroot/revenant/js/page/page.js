@@ -100,6 +100,7 @@ var pageModule = (function ($) {
                             if (!item || item.field_xpath.includes('default')) {
                                 return
                             }
+                            console.log(item.field_xpath)
                             var editedNode = page.getElementByXpath(item.field_xpath);
                             editedNode.innerHTML = item.field_new_content;
                         })
@@ -124,12 +125,14 @@ var pageModule = (function ($) {
         });
     };
 
-    page.addSpinJS = function() {
-        return $.ajax({
-            url: DEV_CONFIG + 'revenant/spin/spin.min.js',
-            dataType: 'script',
-            cache: true
-        });
+    page.ckEditorConfigure = function () {
+        //ckeditor inline save plugin configuration.
+        CKEDITOR.plugins.addExternal('inlinesave', DEV_CONFIG + 'revenant/ckeditor/plugins/inlinesave/', 'plugin.js');
+        CKEDITOR.disableAutoInline = true;
+        CKEDITOR.dtd.$editable = {a: 1, address: 1, article: 1, aside: 1, blockquote: 1, body: 1, details: 1, div: 1, fieldset: 1, figcaption: 1, footer: 1, form: 1, h1: 1, h2: 1, h3: 1, h4: 1, h5: 1, h6: 1, header: 1, hgroup: 1, main: 1, nav: 1, p: 1, pre: 1, section: 1};
+
+        //for clearing ckeditor cache and allowing set Authorization Header
+        // CKEDITOR.timestamp = 'ABCD';
     };
 
     page.spinnerLoad = function() {
@@ -168,21 +171,13 @@ var pageModule = (function ($) {
     page.init = function (callback) {
         page.spinnerLoad();
         page.addCKEditor().done(function () {
+            page.ckEditorConfigure();
             page.revenantContentCheck(callback);
         });
     };
 
     var pageController = {};
 
-    pageController.ckEditorInit = function () {
-        //ckeditor inline save plugin configuration.
-        CKEDITOR.plugins.addExternal('inlinesave', DEV_CONFIG + 'revenant/ckeditor/plugins/inlinesave/', 'plugin.js');
-        CKEDITOR.disableAutoInline = true;
-        CKEDITOR.dtd.$editable = {a: 1, address: 1, article: 1, aside: 1, blockquote: 1, body: 1, details: 1, div: 1, fieldset: 1, figcaption: 1, footer: 1, form: 1, h1: 1, h2: 1, h3: 1, h4: 1, h5: 1, h6: 1, header: 1, hgroup: 1, main: 1, nav: 1, p: 1, pre: 1, section: 1};
-
-        //for clearing ckeditor cache and allowing set Authorization Header
-        // CKEDITOR.timestamp = 'ABCD';
-    };
 
 
     pageController.editHandler = function () {
@@ -200,6 +195,8 @@ var pageModule = (function ($) {
                 postData: {data: data},
                 useJson: true,
                 onSave: function (editor) {
+                    editor.destroy();
+                    el.removeAttribute('contenteditable');
                     return true;
                 },
                 onSuccess: function (editor, data) {
@@ -213,7 +210,6 @@ var pageModule = (function ($) {
             };
             CKEDITOR.inline(el, {
                 bodyId: data,
-                title: 'test title',
                 extraPlugins: 'inlinesave',
                 allowedContent: true,
             });
@@ -241,14 +237,13 @@ var pageModule = (function ($) {
     // adds edit class and data to all text nodes
     pageController.addEditClass = function () {
         var body = document.getElementsByTagName('body')[0];
-
         function recurseAdd(element) {
             if (element.childNodes.length > 0) {
                 for (var i = 0; i < element.childNodes.length; i++)
                     recurseAdd(element.childNodes[i]);
             }
-            if (element.nodeType == Node.TEXT_NODE && element.nodeValue.trim() != '' && element.parentNode.nodeName != 'SCRIPT' && element.parentNode.nodeName != 'NOSCRIPT') {
-                var completePath = pageModule.getCompletePath(element);
+            if ((element.nodeType == Node.TEXT_NODE && element.nodeValue.trim() != '' && element.parentNode.nodeName != 'SCRIPT' && element.parentNode.nodeName != 'NOSCRIPT' && element.parentNode.nodeName != 'B' && element.parentNode.nodeName != 'SPAN' && element.parentNode.nodeName != 'I' && element.parentNode.nodeName != 'STRONG' && element.parentNode.nodeName != 'EM') && (element.parentNode.nodeName != 'A' &&  $(element).parents('.text--edit').length === 0)) {
+                var completePath = page.getCompletePath(element);
                 element.parentNode.className += ' text--edit';
                 element.parentNode.setAttribute('data-category', completePath.xpath);
                 $('[data-category="' + completePath.xpath + '"]').data('complete-path', completePath);
@@ -272,16 +267,17 @@ var pageModule = (function ($) {
                 for (var i = 0; i < element.childNodes.length; i++)
                     recurseRemove(element.childNodes[i]);
             }
-            if (element.nodeType == Node.TEXT_NODE && element.nodeValue.trim() != '' && element.parentNode.nodeName != 'SCRIPT' && element.parentNode.nodeName != 'NOSCRIPT') {
-                var completePath = pageModule.getCompletePath(element);
+                var completePath = page.getCompletePath(element);
                 element.parentNode.classList.remove("text--edit");
                 $('[data-category="' + completePath.xpath + '"]').removeData('complete-path');
                 element.parentNode.removeAttribute('data-category');
                 element.parentNode.removeAttribute('contenteditable');
+                for (name in CKEDITOR.instances) {
+                    CKEDITOR.instances[name].destroy(true);
+                }
                 if (element.parentNode.nodeName === 'A') {
                     element.parentNode.onclick = null;
                 }
-            }
         }
         recurseRemove(body);
     };
@@ -319,7 +315,7 @@ var pageModule = (function ($) {
             pageController.removeEditClass();
             sessionStorage.clear();
 
-            //  pageController.ckEditorInit();
+            // pageController.ckEditorInit();
             // pageController.addEditClass();
             // pageController.edit();
             // pageController.appendControlPanel();
@@ -357,50 +353,20 @@ var pageModule = (function ($) {
                         "access_token": response_data.access_token,
                         "refresh_token": response_data.refresh_token
                     }));
-
-                    // 'Accept': 'application/json',
-                    //     'Content-Type': 'application/hal+json',
-                    //     'Authorization': authBearer,
-                    //     'X-Requested-With': null
-                    // $.ajax({
-                    //     async: true,
-                    //     crossDomain: true,
-                    //     url : DEV_CONFIG + "user/login",
-                    //     type: 'POST',
-                    //     dataType : 'json',
-                    //     headers: {
-                    //         // 'Accept': 'application/json',
-                    //         "Content-Type": "application/x-www-form-urlencoded",
-                    //         'Authorization': 'Bearer ' + response_data.access_token,
-                    //         // 'X-Requested-With': null
-                    //     },
-                    //     data: 'form_id=user_login_form&name=' + encodeURIComponent(username) + '&pass=' + encodeURIComponent(password),
-                    //     error: function (error) {
-                    //         console.log("revenant login: ", error, "user data is ", username  + password);
-                    //     },
-                    //     success : function(data) {
-                    //         console.log('user login data', data);
-                    //         //success code
-                    //     }
-                    // });
-                    // pageModule.init();
+                    page.revenantContentCheck(pageController.init);
                     $('.rev_login').remove();
-                    pageController.addEditClass();
-                    pageController.editAddHandler();
-                    pageController.appendControlPanel();
                 });
         })
     };
 
     //control module initializer, checks for session token and adds login or control panel on page load.
     pageController.init = function () {
-        console.log('pageControllerInit, add handlers')
+        console.log('pageControllerInit, add login or handlers')
         if (!sessionStorage.getItem('rev_auth')) {
             console.log('no rev-auth');
             pageController.appendLogin();
             pageController.loginKeyBind();
         } else {
-            pageController.ckEditorInit();
             pageController.addEditClass();
             pageController.editAddHandler();
             pageController.appendControlPanel();
