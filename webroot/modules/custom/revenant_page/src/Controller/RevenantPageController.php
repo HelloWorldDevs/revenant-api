@@ -21,7 +21,7 @@ class RevenantPageController extends ControllerBase {
      */
     public function post_creds(Request $request) {
         $content = json_decode($request->getContent(), TRUE);
-        $origin = strtr($content['origin'], array('.' => '-', '/' => '-')));
+        $origin = strtr($content['origin'], array('.' => '-', '/' => '-'));
         $username = $content["username"];
         $password = $content["password"];
 
