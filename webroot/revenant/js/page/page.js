@@ -100,7 +100,6 @@ var pageModule = (function ($) {
                             if (!item || item.field_xpath.includes('default')) {
                                 return
                             }
-                            console.log(item.field_xpath)
                             var editedNode = page.getElementByXpath(item.field_xpath);
                             editedNode.innerHTML = item.field_new_content;
                         })
@@ -212,6 +211,23 @@ var pageModule = (function ($) {
                 bodyId: data,
                 extraPlugins: 'inlinesave',
                 allowedContent: true,
+                toolbarGroups : [
+                    { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+                    { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+                    { name: 'links', groups: [ 'links' ] },
+                    { name: 'forms', groups: [ 'forms' ] },
+                    { name: 'tools', groups: [ 'tools' ] },
+                    { name: 'others', groups: [ 'others' ] },
+                    { name: 'insert', groups: [ 'insert' ] },
+                    '/',
+                    { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+                    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+                    { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+                    { name: 'styles', groups: [ 'styles' ] },
+                    { name: 'colors', groups: [ 'colors' ] },
+                    { name: 'about', groups: [ 'about' ] }
+                ],
+                removeButtons : 'Maximize,Image,Table,Anchor,Indent,Outdent,Blockquote,Styles,Format,About'
             });
         }
     }
@@ -232,57 +248,60 @@ var pageModule = (function ($) {
                 $('.rev_login').fadeIn();
             }
         }
-    }
+    };
+
+    //elements to skip in recurseAdd function
+    pageController.skipElements = ['SCRIPT','NOSCRIPT','B','SPAN','I','STRONG','EM','A'];
+
+    pageController.recurseAdd = function(element) {
+        if (element.childNodes.length > 0) {
+            for (var i = 0; i < element.childNodes.length; i++)
+                this.recurseAdd(element.childNodes[i]);
+        }
+        if ((element.nodeType == Node.TEXT_NODE && element.nodeValue.trim() != '' && pageController.skipElements.indexOf(element.parentNode.nodeName) <= 0) && (element.parentNode.nodeName != 'A' &&  $(element).parents('.text--edit').length === 0)) {
+            var completePath = page.getCompletePath(element);
+            element.parentNode.className += ' text--edit';
+            element.parentNode.setAttribute('data-category', completePath.xpath);
+            $('[data-category="' + completePath.xpath + '"]').data('complete-path', completePath);
+            element.parentNode.setAttribute('contenteditable', 'true');
+            if (element.parentNode.nodeName === 'A') {
+                element.parentNode.onclick = function (e) {
+                    e.preventDefault();
+                }
+            }
+        }
+    };
+
+    pageController.recurseRemove = function(element) {
+        if (element.childNodes.length > 0) {
+            for (var i = 0; i < element.childNodes.length; i++)
+                this.recurseRemove(element.childNodes[i]);
+        }
+        var completePath = page.getCompletePath(element);
+        element.parentNode.classList.remove("text--edit");
+        $('[data-category="' + completePath.xpath + '"]').removeData('complete-path');
+        element.parentNode.removeAttribute('data-category');
+        element.parentNode.removeAttribute('contenteditable');
+        for (name in CKEDITOR.instances) {
+            CKEDITOR.instances[name].destroy(true);
+        }
+        if (element.parentNode.nodeName === 'A') {
+            element.parentNode.onclick = null;
+        }
+    };
 
     // adds edit class and data to all text nodes
     pageController.addEditClass = function () {
         var body = document.getElementsByTagName('body')[0];
-        function recurseAdd(element) {
-            if (element.childNodes.length > 0) {
-                for (var i = 0; i < element.childNodes.length; i++)
-                    recurseAdd(element.childNodes[i]);
-            }
-            if ((element.nodeType == Node.TEXT_NODE && element.nodeValue.trim() != '' && element.parentNode.nodeName != 'SCRIPT' && element.parentNode.nodeName != 'NOSCRIPT' && element.parentNode.nodeName != 'B' && element.parentNode.nodeName != 'SPAN' && element.parentNode.nodeName != 'I' && element.parentNode.nodeName != 'STRONG' && element.parentNode.nodeName != 'EM') && (element.parentNode.nodeName != 'A' &&  $(element).parents('.text--edit').length === 0)) {
-                var completePath = page.getCompletePath(element);
-                element.parentNode.className += ' text--edit';
-                element.parentNode.setAttribute('data-category', completePath.xpath);
-                $('[data-category="' + completePath.xpath + '"]').data('complete-path', completePath);
-                element.parentNode.setAttribute('contenteditable', 'true');
-                if (element.parentNode.nodeName === 'A') {
-                    element.parentNode.onclick = function (e) {
-                        e.preventDefault();
-                    }
-                }
-            }
-        }
-        recurseAdd(body);
+        pageController.recurseAdd(body);
     };
 
     // removes edit class and data on all text nodes
     pageController.removeEditClass = function () {
         var body = document.getElementsByTagName('body')[0];
-
-        function recurseRemove(element) {
-            if (element.childNodes.length > 0) {
-                for (var i = 0; i < element.childNodes.length; i++)
-                    recurseRemove(element.childNodes[i]);
-            }
-                var completePath = page.getCompletePath(element);
-                element.parentNode.classList.remove("text--edit");
-                $('[data-category="' + completePath.xpath + '"]').removeData('complete-path');
-                element.parentNode.removeAttribute('data-category');
-                element.parentNode.removeAttribute('contenteditable');
-                for (name in CKEDITOR.instances) {
-                    CKEDITOR.instances[name].destroy(true);
-                }
-                if (element.parentNode.nodeName === 'A') {
-                    element.parentNode.onclick = null;
-                }
-        }
-        recurseRemove(body);
+        pageController.recurseRemove(body);
     };
 
-//
 
     //appends login and and event handler for hiding/showing and authenticating.
     pageController.appendLogin = function () {
@@ -309,20 +328,14 @@ var pageModule = (function ($) {
         var rev_auth = JSON.parse(sessionStorage.getItem('rev_auth'));
         var UserControlPanel = UserControlPanelTemplate(rev_auth.username);
         $('body').prepend(UserControlPanel);
+
+        //logout handler
         $('.rev_logout').on('click', function () {
             $('.rev_user_control_panel').remove();
             $('.text--edit').unbind('click', pageController.editHandler);
             pageController.removeEditClass();
             sessionStorage.clear();
-
-            // pageController.ckEditorInit();
-            // pageController.addEditClass();
-            // pageController.edit();
-            // pageController.appendControlPanel();
-
-
-            pageController.init();
-            //de-init
+            pageController.appendLogin();
         });
         // });
     };
@@ -334,8 +347,7 @@ var pageModule = (function ($) {
             e.preventDefault();
             var username = $(this).find('input[title="username"]').val(),
                 password = $(this).find('input[title="password"]').val(),
-                //for back end yaml file naming convention
-                origin = window.location.host.replace(/\./g, '-').replace(/\//g, '-');
+                origin = window.location.host;
             var auth_data = {
                 "origin": origin,
                 "username": username,
