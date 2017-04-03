@@ -67,7 +67,11 @@ var pageControllerModule = (function($){
       map[e.keyCode] = e.type == 'keydown';
       /* insert conditional here */
       if(map[17] && map[18] && map[82]) { // CTRL+SHIFT+A
-        $('.rev_login').fadeIn();
+       if($('.rev_login').css('display') === 'none') {
+         $('.rev_login').fadeIn();
+       } else {
+         $('.rev_login').fadeOut();
+       }
       }
     }
   };
@@ -81,7 +85,7 @@ var pageControllerModule = (function($){
         this.recurseAdd(element.childNodes[i]);
     }
     if ((element.nodeType == Node.TEXT_NODE && element.nodeValue.trim() != '' && pageController.skipElements.indexOf(element.parentNode.nodeName) <= 0) && (element.parentNode.nodeName != 'A' &&  $(element).parents('.text--edit').length === 0)) {
-      var completePath = page.getCompletePath(element);
+      var completePath = pageModule.getCompletePath(element);
       element.parentNode.className += ' text--edit';
       element.parentNode.setAttribute('data-category', completePath.xpath);
       $('[data-category="' + completePath.xpath + '"]').data('complete-path', completePath);
@@ -99,7 +103,7 @@ var pageControllerModule = (function($){
       for (var i = 0; i < element.childNodes.length; i++)
         this.recurseRemove(element.childNodes[i]);
     }
-    var completePath = page.getCompletePath(element);
+    var completePath = pageModule.getCompletePath(element);
     element.parentNode.classList.remove("text--edit");
     $('[data-category="' + completePath.xpath + '"]').removeData('complete-path');
     element.parentNode.removeAttribute('data-category');
@@ -129,6 +133,7 @@ var pageControllerModule = (function($){
   pageController.appendLogin = function () {
     (function () {
       var LoginTemplate = $('<div class="rev_login" style="display: none;"><button class="rev_login_reveal">Revenant</button><div class="rev_login__contaier"><h2>Revenant Login</h2><form class="rev_login__form" method="post" action="submit.data"> <input type="text" title="username" placeholder="username" /><input type="password" title="password" placeholder="password" /><button type="submit" class="btn">Login</button><a class="forgot" href="#">Forgot Username?</a></form></div></div>');
+      //TODO: readd template functionality? revenant login and control panel handled with js elements
       // templateModule.getCompiledTemplate('login')
       //     .then(function (html) {
       $('body').prepend(LoginTemplate);
@@ -145,6 +150,7 @@ var pageControllerModule = (function($){
     var UserControlPanelTemplate = function (username) {
       return $('<div class="rev_user_control_panel"><h4 class="rev_user">Currently Logged in as: ' + username + '</h4><button class="rev_logout">Logout of Revenant</button></div>')
     };
+    //TODO: readd template functionality? revenant login and control panel handled with js elements
     // templateModule.getCompiledTemplate('user_control_panel')
     //     .then(function (html) {
     var rev_auth = JSON.parse(sessionStorage.getItem('rev_auth'));
@@ -187,7 +193,7 @@ var pageControllerModule = (function($){
             "access_token": response_data.access_token,
             "refresh_token": response_data.refresh_token
           }));
-          page.revenantContentCheck(pageController.init);
+          pageModule.revenantContentCheck(pageController.init);
           $('.rev_login').remove();
         });
     })
@@ -207,7 +213,6 @@ var pageControllerModule = (function($){
     }
     $('#spinner-overlay').fadeOut();
   };
-
 
   return {
     init : pageController.init
