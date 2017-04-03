@@ -5,6 +5,8 @@
 Revenant uses gulp for compiling and minifying scripts into revenant.min.js. 
 The project is built for editing static sites, and interfaces with the D8 revenenat-api, which manages all saved content. 
 
+TODO: include install and setup. 
+
 To initilaize, the following script needs to be added to the page that will be edited.  
  
 
