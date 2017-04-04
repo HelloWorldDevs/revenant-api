@@ -12,7 +12,6 @@ To initilaize, the following script needs to be added to the page that will be e
 
 ``` 
 <script type="text/javascript" src="http://revenant-api.bfdig.dev/revenant/dist/revenant.min.js"></script>
-
 ```
 
 ##Use with revenant-api
