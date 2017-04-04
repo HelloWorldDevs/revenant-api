@@ -140,7 +140,7 @@ var pageModule = (function ($) {
   page.ckEditorConfigure = function () {
     //ckeditor inline save plugin configuration.
     CKEDITOR.plugins.addExternal('inlinesave', DEV_CONFIG + 'revenant/lib/ckeditor/plugins/rev-inlinesave/', 'plugin.js');
-    CKEDITOR.plugins.addExternal('imageuploader', DEV_CONFIG + 'revenant/lib/ckeditor/plugins/imageuploader/', 'plugin.js');
+    // CKEDITOR.plugins.addExternal('imageuploader', DEV_CONFIG + 'revenant/lib/ckeditor/plugins/imageuploader/', 'plugin.js');
     CKEDITOR.disableAutoInline = true;
     CKEDITOR.dtd.$editable = {
       a: 1,
@@ -171,7 +171,7 @@ var pageModule = (function ($) {
     };
 
     //uncomment and run for clearing ckeditor cache and allowing modification of plugins. Used when modifying inline save plugin.
-    // CKEDITOR.timestamp = 'ABCD';
+    CKEDITOR.timestamp = 'ABCD';
   };
 
   //spin js loading gif function, used during content check and insertion
