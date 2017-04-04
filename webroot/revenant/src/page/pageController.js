@@ -46,8 +46,7 @@ var pageControllerModule = (function($){
       CKEDITOR.inline(el, {
         bodyId: data,
         extraPlugins: 'inlinesave,image,widgetselection,widget,filetools,lineutils,notification,notificationaggregator,uploadwidget,uploadimage',
-        uploadUrl :'/uploader/upload.php',
-        filebrowserImageUploadUrl: '/uploader.js',
+        filebrowserImageUploadUrl: 'http://revenant-api.bfdig.com/revenant/src/page/uploader.php',
         allowedContent: true,
         toolbarGroups : [
           { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
