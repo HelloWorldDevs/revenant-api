@@ -41,10 +41,12 @@ var pageControllerModule = (function($){
         useJSON: true,
         useColorIcon: false
       };
+
       //ckeditor toolbar configuration
       CKEDITOR.inline(el, {
         bodyId: data,
-        extraPlugins: 'inlinesave, uploadimage',
+        extraPlugins: 'inlinesave,uploadimage,uploadwidget',
+          imageUploadUrl: '/uploader/upload.php?type=Images',
         allowedContent: true,
         toolbarGroups : [
           { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
