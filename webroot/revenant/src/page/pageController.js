@@ -47,6 +47,7 @@ var pageControllerModule = (function($){
         bodyId: data,
         extraPlugins: 'inlinesave,image,widgetselection,widget,filetools,lineutils,notification,notificationaggregator,uploadwidget,uploadimage',
         uploadUrl :'/uploader/upload.php',
+        filebrowserImageUploadUrl: '/uploader.js',
         allowedContent: true,
         toolbarGroups : [
           { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
