@@ -45,7 +45,7 @@ var pageControllerModule = (function($){
       //ckeditor toolbar configuration
       CKEDITOR.inline(el, {
         bodyId: data,
-        extraPlugins: 'inlinesave,uploadimage,uploadwidget',
+        extraPlugins: 'inlinesave,widget,filetools,notificationaggregator,uploadwidgetuploadimage',
           imageUploadUrl: '/uploader/upload.php?type=Images',
         allowedContent: true,
         toolbarGroups : [
