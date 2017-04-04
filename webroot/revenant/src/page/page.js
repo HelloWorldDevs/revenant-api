@@ -118,15 +118,6 @@ var pageModule = (function ($) {
     })
   };
 
-  //loads ckeditor via ajax.
-  page.addCKEditor = function () {
-    return $.ajax({
-      url: DEV_CONFIG + 'revenant/ckeditor/ckeditor.js',
-      dataType: 'script',
-      cache: true
-    });
-  };
-
   //prepends styling scripts to page
   page.addCSS = function () {
     $("<link/>", {
@@ -134,7 +125,16 @@ var pageModule = (function ($) {
       type: "text/css",
       href: DEV_CONFIG + "/revenant/src/css/main.css"
     }).appendTo("head");
-  }
+  };
+
+  //loads ckeditor via ajax.
+  page.addCKEditor = function () {
+    return $.ajax({
+      url: DEV_CONFIG + 'revenant/lib/ckeditor/ckeditor.js',
+      dataType: 'script',
+      cache: true
+    });
+  };
 
   //configures ckeditor
   page.ckEditorConfigure = function () {
