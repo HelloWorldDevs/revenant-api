@@ -39,12 +39,12 @@ require(__DIR__ . '/check_permission.php');
 if ($username == "" and $password == "") {
     if(!isset($_SESSION['username'])){
         include(__DIR__ . '/new.php');
-        exit;	
+        exit;
     }
 } else {
     if(!isset($_SESSION['username'])){
         include(__DIR__ . '/loginindex.php');
-        exit;	
+        exit;
     }
 }
 

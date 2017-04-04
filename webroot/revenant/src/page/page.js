@@ -140,7 +140,7 @@ var pageModule = (function ($) {
   page.ckEditorConfigure = function () {
     //ckeditor inline save plugin configuration.
     CKEDITOR.plugins.addExternal('inlinesave', DEV_CONFIG + 'revenant/lib/ckeditor/plugins/rev-inlinesave/', 'plugin.js');
-    CKEDITOR.plugins.addExternal('imageuploader', DEV_CONFIG + 'revenant/lib/ckeditor/plugins/imageuploader/', 'plugin.js');
+    // CKEDITOR.plugins.addExternal('imageuploader', DEV_CONFIG + 'revenant/lib/ckeditor/plugins/imageuploader/', 'plugin.js');
     CKEDITOR.disableAutoInline = true;
     CKEDITOR.dtd.$editable = {
       a: 1,
