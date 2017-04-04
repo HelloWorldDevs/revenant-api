@@ -3,6 +3,6 @@
 
 CKEDITOR.plugins.add( 'imageuploader', {
     init: function( editor ) {
-        editor.config.filebrowserBrowseUrl = 'ckeditor/plugins/imageuploader/imgbrowser.php';
+        editor.config.filebrowserBrowseUrl = 'http://revenant-api.bfdig.com/revenant/lib/ckeditor/plugins/imageuploader/imgbrowser.php';
     }
 });
