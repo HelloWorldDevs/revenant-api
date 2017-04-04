@@ -8,19 +8,24 @@ var DEV_CONFIGS = {
 
 var DEV_CONFIG = DEV_CONFIGS.PROD;
 
+
+//pageModule is responsible for rendering page display, makes checks for content and updates page text nodes, also adds needed scripts and configuration
 var pageModule = (function ($) {
 
   var page = {};
 
+  //gets text from element
   page.getText = function (e) {
     var text = e.parentNode.textContent;
     return text;
   };
 
+  //gets the element by xpath
   page.getElementByXpath = function (path) {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
   };
 
+  //gets the xpath to an element
   page.getXPath = function (element) {
     var xpath = '';
     //  loop walks up dom tree for all nodes
@@ -113,7 +118,7 @@ var pageModule = (function ($) {
     })
   };
 
-
+  //loads ckeditor via ajax.
   page.addCKEditor = function () {
     return $.ajax({
       url: DEV_CONFIG + 'revenant/ckeditor/ckeditor.js',
@@ -122,6 +127,7 @@ var pageModule = (function ($) {
     });
   };
 
+  //prepends styling scripts to page
   page.addCSS = function () {
     $("<link/>", {
       rel: "stylesheet",
@@ -130,10 +136,10 @@ var pageModule = (function ($) {
     }).appendTo("head");
   }
 
-
+  //configures ckeditor
   page.ckEditorConfigure = function () {
     //ckeditor inline save plugin configuration.
-    CKEDITOR.plugins.addExternal('inlinesave', DEV_CONFIG + 'revenant/ckeditor/plugins/inlinesave/', 'plugin.js');
+    CKEDITOR.plugins.addExternal('inlinesave', DEV_CONFIG + 'revenant/lib/ckeditor/plugins/rev-inlinesave/', 'plugin.js');
     CKEDITOR.disableAutoInline = true;
     CKEDITOR.dtd.$editable = {
       a: 1,
@@ -163,10 +169,11 @@ var pageModule = (function ($) {
       section: 1
     };
 
-    //for clearing ckeditor cache and allowing set Authorization Header in inline save plugin
-    // CKEDITOR.timestamp = 'ABCD';
+    //uncomment and run for clearing ckeditor cache and allowing modification of plugins. Used when modifying inline save plugin.
+    CKEDITOR.timestamp = 'ABCD';
   };
 
+  //spin js loading gif function, used during content check and insertion
   page.spinnerLoad = function () {
     $spinnerDiv = $('<div id="spinner-overlay" style="position: fixed; height: 100%; z-index: 9999; top: 0;bottom: 0;left: 0;right: 0;opacity: .9;background-color: #fff;"><div id="loading-spinner"><div></div>')
     $('body').append($spinnerDiv);
@@ -193,13 +200,12 @@ var pageModule = (function ($) {
       , hwaccel: false // Whether to use hardware acceleration
       , position: 'absolute' // Element positioning
     };
-    console.log('load spin')
     var target = document.getElementById('loading-spinner')
     var spinner = new Spinner(opts).spin(target);
   }
 
 
-  //initializes check for content and passes in pageController as callback
+  //initializes pageModule, check for content and passes in pageController as callback
   page.init = function (callback) {
     page.spinnerLoad();
     page.addCKEditor().done(function () {
@@ -209,6 +215,7 @@ var pageModule = (function ($) {
     });
   };
 
+  //export other needed functions that pageController will use.
   return {
     revenantContentCheck: page.revenantContentCheck,
     getCompletePath: page.getCompletePath,
@@ -217,5 +224,5 @@ var pageModule = (function ($) {
 
 })(jQuery);
 
-
+//THIS IS WHAT STARTS EVERYTHING :)
 pageModule.init(pageControllerModule.init);

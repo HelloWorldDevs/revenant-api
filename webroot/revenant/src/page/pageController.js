@@ -1,21 +1,33 @@
+
+//pageControllerModule is responsible for attaching extra views, editor classes, data categories, and adds event handlers to pageevent handlers to page. Is initialized as a callback in pageModule.init, and fires different behavior depending on if user is logged in or not.
 var pageControllerModule = (function($){
   var pageController = {};
 
+  //adds ckedittor inline and inline save handlers to editor instances.
   pageController.editHandler = function () {
-    var dataCategory = $(this).attr('data-category');
+
+    //data saved on text node to send to D8
     var data = $(this).data('complete-path');
+
+    //needed parameters for author and authorization sent to D8
     data.username = JSON.parse(sessionStorage.getItem('rev_auth')).username;
     var authBearer = 'Bearer ' + JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
-    // console.log('data here!', data);
-    var el = document.querySelector('[data-category="' + dataCategory + '"');
+
+    //specific element selected by data-category attribute to initialize ckeditor with
+    var el = document.querySelector('[data-category="' + $(this).attr('data-category') + '"');
+
+    //make sure editor instance does not exist already by setting unique xpath attribute for check
     if (!el.hasAttribute('id', data.xpath)) {
       el.setAttribute('id', data.xpath);
+
+      //configure ckeditor instance
       CKEDITOR.config.inlinesave = {
         postUrl: DEV_CONFIG + 'revenant_page/page_content',
-        postAuth: authBearer,
+        postAuth: authBearer, //custom config set by KW in inline save plugin, is and xhr authorization header.
         postData: {data: data},
         useJson: true,
         onSave: function (editor) {
+          //destory ckeditor instance and remove contenteditable attribute
           editor.destroy();
           el.removeAttribute('contenteditable');
           return true;
@@ -29,6 +41,7 @@ var pageControllerModule = (function($){
         useJSON: true,
         useColorIcon: false
       };
+      //ckeditor toolbar configuration
       CKEDITOR.inline(el, {
         bodyId: data,
         extraPlugins: 'inlinesave',
@@ -49,7 +62,7 @@ var pageControllerModule = (function($){
           { name: 'colors', groups: [ 'colors' ] },
           { name: 'about', groups: [ 'about' ] }
         ],
-        removeButtons : 'Maximize,Image,Table,Anchor,Indent,Outdent,Blockquote,Styles,Format,About'
+        removeButtons : 'Maximize,Table,Anchor,Indent,Outdent,Blockquote,Styles,Format,About'
       });
     }
   }
