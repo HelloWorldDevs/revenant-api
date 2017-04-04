@@ -45,8 +45,8 @@ var pageControllerModule = (function($){
       //ckeditor toolbar configuration
       CKEDITOR.inline(el, {
         bodyId: data,
-        extraPlugins: 'inlinesave,widgetselection,widget,filetools,lineutils,notification,notificationaggregator,uploadwidget,uploadimage',
-          imageUploadUrl: '/uploader/upload.php?type=Images',
+        extraPlugins: 'inlinesave,image,widgetselection,widget,filetools,lineutils,notification,notificationaggregator,uploadwidget,uploadimage',
+        uploadUrl :'/uploader/upload.php',
         allowedContent: true,
         toolbarGroups : [
           { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
