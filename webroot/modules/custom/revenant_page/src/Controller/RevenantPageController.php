@@ -10,8 +10,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\node\Entity\Node;
-use Drupal\Core\Logger\RfcLoggerTrait;
-use Psr\Log\LoggerInterface;
+use Drupal\revenant_page\Logger\RevenantPageLogger;
 
 class RevenantPageController extends ControllerBase {
 
@@ -152,15 +151,3 @@ class RevenantPageController extends ControllerBase {
 
 }
 
-
-class RevenantPageLogger implements LoggerInterface {
-    use RfcLoggerTrait;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function log($level, $message, array $context = array()) {
-        \Drupal::logger('revenant_page')->notice($message);
-    }
-
-}
