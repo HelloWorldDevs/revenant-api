@@ -11,7 +11,7 @@ var pageControllerModule = (function($){
 
     //needed parameters for author and authorization sent to D8
     data.username = JSON.parse(sessionStorage.getItem('rev_auth')).username;
-    var authToken = JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
+    var authBearer = 'Bearer ' + JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
 
     //specific element selected by data-category attribute to initialize ckeditor with
     var el = document.querySelector('[data-category="' + $(this).attr('data-category') + '"');
@@ -23,7 +23,7 @@ var pageControllerModule = (function($){
       //configure ckeditor instance
       CKEDITOR.config.inlinesave = {
         postUrl: DEV_CONFIG + '/revenant_page/page_content',
-        postAuth: 'Bearer ' +  authToken, //custom config set by KW in inline save plugin, is and xhr authorization header.
+        postAuth: authBearer, //custom config set by KW in inline save plugin, is and xhr authorization header.
         postData: {data: data},
         useJson: true,
         onSave: function (editor) {
@@ -47,7 +47,7 @@ var pageControllerModule = (function($){
       CKEDITOR.inline(el, {
         bodyId: data,
         extraPlugins: 'inlinesave',
-        filebrowserImageUploadUrl: DEV_CONFIG + '/revenant_page/page_content/image?access_token=' + authToken,
+        filebrowserImageUploadUrl: DEV_CONFIG + '/revenant_page/page_content/image',
         allowedContent: true,
         toolbarGroups : [
           { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
