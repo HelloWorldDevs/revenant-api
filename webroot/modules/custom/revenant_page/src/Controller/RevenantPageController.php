@@ -143,7 +143,7 @@ class RevenantPageController extends ControllerBase {
     }
 
     public function post_page_content_image(Request $request) {
-          RevenantPageLogger::log($request);
+//          RevenantPageLogger::log($request);
           echo('hello again!');
     }
 
