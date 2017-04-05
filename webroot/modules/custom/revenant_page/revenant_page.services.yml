@@ -1,6 +1,5 @@
 services:
-
   logger.mylog:
-    class: \Drupal\revenant_page\Controller\RevenantPageLogger
+    class: \Drupal\revenant_page\src\Logger\RevenantPageLogger
     tags:
       - { name: logger }
