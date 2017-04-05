@@ -22,7 +22,7 @@ var pageControllerModule = (function($){
 
       //configure ckeditor instance
       CKEDITOR.config.inlinesave = {
-        postUrl: DEV_CONFIG + 'revenant_page/page_content',
+        postUrl: DEV_CONFIG + '/revenant_page/page_content',
         postAuth: authBearer, //custom config set by KW in inline save plugin, is and xhr authorization header.
         postData: {data: data},
         useJson: true,
@@ -42,11 +42,12 @@ var pageControllerModule = (function($){
         useColorIcon: false
       };
 
+//image,widgetselection,widget,filetools,lineutils,notification,notificationaggregator,uploadwidget,uploadimage
       //ckeditor toolbar configuration
       CKEDITOR.inline(el, {
         bodyId: data,
-        extraPlugins: 'inlinesave,image,widgetselection,widget,filetools,lineutils,notification,notificationaggregator,uploadwidget,uploadimage',
-        filebrowserImageUploadUrl: 'http://revenant-api.bfdig.com/revenant/src/page/uploader.php',
+        extraPlugins: 'inlinesave',
+        filebrowserImageUploadUrl: DEV_CONFIG + '/revenant_page/page_content/image',
         allowedContent: true,
         toolbarGroups : [
           { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
