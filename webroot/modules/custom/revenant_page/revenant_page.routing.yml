@@ -24,10 +24,12 @@ page_content.post:
   options:
     _auth: [ 'basic_auth', 'oauth2' ]
 
-#page_image.post:
-#  path: 'revenant_page/page_content/image'
-#  defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_page_content_image' }
-#  methods:  [GET]
-#  requirements:
-#    _access: 'TRUE'
+page_image.post:
+  path: 'revenant_page/page_content/image'
+  defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_page_content_image' }
+  methods:  [GET]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    _auth: [ 'basic_auth', 'oauth2' ]
 
