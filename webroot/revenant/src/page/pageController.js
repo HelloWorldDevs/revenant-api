@@ -47,7 +47,7 @@ var pageControllerModule = (function($){
       CKEDITOR.inline(el, {
         bodyId: data,
         extraPlugins: 'inlinesave',
-        filebrowserImageUploadUrl: DEV_CONFIG + 'revenant/src/page/uploader.php',
+        filebrowserImageUploadUrl: DEV_CONFIG + '/revenant_page/page_content/image',
         allowedContent: true,
         toolbarGroups : [
           { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
