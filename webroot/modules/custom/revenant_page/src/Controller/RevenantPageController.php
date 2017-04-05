@@ -7,14 +7,13 @@
 namespace Drupal\revenant_page\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
-
 use Drupal\node\Entity\Node;
+use Drupal\Core\Logger\RfcLoggerTrait;
+use Psr\Log\LoggerInterface;
 
 class RevenantPageController extends ControllerBase {
-
 
     /**
      * Proxy for handling authentication, retrieves client credentials.
@@ -143,6 +142,25 @@ class RevenantPageController extends ControllerBase {
 
 
         return new JsonResponse($response);
+    }
+
+    public function post_page_content_image(Request $request) {
+        RevenantPageLogger::log($request);
+        return new JsonResponse('hello!');
+
+    }
+
+}
+
+
+class RevenantPageLogger implements LoggerInterface {
+    use RfcLoggerTrait;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function log($level, $message, array $context = array()) {
+        \Drupal::logger('revenant_page')->notice($message);
     }
 
 }
