@@ -22,7 +22,7 @@ var pageControllerModule = (function($){
 
       //configure ckeditor instance
       CKEDITOR.config.inlinesave = {
-        postUrl: DEV_CONFIG + 'revenant_page/page_content',
+        postUrl: DEV_CONFIG + '/revenant_page/page_content',
         postAuth: authBearer, //custom config set by KW in inline save plugin, is and xhr authorization header.
         postData: {data: data},
         useJson: true,
