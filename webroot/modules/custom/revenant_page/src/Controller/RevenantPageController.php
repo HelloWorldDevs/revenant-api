@@ -139,14 +139,12 @@ class RevenantPageController extends ControllerBase {
         $response['data'] = 'Post ';
         $response['method'] = 'POST';
 
-
         return new JsonResponse($response);
     }
 
     public function post_page_content_image(Request $request) {
-        RevenantPageLogger::log($request);
-        return new JsonResponse('hello!');
-
+//        RevenantPageLogger::log($request);
+          echo('hello!');
     }
 
 }
