@@ -151,14 +151,14 @@ class RevenantPageController extends ControllerBase
 
 
 
-        $CKEditor = $_GET['CKEditor'] ;
+        $CKEditor = \Drupal::request()->query->get('CKEditor') ;
         RevenantPageLogger::log($CKEditor);
         // Required: Function number as indicated by CKEditor.
-        $funcNum = $_GET['CKEditorFuncNum'] ;
+        $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
         RevenantPageLogger::log($funcNum);
 
         // Optional: To provide localized messages
-        $langCode = $_GET['langCode'] ;
+        $langCode = \Drupal::request()->query->get('langCode');
         RevenantPageLogger::log($langCode);
 
         // ------------------------
