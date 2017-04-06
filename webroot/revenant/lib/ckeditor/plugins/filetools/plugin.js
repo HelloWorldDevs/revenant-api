@@ -10,7 +10,6 @@
 		lang: 'az,ca,cs,da,de,de-ch,en,eo,es,eu,fr,gl,id,it,ja,km,ko,ku,nb,nl,oc,pl,pt,pt-br,ru,sv,tr,ug,uk,zh,zh-cn', // %REMOVE_LINE_CORE%
 
 		beforeInit: function( editor ) {
-			console.log('filetoosls!')
 			/**
 			 * An instance of the {@link CKEDITOR.fileTools.uploadRepository upload repository}.
 			 * It allows you to create and get {@link CKEDITOR.fileTools.fileLoader file loaders}.
@@ -63,17 +62,9 @@
 				}
 				// Append token preventing CSRF attacks.
 				$formData.append( 'ckCsrfToken', CKEDITOR.tools.getCsrfToken() );
-                fileLoader.xhr.setRequestHeader("Authorization", editor.config.postAuth);//added header postAuth
-                fileLoader.xhr.send( $formData );
-			}, null, null, 999 );
 
-            // //revenant-api set auth header
-            // editor.on( 'fileUploadRequest', function( evt ) {
-            //     var xhr = evt.data.fileLoader.xhr;
-            //     xhr.send( this.file );
-            //     // Prevented the default behavior.
-            //     evt.stop();
-            // } );
+				fileLoader.xhr.send( $formData );
+			}, null, null, 999 );
 
 			/**
 			 * Event fired when the {CKEDITOR.fileTools.fileLoader file upload} response is received and needs to be parsed.
