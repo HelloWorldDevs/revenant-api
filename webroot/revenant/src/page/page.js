@@ -136,6 +136,10 @@ var pageModule = (function ($) {
     });
   };
 
+  page.addUploads = function() {
+
+  }
+
   //configures ckeditor
   page.ckEditorConfigure = function () {
     //ckeditor inline save plugin configuration.
