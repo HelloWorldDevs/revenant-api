@@ -1,11 +1,17 @@
 CKEDITOR.plugins.add( 'rev-image-upload', {
     requires: 'widget',
 
-    icons: 'image',
+    icons: 'rev-image',
 
     init: function( editor ) {
-        editor.widgets.add( 'image', {
-            button: 'Upload and Image'
-        } );
+        console.log('rev-upload!!!!', editor)
+
+        editor.addCommand( 'abbr', new CKEDITOR.dialogCommand( 'abbrDialog' ) );
+
+        editor.ui.addButton('rev-image', {
+            label: 'Upload Image',
+            command: 'abbr',
+            toolbar: 'insert,100'
+        });
     }
 } );

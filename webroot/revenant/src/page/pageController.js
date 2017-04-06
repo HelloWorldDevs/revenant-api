@@ -65,7 +65,7 @@ var pageControllerModule = (function($){
           { name: 'colors', groups: [ 'colors' ] },
           { name: 'about', groups: [ 'about' ] }
         ],
-        removeButtons : 'Maximize,Table,Anchor,Indent,Outdent,Blockquote,Styles,Format,About'
+        removeButtons : 'Image,Maximize,Table,Anchor,Indent,Outdent,Blockquote,Styles,Format,About'
       });
     }
   }
