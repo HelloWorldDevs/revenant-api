@@ -130,7 +130,7 @@ var pageModule = (function ($) {
   //loads ckeditor via ajax.
   page.addCKEditor = function () {
     return $.ajax({
-      url: DEV_CONFIGS.LOCAL + 'revenant/lib/ckeditor/ckeditor.js',
+      url: DEV_CONFIG + 'revenant/lib/ckeditor/ckeditor.js',
       dataType: 'script',
       cache: true
     });
@@ -138,7 +138,7 @@ var pageModule = (function ($) {
 
   page.addUploads = function() {
       return $.ajax({
-          url: DEV_CONFIGS.LOCAL + 'revenant/uploads/upload.php',
+          url: DEV_CONFIG + 'revenant/uploads/upload.php',
           dataType: 'html',
           cache: true
       });
