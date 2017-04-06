@@ -1910,7 +1910,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=454832
 		};
 
 		// CORS https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS
-		xhr.withCredentials = true;
+		// xhr.withCredentials = true;
 
 		return xhr;
 	}
