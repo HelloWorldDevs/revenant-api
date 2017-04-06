@@ -130,19 +130,12 @@ var pageModule = (function ($) {
   //loads ckeditor via ajax.
   page.addCKEditor = function () {
     return $.ajax({
-      url: DEV_CONFIG + 'revenant/lib/ckeditor/ckeditor.js',
+      url: DEV_CONFIGS.LOCAL + 'revenant/lib/ckeditor/ckeditor.js',
       dataType: 'script',
-      cache: true
+      // cache: true
     });
   };
 
-  page.addUploads = function() {
-      return $.ajax({
-          url: DEV_CONFIG + 'revenant/uploads/upload.php',
-          dataType: 'html',
-          cache: true
-      });
-  };
 
   //configures ckeditor
   page.ckEditorConfigure = function () {
@@ -217,7 +210,6 @@ var pageModule = (function ($) {
   page.init = function (callback) {
     page.spinnerLoad();
     page.addCKEditor().done(function () {
-      page.addUploads();
       page.addCSS();
         page.ckEditorConfigure();
         page.revenantContentCheck(callback);
