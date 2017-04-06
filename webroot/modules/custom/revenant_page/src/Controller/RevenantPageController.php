@@ -148,17 +148,10 @@ class RevenantPageController extends ControllerBase
 
     public function post_page_content_image(Request $request)
     {
-        if (isset($_SERVER["HTTP_ORIGIN"])) {
-            $origin = $_SERVER["HTTP_ORIGIN"];
-            // Warning: this is not secure, it allows usage of the page from any domain.
-            // You must verify that the $origin domain is on your white-list
-            header('Access-Control-Allow-Origin: ' . $origin);
-            header('Access-Control-Allow-Credentials: true');
-        }
-        if ($_SERVER['REQUEST_METHOD']=='OPTIONS')
-        {
-            exit(0);
-        }
+
+        header('Access-Control-Allow-Origin: http://revenant-test.dev');
+        header('Access-Control-Allow-Credentials: true');
+
 
         RevenantPageLogger::log($request);
         echo "hello!";
