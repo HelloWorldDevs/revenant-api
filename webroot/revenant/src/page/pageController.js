@@ -46,8 +46,8 @@ var pageControllerModule = (function($){
       //ckeditor toolbar configuration
       CKEDITOR.inline(el, {
         bodyId: data,
-        extraPlugins: 'inlinesave,filebrowser',
-        filebrowserImageUploadUrl: DEV_CONFIG + 'revenant_page/page_content/image?access_token=' + authToken,
+        extraPlugins: 'inlinesave,filetools',
+        filebrowserImageUploadUrl: DEV_CONFIG + 'revenant_page/page_content/image',
         allowedContent: true,
         toolbarGroups : [
           { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
