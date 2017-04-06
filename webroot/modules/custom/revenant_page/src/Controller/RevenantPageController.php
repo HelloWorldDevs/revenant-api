@@ -160,7 +160,7 @@ class RevenantPageController extends ControllerBase
             exit(0);
         }
 
-//          RevenantPageLogger::log($request);
+        RevenantPageLogger::log($origin);
         $CKEditor = $_GET['CKEditor'];
 
 // Required: Function number as indicated by CKEditor.
