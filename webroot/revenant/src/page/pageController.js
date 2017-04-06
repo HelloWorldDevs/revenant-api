@@ -46,7 +46,7 @@ var pageControllerModule = (function($){
       //ckeditor toolbar configuration
       CKEDITOR.inline(el, {
         bodyId: data,
-        extraPlugins: 'inlinesave',
+        extraPlugins: 'inlinesave,filebrowser',
         filebrowserImageUploadUrl: DEV_CONFIG + 'revenant_page/page_content/image?access_token=' + authToken,
         allowedContent: true,
         toolbarGroups : [
