@@ -167,7 +167,7 @@ $config['sessionWriteClose'] = true;
 /*================================= CSRF protection ===================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_csrfProtection
 
-$config['csrfProtection'] = false;
+$config['csrfProtection'] = true;
 
 /*============================== End of Configuration =================================*/
 
