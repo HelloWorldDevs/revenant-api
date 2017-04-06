@@ -43,10 +43,10 @@ var pageControllerModule = (function($){
       };
 
       //ckeditor toolbar configuration
-      CKEDITOR.inline(el, {
+      var editor = CKEDITOR.inline(el, {
         bodyId: data,
-        extraPlugins: 'inlinesave,rev-image-upload',
-        filebrowserUploadUrl: DEV_CONFIG + 'revenant_page/page_content/image',
+        extraPlugins: 'inlinesave',
+        filebrowserUploadUrl: DEV_CONFIG + 'revenant/lib/ckeditor/plugins/ckfinder/ckfinder.html',
         postAuth: 'Bearer ' + authToken,
         allowedContent: true,
         toolbarGroups : [
@@ -65,7 +65,7 @@ var pageControllerModule = (function($){
           { name: 'colors', groups: [ 'colors' ] },
           { name: 'about', groups: [ 'about' ] }
         ],
-        removeButtons : 'Image,Maximize,Table,Anchor,Indent,Outdent,Blockquote,Styles,Format,About'
+        removeButtons : 'Maximize,Table,Anchor,Indent,Outdent,Blockquote,Styles,Format,About'
       });
     }
   }

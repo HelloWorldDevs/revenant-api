@@ -29,8 +29,5 @@ page_image.post:
   defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_page_content_image' }
   methods:  [POST]
   requirements:
-    _csrf_token: 'TRUE'
-    _user_is_logged_in: 'TRUE'
-  options:
-    _auth: [ 'oauth2' ]
+    _access: 'TRUE'
 

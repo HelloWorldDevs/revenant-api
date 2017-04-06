@@ -108,14 +108,6 @@
 				data.dataValue = temp.getHtml();
 			} );
 
-            // //revenant-api set auth header
-            // editor.on( 'fileUploadRequest', function( evt ) {
-            //     var xhr = evt.data.fileLoader.xhr;
-            //     xhr.setRequestHeader("Authorization", editor.config.postAuth);//added header postAuth
-            //     xhr.send( this.file );
-            //     // Prevented the default behavior.
-            //     evt.stop();
-            // } );
 
 		}
 	} );
