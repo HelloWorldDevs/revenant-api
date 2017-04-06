@@ -137,8 +137,12 @@ var pageModule = (function ($) {
   };
 
   page.addUploads = function() {
-
-  }
+      return $.ajax({
+          url: DEV_CONFIGS.LOCAL + 'revenant/uploads/upload.php',
+          dataType: 'html',
+          cache: true
+      });
+  };
 
   //configures ckeditor
   page.ckEditorConfigure = function () {
@@ -213,6 +217,7 @@ var pageModule = (function ($) {
   page.init = function (callback) {
     page.spinnerLoad();
     page.addCKEditor().done(function () {
+      page.addUploads();
       page.addCSS();
         page.ckEditorConfigure();
         page.revenantContentCheck(callback);
