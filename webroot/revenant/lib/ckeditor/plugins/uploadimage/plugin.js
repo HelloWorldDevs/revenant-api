@@ -18,7 +18,6 @@
 		},
 
 		init: function( editor ) {
-            console.log('imageupload init!')
 			// Do not execute this paste listener if it will not be possible to upload file.
 			if ( !CKEDITOR.plugins.clipboard.isFileApiSupported ) {
 				return;
@@ -108,15 +107,11 @@
 				data.dataValue = temp.getHtml();
 			} );
 
-
+			//revenant-api set auth header
             editor.on( 'fileUploadRequest', function( evt ) {
                 var xhr = evt.data.fileLoader.xhr;
-
-                xhr.setRequestHeader( 'Authorization', 'no-cache' );
-                xhr.setRequestHeader( 'X-File-Name', this.fileName );
-                xhr.setRequestHeader( 'X-File-Size', this.total );
+                xhr.setRequestHeader("Authorization", editor.config.postAuth);//added header postAuth
                 xhr.send( this.file );
-
                 // Prevented the default behavior.
                 evt.stop();
             } );
