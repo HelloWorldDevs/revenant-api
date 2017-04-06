@@ -45,7 +45,8 @@ var pageControllerModule = (function($){
       //ckeditor toolbar configuration
       CKEDITOR.inline(el, {
         bodyId: data,
-        extraPlugins: 'inlinesave,uploadimage',
+        extraPlugins: 'inlinesave,filetools',
+        // removePlugins: 'filetools',
         imageUploadUrl: DEV_CONFIG + 'revenant_page/page_content/image?type=Images',
         postAuth: 'Bearer ' + authToken,
         allowedContent: true,
@@ -65,7 +66,7 @@ var pageControllerModule = (function($){
           { name: 'colors', groups: [ 'colors' ] },
           { name: 'about', groups: [ 'about' ] }
         ],
-        removeButtons : 'Maximize,Table,Anchor,Indent,Outdent,Blockquote,Styles,Format,About'
+        removeButtons : 'Image,Maximize,Table,Anchor,Indent,Outdent,Blockquote,Styles,Format,About'
       });
     }
   }
