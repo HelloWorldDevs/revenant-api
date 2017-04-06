@@ -170,7 +170,7 @@ var pageModule = (function ($) {
     };
 
     //uncomment and run for clearing ckeditor cache and allowing modification of plugins. Used when modifying inline save plugin.
-    // CKEDITOR.timestamp = 'ABCD';
+    CKEDITOR.timestamp = Math.random().toString(36).substring( 0, 5 );
   };
 
   //spin js loading gif function, used during content check and insertion
