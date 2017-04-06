@@ -149,10 +149,6 @@ class RevenantPageController extends ControllerBase
     public function post_page_content_image(Request $request)
     {
 
-        header('Access-Control-Allow-Origin: http://revenant-test.dev');
-        header('Access-Control-Allow-Credentials: true');
-
-
         RevenantPageLogger::log($request);
         echo "hello!";
 
