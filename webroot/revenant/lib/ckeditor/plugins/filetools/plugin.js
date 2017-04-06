@@ -38,7 +38,6 @@
 			 */
 			editor.on( 'fileUploadRequest', function( evt ) {
 				var fileLoader = evt.data.fileLoader;
-				console.log('UPLOAD!');
 				fileLoader.xhr.open( 'POST', fileLoader.uploadUrl, true );
 
 				// Adding file to event's data by default - allows overwriting it by user's event listeners. (#13518)

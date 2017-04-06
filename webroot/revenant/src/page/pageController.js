@@ -42,12 +42,11 @@ var pageControllerModule = (function($){
         useColorIcon: false
       };
 
-//image,widgetselection,widget,filetools,lineutils,notification,notificationaggregator,uploadwidget,uploadimage
       //ckeditor toolbar configuration
       CKEDITOR.inline(el, {
         bodyId: data,
-        extraPlugins: 'inlinesave,filetools',
-        filebrowserImageUploadUrl: DEV_CONFIG + 'revenant_page/page_content/image',
+        extraPlugins: 'inlinesave,image,widgetselection,widget,filetools,lineutils,notification,notificationaggregator,uploadwidget,uploadimage',
+        imageUploadUrl: DEV_CONFIG + 'revenant_page/page_content/image?type=Images',
         allowedContent: true,
         toolbarGroups : [
           { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
