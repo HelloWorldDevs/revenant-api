@@ -12,12 +12,14 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\node\Entity\Node;
 use Drupal\revenant_page\Logger\RevenantPageLogger;
 
-class RevenantPageController extends ControllerBase {
+class RevenantPageController extends ControllerBase
+{
 
     /**
      * Proxy for handling authentication, retrieves client credentials.
      */
-    public function post_creds(Request $request) {
+    public function post_creds(Request $request)
+    {
         $content = json_decode($request->getContent(), TRUE);
         $origin = strtr($content['origin'], array('.' => '-', '/' => '-'));
         $username = $content["username"];
@@ -44,7 +46,8 @@ class RevenantPageController extends ControllerBase {
         return new JsonResponse($response);
     }
 
-    public function post_page_create(Request $request) {
+    public function post_page_create(Request $request)
+    {
         // This condition checks the `Content-type` and makes sure to
         // decode JSON string from the request body into array.
 //        if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
@@ -83,7 +86,8 @@ class RevenantPageController extends ControllerBase {
         return new JsonResponse($response);
     }
 
-    public function post_page_content(Request $request) {
+    public function post_page_content(Request $request)
+    {
         if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
             $data = json_decode($request->getContent(), TRUE);
             $request->request->replace(is_array($data) ? $data : []);
@@ -142,9 +146,48 @@ class RevenantPageController extends ControllerBase {
         return new JsonResponse($response);
     }
 
-    public function post_page_content_image(Request $request) {
+    public function post_page_content_image(Request $request)
+    {
 //          RevenantPageLogger::log($request);
-          echo('hello again!');
+        $CKEditor = $_GET['CKEditor'];
+
+// Required: Function number as indicated by CKEditor.
+        $funcNum = $_GET['CKEditorFuncNum'];
+
+// Optional: To provide localized messages
+        $langCode = $_GET['langCode'];
+
+// ------------------------
+// Data processing
+// ------------------------
+
+// The returned url of the uploaded file
+        $url = '';
+
+// Optional message to show to the user (file renamed, invalid file, not authenticated...)
+        $message = '';
+
+// In FCKeditor the uploaded file was sent as 'NewFile' but in CKEditor is 'upload'
+        if (isset($_FILES['upload'])) {
+            // ToDo: save the file :-)
+            // Be careful about all the data that it's sent!!!
+            // Check that the user is authenticated, that the file isn't too big,
+            // that it matches the kind of allowed resources...
+            $name = $_FILES['upload']['name'];
+
+            // example: Build the url that should be used for this file
+            $url = "/images/" . $name;
+            // Usually you don't need any message when everything is OK.
+//    $message = 'new file uploaded';
+        } else {
+            $message = 'No file has been sent';
+        }
+// ------------------------
+// Write output
+// ------------------------
+// We are in an iframe, so we must talk to the object in window.parent
+        echo "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message')</script>";
+
     }
 
 }

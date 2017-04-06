@@ -17,4 +17,5 @@ use CKSource\CKFinder\CKFinder;
 
 $ckfinder = new CKFinder(__DIR__ . '/../../../config.php');
 
+
 $ckfinder->run();

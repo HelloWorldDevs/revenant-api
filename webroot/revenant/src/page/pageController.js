@@ -45,8 +45,8 @@ var pageControllerModule = (function($){
       //ckeditor toolbar configuration
       var editor = CKEDITOR.inline(el, {
         bodyId: data,
-        extraPlugins: 'inlinesave',
-        filebrowserUploadUrl: DEV_CONFIG + 'revenant/lib/ckeditor/plugins/ckfinder/ckfinder.html',
+        extraPlugins: 'inlinesave,simpleupload',
+        filebrowserUploadUrl: DEV_CONFIG + 'revenant_page/page_content/image',
         postAuth: 'Bearer ' + authToken,
         allowedContent: true,
         toolbarGroups : [
@@ -65,10 +65,10 @@ var pageControllerModule = (function($){
           { name: 'colors', groups: [ 'colors' ] },
           { name: 'about', groups: [ 'about' ] }
         ],
-        removeButtons : 'Maximize,Table,Anchor,Indent,Outdent,Blockquote,Styles,Format,About'
+        removeButtons : 'Image,Maximize,Table,Anchor,Indent,Outdent,Blockquote,Styles,Format,About'
       });
     }
-  }
+  };
 
 
   //inline editor added on text element click
