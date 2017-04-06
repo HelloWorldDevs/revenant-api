@@ -149,15 +149,17 @@ class RevenantPageController extends ControllerBase
     public function post_page_content_image(Request $request)
     {
 
-        RevenantPageLogger::log($request);
+
 
         $CKEditor = $_GET['CKEditor'] ;
-
+        RevenantPageLogger::log($CKEditor);
         // Required: Function number as indicated by CKEditor.
         $funcNum = $_GET['CKEditorFuncNum'] ;
+        RevenantPageLogger::log($funcNum);
 
         // Optional: To provide localized messages
         $langCode = $_GET['langCode'] ;
+        RevenantPageLogger::log($langCode);
 
         // ------------------------
         // Data processing
@@ -180,7 +182,7 @@ class RevenantPageController extends ControllerBase
             // example: Build the url that should be used for this file
             $url = "/images/" . $name ;
             // Usually you don't need any message when everything is OK.
-        //    $message = 'new file uploaded';
+            $message = 'new file uploaded';
         }
         else
         {
