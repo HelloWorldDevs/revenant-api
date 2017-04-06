@@ -18,6 +18,7 @@
 		},
 
 		init: function( editor ) {
+			console.log('asdfsfasfasdf')
 			// Do not execute this paste listener if it will not be possible to upload file.
 			if ( !CKEDITOR.plugins.clipboard.isFileApiSupported ) {
 				return;
