@@ -47,6 +47,7 @@ var pageControllerModule = (function($){
         bodyId: data,
         extraPlugins: 'inlinesave,image,widgetselection,widget,filetools,lineutils,notification,notificationaggregator,uploadwidget,uploadimage',
         imageUploadUrl: DEV_CONFIG + 'revenant_page/page_content/image?type=Images',
+        postAuth: 'Bearer ' + authToken,
         allowedContent: true,
         toolbarGroups : [
           { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
