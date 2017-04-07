@@ -1,4 +1,4 @@
 services:
-  revenant.logger:
+  revenant_logger:
     class: \Drupal\revenant_page\Logger\RevenantPageLogger
     arguments: ['@logger.factory']
