@@ -149,7 +149,7 @@ class RevenantPageController extends ControllerBase
     public function post_page_content_image(Request $request)
     {
         $temporary = \Drupal::config('system.file')->get('path.temporary');
-//        \Drupal::logger('my_module')->notice($temoprary);
+        \Drupal::logger('my_module')->notice($temporary);
 //        $CKEditor = \Drupal::request()->query->get('CKEditor') ;
 //        \Drupal::logger('my_module')->notice($CKEditor);
 
@@ -161,20 +161,21 @@ class RevenantPageController extends ControllerBase
         $langCode = \Drupal::request()->query->get('langCode');
         \Drupal::logger('my_module')->notice($langCode);
 
-//        $fileContent = $_FILES['upload'];
-//
-//        $file = file_save_data(
-//            $fileContent,
-//            $temporary,
-//            FILE_EXISTS_REPLACE
-//        );
-//
-//        if (is_object($file)) {
-//            print "File created successfully";
-//        }
-//        else {
-//            print "Error in file creation";
-//        }
+        $fileContent = $_FILES['upload'];
+        $tempFilePath = $temporary . $_FILES['upload']['name'];
+
+        $file = file_save_data(
+            $fileContent,
+            $tempFilePath,
+            FILE_EXISTS_REPLACE
+        );
+//        $statusresp = '';
+        if (is_object($file)) {
+            $statusresp = "File created successfully";
+        }
+        else {
+            $statusresp ="Error in file creation";
+        }
         // ------------------------
         // Data processing
         // ------------------------
@@ -207,7 +208,7 @@ class RevenantPageController extends ControllerBase
         // We are in an iframe, so we must talk to the object in window.parent
 //        echo "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message')</script>";
 
-        $response['data'] = $_FILES['upload'];
+        $response['data'] = $statusresp;
         $response['method'] = 'POST';
 
         return new JsonResponse($response);
