@@ -169,7 +169,7 @@ class RevenantPageController extends ControllerBase
             $tempFilePath,
             FILE_EXISTS_REPLACE
         );
-//        $statusresp = '';
+
         if (is_object($file)) {
             $statusresp = "File created successfully";
         }
@@ -180,7 +180,7 @@ class RevenantPageController extends ControllerBase
         // Data processing
         // ------------------------
         // The returned url of the uploaded file
-        $url = '' ;
+        $url = $temporary .  $_FILES['upload']['name'];
 
         // Optional message to show to the user (file renamed, invalid file, not authenticated...)
         $message = '';
@@ -206,12 +206,11 @@ class RevenantPageController extends ControllerBase
         // Write output
         // ------------------------
         // We are in an iframe, so we must talk to the object in window.parent
-//        echo "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message')</script>";
+//
 
-        $response['data'] = $statusresp;
-        $response['method'] = 'POST';
+        $response['data'] = "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url')</script>";
 
-        return new JsonResponse($response);
+        return $response;
     }
 
 }
