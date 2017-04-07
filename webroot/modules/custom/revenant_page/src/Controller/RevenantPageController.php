@@ -153,15 +153,7 @@ class RevenantPageController extends ControllerBase
 //        $logger = new RevenantPageLogger();
 
         \Drupal::logger('revenant_page')->notice($request);
-//        $CKEditor = \Drupal::request()->query->get('CKEditor') ;
-//        RevenantPageLogger::log($CKEditor);
-        // Required: Function number as indicated by CKEditor.
-//        $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
-//        RevenantPageLogger::log($funcNum);
 
-        // Optional: To provide localized messages
-//        $langCode = \Drupal::request()->query->get('langCode');
-//        RevenantPageLogger::log($langCode);
 
         // ------------------------
         // Data processing
@@ -193,9 +185,10 @@ class RevenantPageController extends ControllerBase
         // Write output
         // ------------------------
         // We are in an iframe, so we must talk to the object in window.parent
-//        echo "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message')</script>";
+//        $response = "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message')</script>";`
+        $response = "hello!";
 
-        echo "hello!";
+        return $response;
     }
 
 }
