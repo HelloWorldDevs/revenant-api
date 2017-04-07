@@ -171,10 +171,10 @@ class RevenantPageController extends ControllerBase
         );
 
         if (is_object($file)) {
-            $statusresp = "File created successfully";
+            $msg = "File created successfully";
         }
         else {
-            $statusresp ="Error in file creation";
+            $msg ="Error in file creation";
         }
         // ------------------------
         // Data processing
@@ -182,8 +182,6 @@ class RevenantPageController extends ControllerBase
         // The returned url of the uploaded file
         $url = $temporary .  $_FILES['upload']['name'];
 
-        // Optional message to show to the user (file renamed, invalid file, not authenticated...)
-        $message = '';
 
         // In FCKeditor the uploaded file was sent as 'NewFile' but in CKEditor is 'upload'
 //        if (isset($_FILES['upload'])) {
@@ -208,7 +206,7 @@ class RevenantPageController extends ControllerBase
         // We are in an iframe, so we must talk to the object in window.parent
 //
 
-        $response['data'] = "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url')</script>";
+        $response['data'] = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$url.'","'.$msg.'");</script></body></html>';
 
         return $response;
     }
