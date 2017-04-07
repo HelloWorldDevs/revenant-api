@@ -10,7 +10,6 @@ use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\node\Entity\Node;
-//use Drupal\revenant_page\Logger\RevenantPageLogger;
 
 
 class RevenantPageController extends ControllerBase
@@ -150,10 +149,17 @@ class RevenantPageController extends ControllerBase
     public function post_page_content_image(Request $request)
     {
 
-//        $logger = new RevenantPageLogger();
+//        $CKEditor = \Drupal::request()->query->get('CKEditor') ;
+//        \Drupal::logger('my_module')->notice($CKEditor);
 
-        \Drupal::logger('revenant_page')->notice($request);
-        \Drupal::logger('revenant_page')->notice($_FILES);
+//      Required: Function number as indicated by CKEditor.
+        $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
+        \Drupal::logger('my_module')->notice($funcNum);
+
+//         Optional: To provide localized messages
+        $langCode = \Drupal::request()->query->get('langCode');
+        \Drupal::logger('my_module')->notice($langCode);
+
 
         // ------------------------
         // Data processing
@@ -185,7 +191,8 @@ class RevenantPageController extends ControllerBase
         // Write output
         // ------------------------
         // We are in an iframe, so we must talk to the object in window.parent
-//        $response = "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message')</script>";`
+//        echo "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message')</script>";
+
         $response['data'] = 'Post ';
         $response['method'] = 'POST';
 
