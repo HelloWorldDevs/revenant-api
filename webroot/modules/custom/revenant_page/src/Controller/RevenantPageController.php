@@ -148,7 +148,8 @@ class RevenantPageController extends ControllerBase
 
     public function post_page_content_image(Request $request)
     {
-
+        $temoprary = \Drupal::config('system.file')->get('path.temporary');
+        \Drupal::logger('my_module')->notice($temoprary);
 //        $CKEditor = \Drupal::request()->query->get('CKEditor') ;
 //        \Drupal::logger('my_module')->notice($CKEditor);
 
