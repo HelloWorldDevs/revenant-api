@@ -149,7 +149,8 @@ class RevenantPageController extends ControllerBase
     public function post_page_content_image(Request $request)
     {
         $temporary = \Drupal::config('system.file')->get('path.temporary');
-        \Drupal::logger('my_module')->notice($temporary);
+        $temporary_directory = PublicStream::basePath() . '/tmp';
+        \Drupal::logger('my_module')->notice($temporary_directory);
 //        $CKEditor = \Drupal::request()->query->get('CKEditor') ;
 //        \Drupal::logger('my_module')->notice($CKEditor);
 
@@ -206,7 +207,7 @@ class RevenantPageController extends ControllerBase
         // We are in an iframe, so we must talk to the object in window.parent
 //
 
-        $response = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$url.'","'.$msg.'");</script></body></html>';
+        $response['data'] = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$url.'","'.$msg.'");</script></body></html>';
 
         return $response;
     }
