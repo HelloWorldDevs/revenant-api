@@ -1,4 +1,4 @@
 services:
-  revenant_logger:
+  myservice_that_needs_to_log_to_multiple_channels:
     class: \Drupal\revenant_page\Logger\RevenantPageLogger
     arguments: ['@logger.factory']
