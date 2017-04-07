@@ -18,7 +18,7 @@ class RevenantPageLogger implements LoggerInterface {
     /**
      * {@inheritdoc}
      */
-    static function log($message) {
+    public static function log($level, $message, array $context = array()) {
         \Drupal::logger('revenant_page')->notice($message);
     }
 
