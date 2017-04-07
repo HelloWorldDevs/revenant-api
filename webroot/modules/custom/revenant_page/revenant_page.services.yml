@@ -1,7 +1,4 @@
 services:
-
-
-  logger.mylog:
+  revenant.logger:
     class: \Drupal\revenant_page\Logger\RevenantPageLogger
-    tags:
-      - { name: logger }
+    arguments: ['@logger.factory']

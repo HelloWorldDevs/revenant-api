@@ -8,18 +8,16 @@
 
 namespace Drupal\revenant_page\Logger;
 
-use Drupal\Core\Logger\RfcLoggerTrait;
-use Psr\Log\LoggerInterface;
+class RevenantPageLogger {
+    public function __construct($factory) {
+        $this->loggerFactory = $factory;
+    }
 
-
-class RevenantPageLogger implements LoggerInterface {
-    use RfcLoggerTrait;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function log($level, $message, array $context = array()) {
-        \Drupal::logger('revenant_page')->notice($message);
+    public static function log($message) {
+        // Logs a notice to "my_module" channel.
+        $this->loggerFactory->get('revenan_page')->notice($message);
+        // Logs an error to "my_other_module" channel.
+        $this->loggerFactory->get('revenan_page')->error($message);
     }
 
 }
