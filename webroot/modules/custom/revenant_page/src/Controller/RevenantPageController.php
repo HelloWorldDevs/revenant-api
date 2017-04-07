@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\node\Entity\Node;
 use Drupal\revenant_page\Logger\RevenantPageLogger;
 
+
 class RevenantPageController extends ControllerBase
 {
 
@@ -149,9 +150,9 @@ class RevenantPageController extends ControllerBase
     public function post_page_content_image(Request $request)
     {
 
+        $logger = new RevenantPageLogger();
 
-
-        RevenantPageLogger::log($request);
+        $logger->log($request);
 //        $CKEditor = \Drupal::request()->query->get('CKEditor') ;
 //        RevenantPageLogger::log($CKEditor);
         // Required: Function number as indicated by CKEditor.

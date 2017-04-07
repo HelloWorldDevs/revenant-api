@@ -13,11 +13,11 @@ class RevenantPageLogger {
         $this->loggerFactory = $factory;
     }
 
-    public static function log($message) {
+    public function log($message) {
         // Logs a notice to "my_module" channel.
-        $this->loggerFactory->get('revenan_page')->notice($message);
+        $this->loggerFactory->get('revenant_page')->notice($message);
         // Logs an error to "my_other_module" channel.
-        $this->loggerFactory->get('revenan_page')->error($message);
+        $this->loggerFactory->get('revenant_page')->error($message);
     }
 
 }
