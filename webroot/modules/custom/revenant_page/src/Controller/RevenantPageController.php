@@ -10,6 +10,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\node\Entity\Node;
+use Drupal\revenant_page\Logger\RevenantPageLogger;
 
 class RevenantPageController extends ControllerBase
 {
@@ -165,10 +166,10 @@ class RevenantPageController extends ControllerBase
         // Data processing
         // ------------------------
         // The returned url of the uploaded file
-//        $url = '' ;
+        $url = '' ;
 
         // Optional message to show to the user (file renamed, invalid file, not authenticated...)
-//        $message = '';
+        $message = '';
 
         // In FCKeditor the uploaded file was sent as 'NewFile' but in CKEditor is 'upload'
 //        if (isset($_FILES['upload'])) {
