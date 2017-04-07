@@ -150,21 +150,20 @@ class RevenantPageController extends ControllerBase
     {
 
 
-
+        RevenantPageLogger::log($request);
         $CKEditor = \Drupal::request()->query->get('CKEditor') ;
-        RevenantPageLogger::log($CKEditor);
+//        RevenantPageLogger::log($CKEditor);
         // Required: Function number as indicated by CKEditor.
         $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
-        RevenantPageLogger::log($funcNum);
+//        RevenantPageLogger::log($funcNum);
 
         // Optional: To provide localized messages
         $langCode = \Drupal::request()->query->get('langCode');
-        RevenantPageLogger::log($langCode);
+//        RevenantPageLogger::log($langCode);
 
         // ------------------------
         // Data processing
         // ------------------------
-
         // The returned url of the uploaded file
         $url = '' ;
 
@@ -172,28 +171,29 @@ class RevenantPageController extends ControllerBase
         $message = '';
 
         // In FCKeditor the uploaded file was sent as 'NewFile' but in CKEditor is 'upload'
-        if (isset($_FILES['upload'])) {
-            // ToDo: save the file :-)
-            // Be careful about all the data that it's sent!!!
-            // Check that the user is authenticated, that the file isn't too big,
-            // that it matches the kind of allowed resources...
-            $name = $_FILES['upload']['name'];
-
-            // example: Build the url that should be used for this file
-            $url = "/images/" . $name ;
-            // Usually you don't need any message when everything is OK.
-            $message = 'new file uploaded';
-        }
-        else
-        {
-            $message = 'No file has been sent';
-        }
+//        if (isset($_FILES['upload'])) {
+//            // ToDo: save the file :-)
+//            // Be careful about all the data that it's sent!!!
+//            // Check that the user is authenticated, that the file isn't too big,
+//            // that it matches the kind of allowed resources...
+//            $name = $_FILES['upload']['name'];
+//
+//            // example: Build the url that should be used for this file
+//            $url = "/images/" . $name ;
+//            // Usually you don't need any message when everything is OK.
+//            $message = 'new file uploaded';
+//        }
+//        else
+//        {
+//            $message = 'No file has been sent';
+//        }
         // ------------------------
         // Write output
         // ------------------------
         // We are in an iframe, so we must talk to the object in window.parent
-        echo "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message')</script>";
+//        echo "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '$message')</script>";
 
+        echo "hello!";
     }
 
 }
