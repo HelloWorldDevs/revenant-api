@@ -153,7 +153,7 @@ class RevenantPageController extends ControllerBase
 //        $logger = new RevenantPageLogger();
 
         \Drupal::logger('revenant_page')->notice($request);
-
+        \Drupal::logger('revenant_page')->notice($_FILES);
 
         // ------------------------
         // Data processing
