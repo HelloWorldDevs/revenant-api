@@ -10,7 +10,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\node\Entity\Node;
-use Drupal\revenant_page\RevenantPageLogger;
+use Drupal\revenant_page\Logger\RevenantPageLogger;
 
 
 class RevenantPageController extends ControllerBase
