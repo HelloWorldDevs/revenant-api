@@ -151,24 +151,24 @@ class RevenantPageController extends ControllerBase
 
 
         RevenantPageLogger::log($request);
-        $CKEditor = \Drupal::request()->query->get('CKEditor') ;
+//        $CKEditor = \Drupal::request()->query->get('CKEditor') ;
 //        RevenantPageLogger::log($CKEditor);
         // Required: Function number as indicated by CKEditor.
-        $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
+//        $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
 //        RevenantPageLogger::log($funcNum);
 
         // Optional: To provide localized messages
-        $langCode = \Drupal::request()->query->get('langCode');
+//        $langCode = \Drupal::request()->query->get('langCode');
 //        RevenantPageLogger::log($langCode);
 
         // ------------------------
         // Data processing
         // ------------------------
         // The returned url of the uploaded file
-        $url = '' ;
+//        $url = '' ;
 
         // Optional message to show to the user (file renamed, invalid file, not authenticated...)
-        $message = '';
+//        $message = '';
 
         // In FCKeditor the uploaded file was sent as 'NewFile' but in CKEditor is 'upload'
 //        if (isset($_FILES['upload'])) {
