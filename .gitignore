@@ -19,3 +19,4 @@ webroot/sites/*/development.services.yml
 
 webroot/sites/default/files
 webroot/modules/custom/revenant_page/config/install/revenant_page.settings.yml
+tmp/
