@@ -206,7 +206,7 @@ class RevenantPageController extends ControllerBase
         // We are in an iframe, so we must talk to the object in window.parent
 //
 
-        $response['data'] = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$url.'","'.$msg.'");</script></body></html>';
+        $response = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$url.'","'.$msg.'");</script></body></html>';
 
         return $response;
     }
