@@ -160,13 +160,9 @@ class RevenantPageController extends ControllerBase
         $fileContent = $_FILES['upload'];
         $tempFilePath = 'http://revenant-api.bfdig.com/revenant/img/tmp/' .  $_FILES['upload']['name'];
 
-//        $file = file_save_data(
-//            $fileContent,
-//            file_create_url($tempFilePath),
-//            FILE_EXISTS_REPLACE
-//        );
 
-        $createfile = fopen($_SERVER['DOCUMENT_ROOT'] . '/revenant/img/tmp/' .  $_FILES['upload']['name'],"x+");
+        $target_file = $_SERVER['DOCUMENT_ROOT'] . '/revenant/img/tmp/' .  $_FILES["fileToUpload"]["name"];
+        $createfile = move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
 
         if (is_object($createfile)) {
             $msg = "File created successfully";
