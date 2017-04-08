@@ -177,7 +177,7 @@ class RevenantPageController extends ControllerBase
         // ------------------------
         // The returned url of the uploaded file
         $url = $temporary .  $_FILES['upload']['name'];
-        $public_url = file_create_url($uri);
+        $public_url = file_create_url($url);
         \Drupal::logger('my_module')->notice($public_url);
 
 
