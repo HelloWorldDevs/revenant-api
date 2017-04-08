@@ -158,7 +158,7 @@ class RevenantPageController extends ControllerBase
         \Drupal::logger('my_module')->notice($langCode);
 
         $fileContent = $_FILES['upload'];
-        $tempFilePath = 'temporary://' . $_FILES['upload']['name'];
+        $tempFilePath = 'temporary://' . '/' . $_FILES['upload']['name'];
 
         $file = file_save_data(
             $fileContent,
@@ -172,37 +172,15 @@ class RevenantPageController extends ControllerBase
         else {
             $msg ="Error in file creation";
         }
-        // ------------------------
-        // Data processing
-        // ------------------------
-        // The returned url of the uploaded file
+
         $url = $temporary .  $_FILES['upload']['name'];
         $public_url = file_create_url($url);
         \Drupal::logger('my_module')->notice($public_url);
 
-
-        // In FCKeditor the uploaded file was sent as 'NewFile' but in CKEditor is 'upload'
-//        if (isset($_FILES['upload'])) {
-//            // ToDo: save the file :-)
-//            // Be careful about all the data that it's sent!!!
-//            // Check that the user is authenticated, that the file isn't too big,
-//            // that it matches the kind of allowed resources...
-//            $name = $_FILES['upload']['name'];
-//
-//            // example: Build the url that should be used for this file
-//            $url = "/images/" . $name ;
-//            // Usually you don't need any message when everything is OK.
-//            $message = 'new file uploaded';
-//        }
-//        else
-//        {
-//            $message = 'No file has been sent';
-//        }
         // ------------------------
         // Write output
         // ------------------------
         // We are in an iframe, so we must talk to the object in window.parent
-//
 
         $response['data'] = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$public_url.'","'.$msg.'");</script></body></html>';
 
