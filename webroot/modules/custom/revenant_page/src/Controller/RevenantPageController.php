@@ -152,14 +152,16 @@ class RevenantPageController extends ControllerBase
         $temporary = \Drupal::config('system.file')->get('path.temporary');
 
         $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
-        \Drupal::logger('my_module')->notice($funcNum);
+        \Drupal::logger('revenant_page')->notice($funcNum);
 
         $langCode = \Drupal::request()->query->get('langCode');
-        \Drupal::logger('my_module')->notice($langCode);
+        \Drupal::logger('revenant_page')->notice($langCode);
 
         $fileContent = $_FILES['upload'];
-        $tempFilePath = 'temporary://' . '/' . $_FILES['upload']['name'];
+        $tempFilePath = 'temporary://' . $_FILES['upload']['name'];
 
+        $tempFilePath = '/revenant/img/tmp/' .  $_FILES['upload']['name'];
+        \Drupal::logger('revenant_page')->notice($public_url);
         $file = file_save_data(
             $fileContent,
             $tempFilePath,
@@ -173,14 +175,14 @@ class RevenantPageController extends ControllerBase
             $msg ="Error in file creation";
         }
 
-        $url = $temporary .  $_FILES['upload']['name'];
-        $public_url = file_create_url($url);
-        \Drupal::logger('my_module')->notice($public_url);
+        $public_url = file_create_url($tempFilePath);
+
 
         // ------------------------
         // Write output
         // ------------------------
         // We are in an iframe, so we must talk to the object in window.parent
+//
 
         $response['data'] = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$public_url.'","'.$msg.'");</script></body></html>';
 
