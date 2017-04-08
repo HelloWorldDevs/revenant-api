@@ -157,14 +157,16 @@ class RevenantPageController extends ControllerBase
         $langCode = \Drupal::request()->query->get('langCode');
         \Drupal::logger('revenant_page')->notice($langCode);
 
+
         $fileContent = $_FILES['upload'];
-        $tempFilePath = 'http://revenant-api.bfdig.com/revenant/img/tmp/' .  $_FILES['upload']['name'];
 
+        $tempFilePath = 'public://' . $_FILES['upload']['name'];
 
-        $file_path =    $_FILES['upload']['name'];
-        $file = $_FILES['upload']['name'];
-
-        move_uploaded_file($file, $file_path);
+        $file = file_save_data(
+            $fileContent,
+            $tempFilePath,
+            FILE_EXISTS_REPLACE
+        );
 
         if (true) {
             $msg = "File created successfully";
@@ -172,9 +174,8 @@ class RevenantPageController extends ControllerBase
         else {
             $msg ="Error in file creation";
         }
-        $base_path = base_path();
         $public_url = file_create_url($tempFilePath);
-        \Drupal::logger('revenant_page')->notice($file_path);
+        \Drupal::logger('revenant_page')->notice(@$public_url);
 
 
         // ------------------------
