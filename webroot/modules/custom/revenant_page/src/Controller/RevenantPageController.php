@@ -158,7 +158,7 @@ class RevenantPageController extends ControllerBase
         \Drupal::logger('revenant_page')->notice($langCode);
 
 
-        $fileContent = $_FILES['upload'];
+        $fileContent = $_FILES['upload']['tmp_name'];
 
         $tempFilePath = 'public://' . $_FILES['upload']['name'];
 
@@ -175,7 +175,7 @@ class RevenantPageController extends ControllerBase
             $msg ="Error in file creation";
         }
         $public_url = file_create_url($tempFilePath);
-        \Drupal::logger('revenant_page')->notice($fileContent);
+        \Drupal::logger('revenant_page')->notice($public_url);
 
 
         // ------------------------
@@ -184,12 +184,9 @@ class RevenantPageController extends ControllerBase
         // We are in an iframe, so we must talk to the object in window.parent
 //
 
-//        $response['data'] = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$public_url.'","'.$msg.'");</script></body></html>';
+        $response['data'] = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$public_url.'","'.$msg.'");</script></body></html>';
 
-        $response['data'] = $fileContent;
-        $response['method'] = 'POST';
-
-        return new JsonResponse($response);
+        return $response;
     }
 
 }
