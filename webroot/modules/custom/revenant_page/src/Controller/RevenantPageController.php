@@ -162,7 +162,7 @@ class RevenantPageController extends ControllerBase
 
 
         $target_file = $_SERVER['DOCUMENT_ROOT'] . '/revenant/img/tmp/' .  $_FILES['upload']['name'];
-        $createfile = move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+        $createfile = move_uploaded_file($_FILES['upload']['name'], $target_file);
 
         if (is_object($createfile)) {
             $msg = "File created successfully";
