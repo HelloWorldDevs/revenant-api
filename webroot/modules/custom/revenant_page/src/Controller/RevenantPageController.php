@@ -151,7 +151,7 @@ class RevenantPageController extends ControllerBase
     public function post_page_content_image(Request $request)
     {
 
-//        $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
+        $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
 //        \Drupal::logger('revenant_page')->notice($funcNum);
 //
 //        $langCode = \Drupal::request()->query->get('langCode');
@@ -162,12 +162,15 @@ class RevenantPageController extends ControllerBase
 
         move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
 
-        if (true) {
-            $msg = "File created successfully";
-        }
-        else {
-            $msg ="Error in file creation";
-        }
+//        if (true) {
+//            $msg = "File created successfully";
+//        }
+//        else {
+//            $msg ="Error in file creation";
+
+        $msg = '';
+
+
         $public_url = file_create_url($tempFilePath);
         \Drupal::logger('revenant_page')->notice($public_url);
 
