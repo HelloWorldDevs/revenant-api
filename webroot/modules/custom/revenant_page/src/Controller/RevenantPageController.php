@@ -163,7 +163,7 @@ class RevenantPageController extends ControllerBase
         $tempFilePath = '/revenant/img/tmp/' .  $_FILES['upload']['name'];
 
         $file = file_save_data(
-            $fileContent,
+            file_create_url($tempFilePath),
             $tempFilePath,
             FILE_EXISTS_REPLACE
         );
