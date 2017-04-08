@@ -161,7 +161,7 @@ class RevenantPageController extends ControllerBase
         $tempFilePath = 'http://revenant-api.bfdig.com/revenant/img/tmp/' .  $_FILES['upload']['name'];
 
 
-        $file_path = base_path() . '/revenant/img/tmp/' .  $_FILES['upload']['name'];
+        $file_path =    $_FILES['upload']['name'];
         $file = $_FILES['upload']['name'];
 
         move_uploaded_file($file, $file_path);
@@ -174,7 +174,7 @@ class RevenantPageController extends ControllerBase
         }
         $base_path = base_path();
         $public_url = file_create_url($tempFilePath);
-        \Drupal::logger('revenant_page')->notice($base_path);
+        \Drupal::logger('revenant_page')->notice($file_path);
 
 
         // ------------------------
