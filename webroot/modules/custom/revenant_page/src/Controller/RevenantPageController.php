@@ -161,7 +161,7 @@ class RevenantPageController extends ControllerBase
         $tempFilePath = 'temporary://' . $_FILES['upload']['name'];
 
         $tempFilePath = '/revenant/img/tmp/' .  $_FILES['upload']['name'];
-        \Drupal::logger('revenant_page')->notice($public_url);
+
         $file = file_save_data(
             $fileContent,
             $tempFilePath,
@@ -176,6 +176,7 @@ class RevenantPageController extends ControllerBase
         }
 
         $public_url = file_create_url($tempFilePath);
+        \Drupal::logger('revenant_page')->notice($public_url);
 
 
         // ------------------------
