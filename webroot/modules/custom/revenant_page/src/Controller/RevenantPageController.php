@@ -160,7 +160,7 @@ class RevenantPageController extends ControllerBase
 
         $fileContent = $_FILES['upload']['tmp_name'];
 
-        $tempFilePath = 'public://' . $_FILES['upload']['name'];
+        $tempFilePath = 'temporary://' . $_FILES['upload']['name'];
 
         move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
 
