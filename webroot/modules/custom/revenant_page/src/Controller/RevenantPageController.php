@@ -162,11 +162,11 @@ class RevenantPageController extends ControllerBase
 
 
         $file_path = $_SERVER['DOCUMENT_ROOT'] . '/revenant/img/tmp/' .  $_FILES['upload']['name'];
-        $file = $_FILES['upload']['name'];
+        $file = $_FILES['upload'];
 
+        move_uploaded_file($file, $file_path);
 
-
-        if (move_uploaded_file($file, $file_path)) {
+        if (true) {
             $msg = "File created successfully";
         }
         else {
@@ -174,7 +174,7 @@ class RevenantPageController extends ControllerBase
         }
 
         $public_url = file_create_url($tempFilePath);
-        \Drupal::logger('revenant_page')->notice($public_url);
+        \Drupal::logger('revenant_page')->notice($file_path);
 
 
         // ------------------------
