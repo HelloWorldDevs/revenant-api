@@ -150,16 +150,10 @@ class RevenantPageController extends ControllerBase
     public function post_page_content_image(Request $request)
     {
         $temporary = \Drupal::config('system.file')->get('path.temporary');
-        $temporary_directory = PublicStream::basePath() . '/tmp';
-        \Drupal::logger('my_module')->notice($temporary_directory);
-//        $CKEditor = \Drupal::request()->query->get('CKEditor') ;
-//        \Drupal::logger('my_module')->notice($CKEditor);
 
-//      Required: Function number as indicated by CKEditor.
         $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
         \Drupal::logger('my_module')->notice($funcNum);
 
-//         Optional: To provide localized messages
         $langCode = \Drupal::request()->query->get('langCode');
         \Drupal::logger('my_module')->notice($langCode);
 
@@ -183,6 +177,8 @@ class RevenantPageController extends ControllerBase
         // ------------------------
         // The returned url of the uploaded file
         $url = $temporary .  $_FILES['upload']['name'];
+        $public_url = file_create_url($uri);
+        \Drupal::logger('my_module')->notice($public_url);
 
 
         // In FCKeditor the uploaded file was sent as 'NewFile' but in CKEditor is 'upload'
@@ -208,7 +204,7 @@ class RevenantPageController extends ControllerBase
         // We are in an iframe, so we must talk to the object in window.parent
 //
 
-        $response['data'] = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$url.'","'.$msg.'");</script></body></html>';
+        $response['data'] = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$public_url.'","'.$msg.'");</script></body></html>';
 
         return $response;
     }
