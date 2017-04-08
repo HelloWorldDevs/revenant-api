@@ -162,11 +162,13 @@ class RevenantPageController extends ControllerBase
 
         $tempFilePath = 'public://' . $_FILES['upload']['name'];
 
-        $file = file_save_data(
-            $fileContent,
-            $tempFilePath,
-            FILE_EXISTS_REPLACE
-        );
+        move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
+
+//        $file = file_save_data(
+//            $fileContent,
+//            $tempFilePath,
+//            FILE_EXISTS_REPLACE
+//        );
 
         if (true) {
             $msg = "File created successfully";
