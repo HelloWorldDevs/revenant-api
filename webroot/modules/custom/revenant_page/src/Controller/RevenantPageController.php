@@ -162,18 +162,14 @@ class RevenantPageController extends ControllerBase
 
         move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
 
-        if (true) {
-            $msg = "File created successfully";
-        }
-        else {
-            $msg ="Error in file creation";
-        }
+        $msg = '';
+
         $public_url = file_create_url($tempFilePath);
         \Drupal::logger('revenant_page')->notice($public_url);
 
         $response = new Response();
 
-        $response->setContent('<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction(' . $funcNum . ', "'.$public_url.'");</script></body></html>');
+        $response->setContent('<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction(' . $funcNum . ', "'.$public_url.'","'.$msg.'");</script></body></html>');
 
         return $response;
     }
