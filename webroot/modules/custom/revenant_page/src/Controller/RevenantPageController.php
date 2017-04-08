@@ -158,7 +158,7 @@ class RevenantPageController extends ControllerBase
         \Drupal::logger('revenant_page')->notice($langCode);
 
 
-        $fileContent = $_FILES['upload'];
+        $fileContent = $_FILES['upload'][0];
 
         $tempFilePath = 'public://' . $_FILES['upload']['name'];
 
