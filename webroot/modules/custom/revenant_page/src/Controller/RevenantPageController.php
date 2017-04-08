@@ -188,12 +188,12 @@ class RevenantPageController extends ControllerBase
 
         $response = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$public_url.'","'.$msg.'");</script></body></html>';
 
-        return $response;
+//        return $response;
 
 //        $response['data'] = 'Post ';
 //        $response['method'] = 'POST';
 //
-//        return new JsonResponse($response);
+        return new JsonResponse($response);
     }
 
 }
