@@ -158,7 +158,7 @@ class RevenantPageController extends ControllerBase
         \Drupal::logger('revenant_page')->notice($langCode);
 
 
-        $fileContent = $_FILES['upload'][0];
+        $fileContent = $_FILES['upload'];
 
         $tempFilePath = 'public://' . $_FILES['upload']['name'];
 
@@ -175,7 +175,7 @@ class RevenantPageController extends ControllerBase
             $msg ="Error in file creation";
         }
         $public_url = file_create_url($tempFilePath);
-        \Drupal::logger('revenant_page')->notice(@$public_url);
+        \Drupal::logger('revenant_page')->notice($fileContent);
 
 
         // ------------------------
