@@ -151,24 +151,16 @@ class RevenantPageController extends ControllerBase
     public function post_page_content_image(Request $request)
     {
 
-        $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
-        \Drupal::logger('revenant_page')->notice($funcNum);
+//        $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
+//        \Drupal::logger('revenant_page')->notice($funcNum);
+//
+//        $langCode = \Drupal::request()->query->get('langCode');
+//        \Drupal::logger('revenant_page')->notice($langCode);
 
-        $langCode = \Drupal::request()->query->get('langCode');
-        \Drupal::logger('revenant_page')->notice($langCode);
-
-
-        $fileContent = $_FILES['upload']['tmp_name'];
 
         $tempFilePath = 'public://' . 'temp/'. $_FILES['upload']['name'];
 
         move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
-
-//        $file = file_save_data(
-//            $fileContent,
-//            $tempFilePath,
-//            FILE_EXISTS_REPLACE
-//        );
 
         if (true) {
             $msg = "File created successfully";
@@ -179,23 +171,11 @@ class RevenantPageController extends ControllerBase
         $public_url = file_create_url($tempFilePath);
         \Drupal::logger('revenant_page')->notice($public_url);
 
-
-        // ------------------------
-        // Write output
-        // ------------------------
-        // We are in an iframe, so we must talk to the object in window.parent
-//
-
         $response = new Response();
 
-        $response->setContent('<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction(' . $funcNum . ', "'.$public_url.'","'.$msg.'");</script></body></html>');
+        $response->setContent('<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction(' . $funcNum . ', "'.$public_url.'");</script></body></html>');
 
         return $response;
-
-//        $response['data'] = 'Post ';
-//        $response['method'] = 'POST';
-//
-//        return new JsonResponse($response);
     }
 
 }
