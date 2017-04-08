@@ -10,7 +10,8 @@ use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\node\Entity\Node;
-use \Drupal\Core\StreamWrapper\PublicStream;
+use Symfony\Component\HttpFoundation\Response;
+
 
 
 class RevenantPageController extends ControllerBase
@@ -186,14 +187,15 @@ class RevenantPageController extends ControllerBase
         // We are in an iframe, so we must talk to the object in window.parent
 //
 
-        $response = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$public_url.'","'.$msg.'");</script></body></html>';
+        $response = new Response('<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$public_url.'","'.$msg.'");</script></body></html>', Response::HTTP_OK,
+            array('content-type' => 'text/html'));
 
-//        return $response;
+        return $response;
 
 //        $response['data'] = 'Post ';
 //        $response['method'] = 'POST';
 //
-        return new JsonResponse($response);
+//        return new JsonResponse($response);
     }
 
 }
