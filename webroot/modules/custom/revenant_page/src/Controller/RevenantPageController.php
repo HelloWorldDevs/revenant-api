@@ -150,7 +150,7 @@ class RevenantPageController extends ControllerBase
         $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
 
         //public files directory in drupal
-        $tempFilePath = 'public://' . 'temp/'. $_FILES['upload']['name'];
+        $tempFilePath = 'public://' . $_FILES['upload']['name'];
 
         //save uploaded image file to public dir
         move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
