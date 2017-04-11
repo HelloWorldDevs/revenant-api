@@ -40,7 +40,7 @@ var pageModule = (function ($) {
     return xpath;
   };
 
-  //method for constructing revenant content item data model.
+  //method for constructing revenant content item data model. All of the data that D8 needs to construct node.
   page.getCompletePath = function (e) {
     var url = window.location.hostname + window.location.pathname;
     var xpath = page.getXPath(e.parentNode);
@@ -88,7 +88,7 @@ var pageModule = (function ($) {
         url: DEV_CONFIG + 'rev-content/?url=' + pageLocation,
         success: function (data) {
           console.log('revenant content check success', data);
-          //if no revenant nodes are sent and the user is logged in, send current revenant data to be created as revenant revenant entity reference
+          //if no revenant nodes are sent and the user is logged in, send current revenant data to be created as revenant page entity reference
           if (!data.length && sessionStorage.getItem('rev_auth')) {
             var currentPage = {};
             currentPage.title = window.location.hostname + window.location.pathname;

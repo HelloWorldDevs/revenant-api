@@ -16,10 +16,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RevenantPageController extends ControllerBase
 {
-
     /**
      * Proxy for handling authentication, retrieves client credentials.
      */
+    //endpoint for proxying request credentials
     public function post_creds(Request $request)
     {
         $content = json_decode($request->getContent(), TRUE);
@@ -48,14 +48,9 @@ class RevenantPageController extends ControllerBase
         return new JsonResponse($response);
     }
 
+    //endpoint for creating a revenent page entity reference, must be associated with all revenant page content nodes for rest export of content.
     public function post_page_create(Request $request)
     {
-        // This condition checks the `Content-type` and makes sure to
-        // decode JSON string from the request body into array.
-//        if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
-//            $data = json_decode($request->getContent(), TRUE);
-//            $request->request->replace(is_array($data) ? $data : []);
-//        }
         $content = json_decode($request->getContent(), TRUE);
 
         //create node for page on check
@@ -69,7 +64,7 @@ class RevenantPageController extends ControllerBase
         $page_node->save();
         $page_node_id = $page_node->id();
 
-        // create default content node for page
+        // create default content node for page, so on load with no content yet saved the page is not created a second time.
         $content_node = Node::create(array(
             'type' => 'revenant_content_item',
             'title' => $content['title'] . 'default content item',
@@ -82,18 +77,20 @@ class RevenantPageController extends ControllerBase
         $content_node->field_page->target_id = $page_node_id;
         $content_node->save();
 
-        $response['data'] = 'Post ';
+        //all endpoints must return a response
+        $response['data'] = 'Post to revenent_page_create successful';
         $response['method'] = 'POST';
-
         return new JsonResponse($response);
     }
 
+
+    //endpoint for posting page content
     public function post_page_content(Request $request)
     {
-        if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
-            $data = json_decode($request->getContent(), TRUE);
-            $request->request->replace(is_array($data) ? $data : []);
-        }
+//        if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
+//            $data = json_decode($request->getContent(), TRUE);
+//            $request->request->replace(is_array($data) ? $data : []);
+//        }
         $content = json_decode($request->getContent(), TRUE);
         $editorData = $content['data'];
 
