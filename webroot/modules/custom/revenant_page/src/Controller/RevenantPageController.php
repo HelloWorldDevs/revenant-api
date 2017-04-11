@@ -87,10 +87,6 @@ class RevenantPageController extends ControllerBase
     //endpoint for posting page content
     public function post_page_content(Request $request)
     {
-//        if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
-//            $data = json_decode($request->getContent(), TRUE);
-//            $request->request->replace(is_array($data) ? $data : []);
-//        }
         $content = json_decode($request->getContent(), TRUE);
         $editorData = $content['data'];
 
@@ -114,6 +110,7 @@ class RevenantPageController extends ControllerBase
                 ->condition('status', 1)
                 ->condition('type', 'revenant_page')
                 ->condition('title', $editorData['url']);
+            //entityQuery returns array of results, must use reset to get only returning result
             $results = $query->execute();
             $nid = reset($results);
 
@@ -123,7 +120,6 @@ class RevenantPageController extends ControllerBase
             $user = reset($users);
             $uid = $user->id();
 
-            //TODO remove tags for edit text and content-editable
             //create node for page on check
             $node = Node::create(array(
                 'type' => 'revenant_content_item',
@@ -139,28 +135,34 @@ class RevenantPageController extends ControllerBase
             $node->save();
         }
 
-        $response['data'] = 'Post ';
+        $response['data'] = 'Post to revenant post content successful';
         $response['method'] = 'POST';
 
         return new JsonResponse($response);
     }
 
+
+    // endpoint used for uploading images in ckeditor. Uploaded images in ckeditor must be saved and have a url to reference.
+    //BIG TODO: associate saved images with revenant image content types to be associated with revenant page content. Saving to public file system (tried to save to temp, cannot make accessible because of .htaccess written to temp on every file save) was a temporary solution. Getting rid of image content that is not associated with any revenant page content will need to be done as well.
     public function post_page_content_image(Request $request)
     {
-
+        //callback function ckeditor simpleuploads needs for saved images
         $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
 
+        //public files directory in drupal
         $tempFilePath = 'public://' . 'temp/'. $_FILES['upload']['name'];
 
+        //save uploaded image file to public dir
         move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
 
+        //leave message blank to avoid browser alert
         $msg = '';
 
+        //create a public url to send back for uploaded image.
         $public_url = file_create_url($tempFilePath);
-        \Drupal::logger('revenant_page')->notice($public_url);
 
         $response = new Response();
-
+        //see the ckeditor simpleuploads plugin directory for documentation on this response code.
         $response->setContent('<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction(' . $funcNum . ', "'.$public_url.'","'.$msg.'");</script></body></html>');
 
         return $response;
