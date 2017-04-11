@@ -42,6 +42,16 @@ var pageControllerModule = (function($){
         useColorIcon: false
       };
 
+      CKEDITOR.on('instanceReady', function(e) {
+          // the real listener
+          e.editor.on( 'simpleuploads.startUpload' , function(ev) {
+              var extraHeaders = {
+                  'Authorization': 'Bearer ' + authToken
+              };
+              ev.data.extraHeaders = extraHeaders;
+          });
+      });
+
       //ckeditor instantiation happens here, when passing element into method, toolbar configuration also needs to happen here.
       var editor = CKEDITOR.inline(el, {
         bodyId: data,

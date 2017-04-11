@@ -151,10 +151,11 @@ class RevenantPageController extends ControllerBase
     public function post_page_content_image(Request $request)
     {
 
-        $funcNum = \Drupal::request()->query->get('CKEditorFuncNum');
-        $filePath = 'public://' . 'temp/'. $_FILES['upload']['name'];
+        $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
 
-        move_uploaded_file($_FILES["upload"]["tmp_name"], $filePath);
+        $tempFilePath = 'public://' . 'temp/'. $_FILES['upload']['name'];
+
+        move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
 
         $msg = '';
 
