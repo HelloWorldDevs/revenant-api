@@ -150,7 +150,7 @@ class RevenantPageController extends ControllerBase
         $funcNum = \Drupal::request()->query->get('CKEditorFuncNum') ;
 
         //public files directory in drupal
-        $tempFilePath = 'public://' . $_FILES['upload']['name'];
+        $tempFilePath = 'public://' . 'temp/'. $_FILES['upload']['name'];
 
         //save uploaded image file to public dir
         move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
@@ -161,6 +161,7 @@ class RevenantPageController extends ControllerBase
         //create a public url to send back for uploaded image.
         $public_url = file_create_url($tempFilePath);
         \Drupal::logger('revenant_page')->notice($public_url);
+        \Drupal::logger('revenant_page')->notice($_FILES['upload']['name']);
 
         $response = new Response();
         //see the ckeditor simpleuploads plugin directory for documentation on this response code.
