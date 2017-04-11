@@ -160,6 +160,7 @@ class RevenantPageController extends ControllerBase
 
         //create a public url to send back for uploaded image.
         $public_url = file_create_url($tempFilePath);
+        \Drupal::logger('revenant_page')->notice($public_url);
 
         $response = new Response();
         //see the ckeditor simpleuploads plugin directory for documentation on this response code.
