@@ -1978,12 +1978,12 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=454832
 		if (typeof data.file == 'string')
 			sendBase64File(data, xhr, inputName);
 		else
-			sendBlobFile(data, xhr, inputName, editor);
+			sendBlobFile(data, xhr, inputName);
 
 		return true;
 	}
 
-	function sendBlobFile(data, xhr, inputName, editor) {
+	function sendBlobFile(data, xhr, inputName) {
 		var formdata = new FormData();
 		formdata.append(inputName, data.file, data.name);
 		// Add extra fields if provided
@@ -2003,7 +2003,6 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=454832
 				}
 			}
 		}
-		xhr.setRequestHeader("Authorization", editor.config.postAuth);//added header postAuth
 		xhr.send(formdata);
 	}
 
