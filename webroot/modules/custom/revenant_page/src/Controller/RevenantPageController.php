@@ -10,7 +10,6 @@ use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\node\Entity\Node;
-use Drupal\Core\File\FileSystem;
 use Symfony\Component\HttpFoundation\Response;
 
 
@@ -154,9 +153,7 @@ class RevenantPageController extends ControllerBase
         $tempFilePath = 'public://' . 'temp/'. $_FILES['upload']['name'];
 
         //save uploaded image file to public dir
-//        move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
-
-        FileSystem::moveUploadedFile($_FILES["upload"]["tmp_name"], $tempFilePath);
+        move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
 
         //leave message blank to avoid browser alert
         $msg = '';
