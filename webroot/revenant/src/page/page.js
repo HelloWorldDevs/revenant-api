@@ -169,6 +169,16 @@ var pageModule = (function ($) {
       pre: 1,
       section: 1
     };
+    var authToken = JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
+    CKEDITOR.on('instanceReady', function(e) {
+        // the real listener
+        e.editor.on( 'simpleuploads.startUpload' , function(ev) {
+            var extraHeaders = {
+              'Authorization': 'Bearer ' + authToken
+            };
+            ev.data.extraHeaders = extraHeaders;
+        });
+    });
 
     //uncomment and run for clearing ckeditor cache and allowing modification of plugins. Used when modifying inline save plugin.
     CKEDITOR.timestamp = Math.random().toString(36).substring( 0, 5 );
@@ -176,7 +186,7 @@ var pageModule = (function ($) {
 
   //spin js loading gif function, used during content check and insertion
   page.spinnerLoad = function () {
-    $spinnerDiv = $('<div id="spinner-overlay" style="position: fixed; height: 100%; z-index: 9999; top: 0;bottom: 0;left: 0;right: 0;opacity: .9;background-color: #fff;"><div id="loading-spinner"><div></div>')
+    $spinnerDiv = $('<div id="spinner-overlay" style="position: fixed; height: 100%; z-index: 9999; top: 0;bottom: 0;left: 0;right: 0;opacity: .9;background-color: #fff;"><div id="loading-spinner"><div></div>');
     $('body').append($spinnerDiv);
 
     var opts = {

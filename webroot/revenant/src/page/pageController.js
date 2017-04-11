@@ -42,7 +42,7 @@ var pageControllerModule = (function($){
         useColorIcon: false
       };
 
-      //ckeditor toolbar configuration
+      //ckeditor instantiation happens here, when passing element into method, toolbar configuration also needs to happen here.
       var editor = CKEDITOR.inline(el, {
         bodyId: data,
         extraPlugins: 'inlinesave,simpleuploads,image2',
