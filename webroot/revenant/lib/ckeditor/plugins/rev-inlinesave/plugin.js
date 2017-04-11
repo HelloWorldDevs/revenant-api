@@ -1,6 +1,5 @@
 CKEDITOR.plugins.add("inlinesave", {
   init: function (b) {
-    console.log('inline save init!')
     var a = b.config.inlinesave, c;
     if (typeof a == "undefined") {
       throw new Error("CKEditor inlinesave: You must define config.inlinesave in your configuration file. See http://ckeditor.com/addon/inlinesave");
