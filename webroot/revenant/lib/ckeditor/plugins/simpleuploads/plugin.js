@@ -1822,7 +1822,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=454832
 		data.xhr = xhr;
 
 		// Upload the file
-		xhr.open('POST', data.url);
+		xhr.open('PUT', data.url);
 		xhr.onload = function () {
 			var id = data.id;
 			var el = editor.document.getById(id);
@@ -1978,12 +1978,12 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=454832
 		if (typeof data.file == 'string')
 			sendBase64File(data, xhr, inputName);
 		else
-			sendBlobFile(data, xhr, inputName);
+			sendBlobFile(data, xhr, inputName, editor);
 
 		return true;
 	}
 
-	function sendBlobFile(data, xhr, inputName) {
+	function sendBlobFile(data, xhr, inputName, editor) {
 		var formdata = new FormData();
 		formdata.append(inputName, data.file, data.name);
 		// Add extra fields if provided
@@ -2003,6 +2003,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=454832
 				}
 			}
 		}
+        xhr.setRequestHeader("Authorization", editor.config.postAuth);
 		xhr.send(formdata);
 	}
 
