@@ -153,7 +153,12 @@ class RevenantPageController extends ControllerBase
         $tempFilePath = 'public://' . 'temp/'. $_FILES['upload']['name'];
 
         //save uploaded image file to public dir
-        move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
+        if(move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath)) {
+            \Drupal::logger('revenant_page')->notice('file saved!');
+        } else {
+            \Drupal::logger('revenant_page')->notice('file NOT saved!');
+        }
+
 
         //leave message blank to avoid browser alert
         $msg = '';
