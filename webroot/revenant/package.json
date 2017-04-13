@@ -2,7 +2,7 @@
   "name": "revenant",
   "version": "1.0.0",
   "description": "Revenant drop in CMS front end scripts",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "repository": "https://github.com/HelloWorldDevs/revenant-api.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

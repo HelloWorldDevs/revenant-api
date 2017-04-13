@@ -29,5 +29,7 @@ page_image.post:
   defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_page_content_image' }
   methods:  [GET, POST]
   requirements:
-    _access: 'TRUE'
+    _permission: 'access content'
+  options:
+    _auth: [ 'basic_auth', 'oauth2' ]
 
