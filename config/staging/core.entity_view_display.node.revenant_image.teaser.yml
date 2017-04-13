@@ -1,0 +1,26 @@
+uuid: 393704ec-a84a-45bc-b000-5e71dea13e98
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.revenant_image.body
+    - node.type.revenant_image
+  module:
+    - text
+    - user
+id: node.revenant_image.teaser
+targetEntityType: node
+bundle: revenant_image
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }
