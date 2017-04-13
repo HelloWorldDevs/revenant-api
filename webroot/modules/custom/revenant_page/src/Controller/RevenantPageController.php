@@ -153,33 +153,31 @@ class RevenantPageController extends ControllerBase
         $tempFilePath = 'public://' . 'temp/'. $_FILES['upload']['name'];
 
         //save uploaded image file to public dir
-//        if(move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath)) {
-//            \Drupal::logger('revenant_page')->notice('file saved!');
-//        } else {
-//            \Drupal::logger('revenant_page')->notice($_FILES["upload"]["error"]);
-//        }
+        if(move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath)) {
+            \Drupal::logger('revenant_page')->notice('file saved!');
+        } else {
+            \Drupal::logger('revenant_page')->notice($_FILES["upload"]["error"]);
+        }
 
-//        $content = json_decode($request->getContent(), TRUE);
 
         //create image node for page on check
-        $image_node = Node::create(array(
-            'type' => 'revenant_image',
-            'title' => 'revenant image',
-            'langcode' => 'en',
-            'status' => 1,
-            'field_inline_image' => $_FILES["upload"]["tmp_name"],
-        ));
-
-        $public_url = file_create_url($image_node->field_inline_image->entity->getFileUri());
-        \Drupal::logger('revenant_page')->notice($public_url);
-
-        $image_node->save();
+//        $image_node = Node::create(array(
+//            'type' => 'revenant_image',
+//            'title' => 'revenant image',
+//            'langcode' => 'en',
+//            'status' => 1,
+//            'field_inline_image' => $_FILES["upload"]["tmp_name"],
+//        ));
+//
+//        $public_url = file_create_url($image_node->field_inline_image->entity->getFileUri());
+//        $image_node->save();
 
         //leave message blank to avoid browser alert
         $msg = '';
 
         //create a public url to send back for uploaded image.
-//        $public_url = file_create_url($tempFilePath);
+        $public_url = file_create_url($tempFilePath);
+        \Drupal::logger('revenant_page')->notice($public_url);
 
         $response = new Response();
         //see the ckeditor simpleuploads plugin directory for documentation on this response code.
