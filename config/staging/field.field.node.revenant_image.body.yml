@@ -1,0 +1,22 @@
+uuid: f04bdaee-28d6-4ae9-b55a-36fc118af32d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.revenant_image
+  module:
+    - text
+id: node.revenant_image.body
+field_name: body
+entity_type: node
+bundle: revenant_image
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary
