@@ -65,7 +65,7 @@ class RevenantPageController extends ControllerBase
     {
         $content = json_decode($request->getContent(), TRUE);
         $username = $content["username"];
-        \Drupal::logger('revenant_page')->notice($username);
+        \Drupal::logger('revenant_page')->notice($content);
         $users = \Drupal::entityTypeManager()->getStorage('user')
             ->loadByProperties(['name' => $username]);
         $user = reset($users);
