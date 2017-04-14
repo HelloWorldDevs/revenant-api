@@ -46,7 +46,7 @@ class RevenantPageController extends ControllerBase
                      'form_params' => $auth_body
                  ]);
                  $response = $response->getBody()->getContents();
-                 //get uid from current client user.
+                 //log user into revenant to allow content saving.
                  $users = \Drupal::entityTypeManager()->getStorage('user')
                      ->loadByProperties(['name' => $username]);
                  $user = reset($users);
@@ -59,6 +59,38 @@ class RevenantPageController extends ControllerBase
         }
         return new JsonResponse($response);
     }
+
+    //endpoint for logging user out of drupal.
+    public function page_logout(Request $request)
+    {
+        $content = json_decode($request->getContent(), TRUE);
+        $username = $content["username"];
+        $users = \Drupal::entityTypeManager()->getStorage('user')
+            ->loadByProperties(['name' => $username]);
+        $user = reset($users);
+        $this->revenant_page_user_logout($user);
+
+        //all endpoints must return a response
+        $response['data'] = 'Post to page_logout successful';
+        $response['method'] = 'POST';
+        return new JsonResponse($response);
+
+    }
+
+
+    /*
+     * Implements hook_user_logout
+     */
+    function revenant_page_user_logout($account) {
+        $db = \Drupal::database();
+        $db->insert('logouts')
+            ->fields(array(
+                'uid' => $account->id(),
+                'time' => time(),
+            ))
+            ->execute();
+    }
+
 
     //endpoint for creating a revenent page entity reference, must be associated with all revenant page content nodes for rest export of content.
     public function post_page_create(Request $request)

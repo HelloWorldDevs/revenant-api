@@ -6,6 +6,15 @@ page_creds.post:
   requirements:
     _access: 'TRUE'
 
+page_logout.post:
+  path: 'revenant_page/page_logout'
+  defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::page_logout' }
+  methods:  [POST]
+  requirements:
+    _user_is_logged_in: 'TRUE'
+  options:
+    _auth: [ 'basic_auth', 'oauth2' ]
+
 page.post:
   path: 'revenant_page/page_create'
   defaults: { _controller: '\Drupal\revenant_page\Controller\RevenantPageController::post_page_create' }

@@ -206,20 +206,23 @@ var pageControllerModule = (function($){
 
     //logout handler, unbind and bind handler to avoid repetition
     $('.rev_logout').off('click').on('click', function () {
-      $('.rev_user_control_panel').remove();
+      pageController.logoutRequest().then(function(data) {
+        console.log('rev logout', data);
+          $('.rev_user_control_panel').remove();
 
-      //remove all edit handlers from text--edit elements
-      $('.text--edit').unbind('click', pageController.editHandler);
+          //remove all edit handlers from text--edit elements
+          $('.text--edit').unbind('click', pageController.editHandler);
 
-      //remove all edit classes
-      pageController.removeEditClass();
+          //remove all edit classes
+          pageController.removeEditClass();
 
-      //clear session storage of tokens
-      sessionStorage.clear();
+          //clear session storage of tokens
+          sessionStorage.clear();
 
-      //append login and bind keydown keyup
-      pageController.appendLogin();
-      pageController.loginKeyBind();
+          //append login and bind keydown keyup
+          pageController.appendLogin();
+          pageController.loginKeyBind();
+      });
     });
     // });
   };
@@ -263,6 +266,20 @@ var pageControllerModule = (function($){
         });
     })
   };
+
+  //request handler for logging out drupal user
+    pageController.logoutRequest = function () {
+      var username = JSON.parse(sessionStorage.getItem('rev_auth')).username,
+      authToken = JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
+      return $.ajax({
+        url: DEV_CONFIG + 'revenant_page/page_logout',
+        type: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' +  authToken
+        },
+        data: {'username': username}
+      })
+    }
 
   //pageController module initializer, checks for authorized user session token and adds login or control panel on page load. Adds edit class if user is authenticated.
   pageController.init = function () {
