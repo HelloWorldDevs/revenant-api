@@ -193,7 +193,7 @@ class RevenantPageController extends ControllerBase
 //        }
 
 //        $data = file_get_contents($tempFilePath);
-        $file = move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath)
+        $file = move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
 
 
         //create image node for page on check
