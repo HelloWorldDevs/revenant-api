@@ -271,6 +271,7 @@ var pageControllerModule = (function($){
     pageController.logoutRequest = function () {
       var username = JSON.parse(sessionStorage.getItem('rev_auth')).username,
       authToken = JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
+      console.log(username)
       return $.ajax({
         url: DEV_CONFIG + 'revenant_page/page_logout',
         type: 'POST',
@@ -278,8 +279,8 @@ var pageControllerModule = (function($){
           'Authorization': 'Bearer ' +  authToken
         },
         data: {'username': username}
-      })
-    }
+      });
+    };
 
   //pageController module initializer, checks for authorized user session token and adds login or control panel on page load. Adds edit class if user is authenticated.
   pageController.init = function () {

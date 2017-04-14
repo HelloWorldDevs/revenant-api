@@ -83,7 +83,8 @@ class RevenantPageController extends ControllerBase
      */
     function revenant_page_user_logout($account) {
         $db = \Drupal::database();
-        $db->insert('logouts')
+        $conn = $db::getConnection();
+        $conn->insert('logouts')
             ->fields(array(
                 'uid' => $account->id(),
                 'time' => time(),
