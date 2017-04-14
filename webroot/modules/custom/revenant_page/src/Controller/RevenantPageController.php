@@ -185,15 +185,15 @@ class RevenantPageController extends ControllerBase
         $tempFilePath = 'public://' . 'temp/'. $_FILES['upload']['name'];
 
 
-//        //save uploaded image file to public dir
-//        if(move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath)) {
-//            \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
-//        } else {
-//            \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
-//        }
+        //save uploaded image file to public dir
+        if(move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath)) {
+            \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
+        } else {
+            \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
+        }
 
-//        $data = file_get_contents($tempFilePath);
-        $file = move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath);
+        $data = file_get_contents($tempFilePath);
+        $file = file_save_data($data, $tempFilePath, FILE_EXISTS_REPLACE);
 
 
         //create image node for page on check
