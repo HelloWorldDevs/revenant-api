@@ -184,7 +184,6 @@ class RevenantPageController extends ControllerBase
         //public files directory in drupal
         $tempFilePath = 'public://' . 'temp/'. $_FILES['upload']['name'];
 
-        chmod('public://temp/', 0755);
 
         //save uploaded image file to public dir
 //        if(move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath)) {
