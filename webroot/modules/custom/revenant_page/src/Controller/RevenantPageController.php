@@ -80,21 +80,6 @@ class RevenantPageController extends ControllerBase
     }
 
 
-//    /**
-//     * Implements hook_user_logout
-//     */
-//    function revenant_page_user_logout($account) {
-//        $db = \Drupal::database();
-//        $conn = $db::getConnection();
-//        $conn->insert('logouts')
-//            ->fields(array(
-//                'uid' => $account->id(),
-//                'time' => time(),
-//            ))
-//            ->execute();
-//    }
-
-
     //endpoint for creating a revenent page entity reference, must be associated with all revenant page content nodes for rest export of content.
     public function post_page_create(Request $request)
     {

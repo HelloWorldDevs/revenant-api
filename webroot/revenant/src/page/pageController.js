@@ -42,7 +42,7 @@ var pageControllerModule = (function($){
         useColorIcon: false
       };
 
-      //ckeditor simpleupload images add authorization header.
+      // ckeditor simpleupload images add authorization header.
       CKEDITOR.on('instanceReady', function(e) {
           e.editor.on( 'simpleuploads.startUpload' , function(ev) {
               var extraHeaders = {
@@ -271,7 +271,6 @@ var pageControllerModule = (function($){
     pageController.logoutRequest = function () {
       var username = JSON.parse(sessionStorage.getItem('rev_auth')).username,
       authToken = JSON.parse(sessionStorage.getItem('rev_auth')).access_token;
-      console.log(username)
       return $.ajax({
         url: DEV_CONFIG + 'revenant_page/page_logout',
         type: 'POST',
