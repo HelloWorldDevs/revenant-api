@@ -23,7 +23,7 @@ var pageControllerModule = (function($){
       //configure ckeditor instance
       CKEDITOR.config.inlinesave = {
         postUrl: DEV_CONFIG + 'revenant_page/page_content',
-        postAuth: 'Bearer ', //custom config set by KW in inline save plugin, is and xhr authorization header.
+        postAuth: 'Bearer ' + authToken, //custom config set by KW in inline save plugin, is and xhr authorization header.
         postData: {data: data},
         useJson: true,
         onSave: function (editor) {
@@ -43,14 +43,14 @@ var pageControllerModule = (function($){
       };
 
       //ckeditor simpleupload images add authorization header.
-      // CKEDITOR.on('instanceReady', function(e) {
-      //     e.editor.on( 'simpleuploads.startUpload' , function(ev) {
-      //         var extraHeaders = {
-      //             'Authorization': 'Bearer ' + authToken
-      //         };
-      //         ev.data.extraHeaders = extraHeaders;
-      //     });
-      // });
+      CKEDITOR.on('instanceReady', function(e) {
+          e.editor.on( 'simpleuploads.startUpload' , function(ev) {
+              var extraHeaders = {
+                  'Authorization': 'Bearer ' + authToken
+              };
+              ev.data.extraHeaders = extraHeaders;
+          });
+      });
 
       //ckeditor instantiation happens here, when passing element into method, toolbar configuration also needs to happen here.
       var editor = CKEDITOR.inline(el, {
