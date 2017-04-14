@@ -46,6 +46,12 @@ class RevenantPageController extends ControllerBase
                      'form_params' => $auth_body
                  ]);
                  $response = $response->getBody()->getContents();
+                 //get uid from current client user.
+                 $users = \Drupal::entityTypeManager()->getStorage('user')
+                     ->loadByProperties(['name' => $editorData['username']]);
+                 $user = reset($users);
+                 user_login_finalize($user);
+
              } catch (RequestException $e) {
                  \Drupal::logger('revenant_page')->notice($e->getMessage());
                  $response = $e->getMessage();
