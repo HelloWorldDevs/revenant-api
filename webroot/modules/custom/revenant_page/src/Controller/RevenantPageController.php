@@ -68,7 +68,9 @@ class RevenantPageController extends ControllerBase
         $users = \Drupal::entityTypeManager()->getStorage('user')
             ->loadByProperties(['name' => $username]);
         $user = reset($users);
-        $this->revenant_page_user_logout($user);
+        $uid = $user->id();
+        \Drupal::service('session_manager')->delete($uid);
+//        $this->revenant_page_user_logout($user);
 
         //all endpoints must return a response
         $response['data'] = 'Post to page_logout successful';
@@ -78,7 +80,7 @@ class RevenantPageController extends ControllerBase
     }
 
 
-    /*
+    /**
      * Implements hook_user_logout
      */
     function revenant_page_user_logout($account) {
