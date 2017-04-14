@@ -186,15 +186,13 @@ class RevenantPageController extends ControllerBase
 
 
         //save uploaded image file to public dir
-//        if(move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath)) {
-//            \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
-//        } else {
-//            \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
-//        }
+        if(move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath)) {
+            \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
+        } else {
+            \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
+        }
 
-        $file = file_save_data($_FILES["upload"]["tmp_name"], $tempFilePath, FILE_EXISTS_REPLACE);
-
-
+        $file = file_get_contents($tempFilePath);
 
         //create image node for page on check
         $image_node = Node::create(array(
@@ -207,8 +205,8 @@ class RevenantPageController extends ControllerBase
                 'alt' => 'Hello world',
             ]
         ));
-//
-//        $public_url = file_create_url($image_node->field_inline_image->entity->getFileUri());
+
+        //$public_url = file_create_url($image_node->field_inline_image->entity->getFileUri());
         $image_node->save();
 
         //leave message blank to avoid browser alert
