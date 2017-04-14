@@ -65,17 +65,16 @@ class RevenantPageController extends ControllerBase
     {
         $content = json_decode($request->getContent(), TRUE);
         $username = $content["username"];
-//        \Drupal::logger('revenant_page')->notice($content);
         $users = \Drupal::entityTypeManager()->getStorage('user')
             ->loadByProperties(['name' => $username]);
         $user = reset($users);
         $uid = $user->id();
         \Drupal::service('session_manager')->delete($uid);
-//        $this->revenant_page_user_logout($user);
+        \Drupal::logger('user')->notice('Session closed for %name.', array('%name' => $user->getAccountName()));
 
-        //all endpoints must return a response
         $response['data'] = 'Post to page_logout successful';
         $response['method'] = 'POST';
+
         return new JsonResponse($response);
 
     }
