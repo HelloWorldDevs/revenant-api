@@ -43,20 +43,19 @@ var pageControllerModule = (function($){
       };
 
       // ckeditor simpleupload images add authorization header.
-      // CKEDITOR.on('instanceReady', function(e) {
-      //     e.editor.on( 'simpleuploads.startUpload' , function(ev) {
-      //         var extraHeaders = {
-      //             'Authorization': 'Bearer ' + authToken
-      //         };
-      //         ev.data.extraHeaders = extraHeaders;
-      //     });
-      // });
+      CKEDITOR.on('instanceReady', function(e) {
+          e.editor.on( 'simpleuploads.startUpload' , function(ev) {
+              var extraHeaders = {
+                  'Authorization': 'Bearer ' + authToken
+              };
+              ev.data.extraHeaders = extraHeaders;
+          });
+      });
 
       //ckeditor instantiation happens here, when passing element into method, toolbar configuration also needs to happen here.
       var editor = CKEDITOR.inline(el, {
         bodyId: data,
         extraPlugins: 'inlinesave,simpleuploads',
-        postAuth: 'Bearer ' + authToken, //custom config set by KW in simpleuploads plugin, is and xhr authorization header.
         filebrowserImageUploadUrl: DEV_CONFIG + 'revenant_page/page_content/image',
         postAuth: 'Bearer ' + authToken,
         allowedContent: true,

@@ -184,25 +184,33 @@ class RevenantPageController extends ControllerBase
         //public files directory in drupal
         $tempFilePath = 'public://' . 'temp/'. $_FILES['upload']['name'];
 
+        chmod($tempFilePath, 0755);
+
         //save uploaded image file to public dir
-        if(move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath)) {
-            \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
-        } else {
-            \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
-        }
+//        if(move_uploaded_file($_FILES["upload"]["tmp_name"], $tempFilePath)) {
+//            \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
+//        } else {
+//            \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
+//        }
+
+        $file = file_save_data($_FILES["upload"]["tmp_name"], $tempFilePath, FILE_EXISTS_REPLACE);
+
 
 
         //create image node for page on check
-//        $image_node = Node::create(array(
-//            'type' => 'revenant_image',
-//            'title' => 'revenant image',
-//            'langcode' => 'en',
-//            'status' => 1,
-//            'field_inline_image' => $_FILES["upload"]["tmp_name"],
-//        ));
+        $image_node = Node::create(array(
+            'type' => 'revenant_image',
+            'title' => 'revenant image',
+            'langcode' => 'en',
+            'status' => 1,
+            'field_inline_image' => [
+                'target_id' => $file->id(),
+                'alt' => 'Hello world',
+            ]
+        ));
 //
 //        $public_url = file_create_url($image_node->field_inline_image->entity->getFileUri());
-//        $image_node->save();
+        $image_node->save();
 
         //leave message blank to avoid browser alert
         $msg = '';
