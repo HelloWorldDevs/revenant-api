@@ -192,7 +192,9 @@ class RevenantPageController extends ControllerBase
             \Drupal::logger('revenant_page')->notice( $_FILES["upload"]["size"]);
         }
 
-        $file = file_get_contents($tempFilePath);
+        $data = file_get_contents($tempFilePath);
+        $file = file_save_data($data, $tempFilePath, FILE_EXISTS_REPLACE);
+
 
         //create image node for page on check
         $image_node = Node::create(array(
