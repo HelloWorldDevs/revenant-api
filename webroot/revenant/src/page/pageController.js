@@ -278,7 +278,7 @@ var pageControllerModule = (function($){
         headers: {
           'Authorization': 'Bearer ' +  authToken
         },
-        data: {'username': username}
+        data: JSON.stringify({'username': username})
       });
     };
 
