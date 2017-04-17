@@ -42,6 +42,7 @@ var pageControllerModule = (function($){
         useColorIcon: false
       };
 
+      //TODO: add this code to add authorization header and update revenant_page.routing.yml with _user_logged_in and _auth specifictaions that are on other routes. Currently adding the authorization header will not allow file to save, handled by revenant_page_module.
       // ckeditor simpleupload images add authorization header.
       // CKEDITOR.on('instanceReady', function(e) {
       //     e.editor.on( 'simpleuploads.startUpload' , function(ev) {

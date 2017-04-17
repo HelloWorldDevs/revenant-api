@@ -175,7 +175,8 @@ class RevenantPageController extends ControllerBase
 
 
     // endpoint used for uploading images in ckeditor. Uploaded images in ckeditor must be saved and have a url to reference.
-    //BIG TODO: associate saved images with revenant image content types to be associated with revenant page content. Saving to public file system (tried to save to temp, cannot make accessible because of .htaccess written to temp on every file save) was a temporary solution. Getting rid of image content that is not associated with any revenant page content will need to be done as well.
+    // TODO: enable file creation with authorization token sent in header. See revenant pageCotnroller.js line 45
+    // TODO: associate saved revenant_image content types with revenant_content_item types. Saving to public file system (and  Getting rid of revenant_image nodes that are not associated with any revenant_content_items will need to be done as well, to clean up.
     public function post_page_content_image(Request $request)
     {
         //callback function ckeditor simpleuploads needs for saved images
@@ -208,7 +209,6 @@ class RevenantPageController extends ControllerBase
             ]
         ));
 
-        //$public_url = file_create_url($image_node->field_inline_image->entity->getFileUri());
         $image_node->save();
 
         //leave message blank to avoid browser alert
@@ -219,6 +219,7 @@ class RevenantPageController extends ControllerBase
         \Drupal::logger('revenant_page')->notice($public_url);
 
         $response = new Response();
+
         //see the ckeditor simpleuploads plugin directory for documentation on this response code.
         $response->setContent('<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction(' . $funcNum . ', "'.$public_url.'","'.$msg.'");</script></body></html>');
 
