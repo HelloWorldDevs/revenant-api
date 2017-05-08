@@ -6,9 +6,9 @@ var sourcemaps = require('gulp-sourcemaps');
 
 
 var scriptSrc = './src/page/*.js',
-    destDir = './dist/'
+    destDir = './dist/';
 
-gulp.task('scripts', function() {
+gulp.task('compile:js', function() {
   return gulp.src(['./lib/spin/spin.min.js', './src/page/pageController.js', './src/page/page.js'])
     .pipe(sourcemaps.init())
     .pipe(concat('revenant.js'))
@@ -18,9 +18,11 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(destDir));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch:js', function() {
   // Watch .js files
-  gulp.watch(scriptSrc, ['scripts']);
+  gulp.watch(scriptSrc, ['compile:js']);
 });
 
-gulp.task('default', ['scripts','watch']);
+gulp.task('default', ['compile:js','watch:js']);
+
+gulp.task('build', ['compile:js']);
