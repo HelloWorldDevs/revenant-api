@@ -1,4 +1,5 @@
 
 node_modules
-.DS_Store
-npm-debug.log
+
+dist/revanant.min.js
+dist/map/revanant.min.js.map
