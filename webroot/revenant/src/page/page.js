@@ -103,7 +103,7 @@ var pageModule = (function ($) {
               if (!item || item.field_xpath.includes('default')) {
                 return
               }
-              let editedNode = page.getElementByXpath(item.field_xpath);
+              var editedNode = page.getElementByXpath(item.field_xpath);
               editedNode ?
                   editedNode.innerHTML = item.field_new_content:
                   console.log("Revenant db content does not match current page. Xpath from db not found on page");

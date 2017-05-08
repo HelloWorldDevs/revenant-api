@@ -1,5 +1,6 @@
 
 node_modules
 
-dist/revanant.min.js
-dist/map/revanant.min.js.map
+revenant.min.js
+revenant.min.js.map
+dist
