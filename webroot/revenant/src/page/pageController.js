@@ -117,7 +117,11 @@ var pageControllerModule = (function($){
         this.recurseAdd(element.childNodes[i]);
     }
     //TODO: add different check for recurse add, must add to anchor elements that are not within a content editable area.
-    if ((element.nodeType == Node.TEXT_NODE && element.nodeValue.trim() != '' && pageController.skipElements.indexOf(element.parentNode.nodeName) <= 0) && (element.parentNode.nodeName != 'A' &&  $(element).parents('.text--edit').length === 0)) {
+    if ((element.nodeType == Node.TEXT_NODE 
+          && element.nodeValue.trim() != '' 
+          && pageController.skipElements.indexOf(element.parentNode.nodeName) <= 0) 
+          && (element.parentNode.nodeName != 'A' 
+            &&  $(element).parents('.text--edit').length === 0)) {
       //get completePath function returns all data needed to send to D8
       var completePath = pageModule.getCompletePath(element);
 
@@ -282,8 +286,11 @@ var pageControllerModule = (function($){
     };
 
   //pageController module initializer, checks for authorized user session token and adds login or control panel on page load. Adds edit class if user is authenticated.
+  /**
+   * pageController module initializer
+   * checks for authorized user session token and adds login or control panel on page load. Adds edit class if user is authenticated.
+   */
   pageController.init = function () {
-    console.log('pageControllerInit, add login or handlers');
     if (!sessionStorage.getItem('rev_auth')) {
       console.log('no rev-auth');
       pageController.appendLogin();
@@ -293,6 +300,7 @@ var pageControllerModule = (function($){
       pageController.editAddHandler();
       pageController.appendControlPanel();
     }
+    console.log('Revenant page controller initialed, login and handlers added');
     $('#spinner-overlay').fadeOut();
   };
 

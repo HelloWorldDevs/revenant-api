@@ -19,11 +19,10 @@
 /*LOGIN*/
 
 .rev_login {
-  text-align: right;
-  display: none;
+  text-align: center;
 }
 
-.rev_login__contaier {
+.rev_login__container {
   height: 1px;
   opacity: 0;
   -webkit-transition: all .7s;
