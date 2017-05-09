@@ -32,6 +32,19 @@
 .show {
 }
 
+.rev_login button {
+  font-family: sans-serif !important;
+  font: 400 !important;
+  font-size: 17px !important;
+  text-transform: uppercase !important;
+  background-color: #007360 !important;
+  color: #FFFFFF !important;
+  border-radius: 10px !important;
+  padding: 5px 10px !important;
+  margin-bottom: 0 !important;
+  line-height: 1 !important;
+}
+
 /* LOADING SPINNER */
 /*#spinner-overlay {*/
   /*position: fixed;*/
