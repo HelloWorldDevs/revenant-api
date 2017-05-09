@@ -23,8 +23,6 @@
 }
 
 .rev_login__container {
-  height: 1px;
-  opacity: 0;
   -webkit-transition: all .7s;
   -moz-transition: all .7s;
   -o-transition: all .7s;
@@ -32,8 +30,6 @@
 }
 
 .show {
-  height: 15rem;
-  opacity: 1;
 }
 
 /* LOADING SPINNER */
