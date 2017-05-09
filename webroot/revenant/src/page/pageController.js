@@ -182,7 +182,7 @@ var pageControllerModule = (function($){
   pageController.appendLogin = function () {
     (function () {
       //TODO??: use ajax and handlebars templats! Would be so much nicer, was working initially but then CORS :(
-      var LoginTemplate = $('<div class="rev_login" style="display: none;"><button class="rev_login_reveal">Revenant</button><div class="rev_login__contaier"><h2>Revenant Login</h2><form class="rev_login__form" method="post" action="submit.data"> <input type="text" title="username" placeholder="username" /><input type="password" title="password" placeholder="password" /><button type="submit" class="btn">Login</button><a class="forgot" href="#">Forgot Username?</a></form></div></div>');
+      var LoginTemplate = $('<div class="rev_login" style="display: none;"><div class="rev_login__container"><h2>Revenant Login</h2><form class="rev_login__form" method="post" action="submit.data"> <input type="text" title="username" placeholder="username" /><input type="password" title="password" placeholder="password" /><button type="submit" class="btn">Login</button><a class="forgot" href="#">Forgot Username?</a></form></div></div>');
       //TODO??: use template functionality here ???
       // templateModule.getCompiledTemplate('login')
       //     .then(function (html) {
